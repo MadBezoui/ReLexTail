@@ -18,16 +18,17 @@ DELTAS = [0.001, 0.01, 0.05, 0.1, 0.2]
 METHODS_TO_TEST = ["TOPSIS", "CP", "WS", "Leximax", "RW", "ASF", "SMAA", "MMR", "LexPR"]
 
 
-def _eval_method(F, test_seed, n_test, name=None, delta=None, nadir=None, ideal=None):
+def _eval_method(F, test_seed, n_test, name=None, delta=None, nadir=None, ideal=None, method_seed=None):
+    rng = np.random.default_rng(method_seed) if method_seed is not None else None
     if name == "ReLexTail":
         resolutions = {
             k: str(delta) for k in ["maximum", "tail_025", "tail_050", "tail_100"]
         }
         idx = methods.select(
-            "ReLexTail", F, resolutions=resolutions, nadir=nadir, ideal=ideal
+            "ReLexTail", F, resolutions=resolutions, nadir=nadir, ideal=ideal, rng=rng
         )
     else:
-        idx = methods.select(name, F, nadir=nadir, ideal=ideal)
+        idx = methods.select(name, F, nadir=nadir, ideal=ideal, rng=rng)
 
     loss, family_loss = metrics.out_of_class_loss(
         F, idx, np.random.default_rng(test_seed), n_per_family=n_test, by_family=True
@@ -54,11 +55,12 @@ def run_quality_stability_frontier(
 
         # Test baseline methods
         for name in METHODS_TO_TEST:
+            method_seed = int(rng_master.integers(1 << 31))
             idx0, loss0, fam0 = _eval_method(
-                F, test_seed, n_test, name=name, nadir=nadir0, ideal=ideal
+                F, test_seed, n_test, name=name, nadir=nadir0, ideal=ideal, method_seed=method_seed
             )
             idx1, loss1, fam1 = _eval_method(
-                F, test_seed, n_test, name=name, nadir=perturbed_nadir, ideal=ideal
+                F, test_seed, n_test, name=name, nadir=perturbed_nadir, ideal=ideal, method_seed=method_seed
             )
             results.append(
                 {
@@ -82,6 +84,7 @@ def run_quality_stability_frontier(
                 delta=d,
                 nadir=nadir0,
                 ideal=ideal,
+                method_seed=42, # Deterministic method, but pass for completeness
             )
             idx1, loss1, fam1 = _eval_method(
                 F,
@@ -91,6 +94,7 @@ def run_quality_stability_frontier(
                 delta=d,
                 nadir=perturbed_nadir,
                 ideal=ideal,
+                method_seed=42,
             )
             results.append(
                 {
@@ -160,9 +164,9 @@ def run_quality_stability_frontier(
                 alpha=0.7,
             )
 
-        ax.set_xlabel("Subset-Averaged Tail Loss")
+        ax.set_xlabel("Upper-tail regret")
         ax.set_ylabel("Point flip rate")
-        ax.set_title("Quality-Stability Frontier")
+        ax.set_title("Quality–stability trade-off")
         ax.legend()
         fig.tight_layout()
         fig.savefig(f"{outdir}/figures/quality_stability_frontier.pdf")
@@ -244,9 +248,9 @@ def run_class_evaluation(reps=10, n=200, m=6, n_test=200, seed=102, outdir="resu
 
 
 def plot_relex_decision_profile(seed=103, outdir="results"):
-    rng = np.random.default_rng(seed)
-    F = problems.make_candidate_set("concave", n=50, m=5, rng=rng)
-    resolutions = {k: "0.05" for k in ["maximum", "tail_025", "tail_050", "tail_100"]}
+    from .supplier import load_supplier_case
+    F, sup, crit = load_supplier_case()
+    resolutions = {k: "0.01" for k in ["maximum", "tail_025", "tail_050", "tail_100"]}
     idx, D, labels, pbs, winners = methods.select(
         "ReLexTail", F, resolutions=resolutions, return_detail=True
     )

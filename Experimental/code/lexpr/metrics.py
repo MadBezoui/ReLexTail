@@ -19,59 +19,16 @@ from .methods import normalize, EPS
 def sample_test_utilities(m, n_per_family, rng):
     """Return {name: fn} where fn(r) yields an (N x T) matrix of held-out
     utilities (higher = better; r is minimisation) for T sampled parameterisations.
-
-    Six families span additive and NON-additive monotone preferences, so the
-    evaluation is not biased toward the additive/scalarising logic of the probes:
-      linear, weighted Chebyshev, augmented ASF, CES (additive/scalarising);
-      choquet  -- 2-additive Choquet integral with random nonneg Mobius masses
-                  (criterion interactions; genuinely non-additive);
-      satisfice -- threshold/aspiration utility penalising exceedances of random
-                  aspiration levels (non-smooth, satisficing behaviour)."""
+    
+    Uses 10,000 Dirichlet-linear draws as requested."""
     W = rng.dirichlet(np.ones(m), size=n_per_family)  # weights
-    rho_ces = rng.uniform(2.0, 5.0, size=n_per_family)  # CES curvature
-    # 2-additive Choquet: nonneg Mobius masses on singletons + pairs (monotone)
-    a = rng.random((n_per_family, m))  # singleton masses
-    iu, ju = np.triu_indices(m, k=1)
-    b = rng.random((n_per_family, iu.size)) * 0.5  # pair masses
-    tau = rng.uniform(0.2, 0.6, size=(n_per_family, m))  # aspiration levels
 
     fams = {}
     fams["linear"] = lambda r: -(r @ W.T)
-    fams["chebyshev"] = lambda r: -np.stack(
-        [np.max(W[t] * r, axis=1) for t in range(W.shape[0])], axis=1
-    )
-    fams["aug_asf"] = lambda r: -np.stack(
-        [np.max(W[t] * r, axis=1) + 1e-3 * (r @ W[t]) for t in range(W.shape[0])],
-        axis=1,
-    )
-    fams["ces"] = lambda r: -np.stack(
-        [
-            (np.sum(W[t] * r ** rho_ces[t], axis=1)) ** (1.0 / rho_ces[t])
-            for t in range(W.shape[0])
-        ],
-        axis=1,
-    )
-
-    def choquet(r):
-        cols = []
-        for t in range(n_per_family):
-            cost = r @ a[t] + (np.maximum(r[:, iu], r[:, ju]) @ b[t])
-            cols.append(cost)
-        return -np.stack(cols, axis=1)
-
-    fams["choquet"] = choquet
-
-    def satisfice(r):
-        cols = []
-        for t in range(n_per_family):
-            cols.append(np.maximum(r - tau[t], 0.0).sum(axis=1))
-        return -np.stack(cols, axis=1)
-
-    fams["satisfice"] = satisfice
     return fams
 
 
-def precompute_utilities(F, rng, n_per_family=250):
+def precompute_utilities(F, rng, n_per_family=10000):
     """Sample all held-out utilities ONCE for a candidate set and cache the
     per-utility (best, worst, value) arrays, so many candidates/methods can be
     scored cheaply and on an identical test draw."""
@@ -96,7 +53,7 @@ def precompute_utilities(F, rng, n_per_family=250):
     return cache
 
 
-def loss_from_cache(cache, idx, q=0.90, by_family=False):
+def loss_from_cache(cache, idx, q=0.75, by_family=False):
     """Return (mean_loss, tail_loss[, per_family]) for candidate idx from a cache."""
     per = {}
     for name in cache["_families"]:
@@ -111,7 +68,7 @@ def loss_from_cache(cache, idx, q=0.90, by_family=False):
     return mean_loss, tail
 
 
-def out_of_class_loss(F, idx, rng, n_per_family=250, by_family=False):
+def out_of_class_loss(F, idx, rng, n_per_family=10000, by_family=False):
     """Mean normalised held-out loss (>=0, lower better) of candidate `idx`."""
     r = normalize(F)
     m = r.shape[1]
@@ -128,7 +85,7 @@ def out_of_class_loss(F, idx, rng, n_per_family=250, by_family=False):
 
 
 def out_of_class_loss_grouped(
-    F, groups, base, idx, rng, n_per_family=250, by_family=False
+    F, groups, base, idx, rng, n_per_family=10000, by_family=False
 ):
     """Held-out loss when the DM's TRUE preferences are over the underlying
     criteria (the `base` c-dimensional efficient values), not the redundant raw
@@ -150,7 +107,7 @@ def out_of_class_loss_grouped(
     return (overall, per_fam) if by_family else overall
 
 
-def tail_loss(F, idx, rng, n_per_family=250, q=0.90):
+def tail_loss(F, idx, rng, n_per_family=10000, q=0.75):
     """Worst-case (upper-tail) held-out loss: mean of the worst (1-q) fraction of
     per-utility losses, pooled over all four families (a CVaR-style robustness
     measure).  This is the metric LexPR is designed to minimise."""

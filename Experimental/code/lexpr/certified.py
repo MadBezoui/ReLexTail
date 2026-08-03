@@ -192,20 +192,9 @@ def _D_enclosure(F, probes, box):
         r_lo, r_hi = _r_enclosure(F, ideal_lo, ideal_hi, nadir_lo, nadir_hi)
     except (ValueError, FloatingPointError):
         # Some criterion range collapses somewhere in this box, or an
-        # intermediate overflowed. Nothing can be certified here, so return the
-        # trivial enclosure and let the caller subdivide. Refusing is sound;
-        # continuing with a nan or an inf would not be.
-        singles = {q[1][0] for q in probes if q[0] == "single"}
-        Dlos, Dhis = [], []
-        for q in probes:
-            if q[0] == "single":
-                d = _singleton_disappointment(F, q[1][0])
-                Dlos.append(d)
-                Dhis.append(d)
-            else:
-                Dlos.append(np.zeros(n))
-                Dhis.append(np.ones(n))
-        return np.column_stack(Dlos), np.column_stack(Dhis)
+        # intermediate overflowed. Nothing can be certified here, so we
+        # refuse resolution (Algorithm 3 requires certified uniform retention).
+        return None
     Dlos, Dhis = [], []
     for q in probes:
         kind = q[0]
@@ -221,9 +210,7 @@ def _D_enclosure(F, probes, box):
         # unless it is bounded away from zero
         den_min, den_max = _isub(qw_lo, qw_hi, qstar_lo, qstar_hi)
         if np.any(den_min <= EPS):
-            Dlos.append(np.zeros(n))
-            Dhis.append(np.ones(n))
-            continue
+            return None
         num_lo, num_hi = _isub(vlo, vhi, qstar_lo, qstar_hi)
         Dlo, Dhi = _idiv_pos(num_lo, num_hi, den_min, den_max)
         _check_finite(Dlo, Dhi)
@@ -258,8 +245,22 @@ def _beats_always(Dhi_x, Dlo_y, method="lexpr", resolutions=None):
 
 def _classify_box(F, probes, box, method="lexpr", resolutions=None):
     """Return (sole_winner or None, not_eliminated_set)."""
-    Dlo, Dhi = _D_enclosure(F, probes, box)
+    ret = _D_enclosure(F, probes, box)
     n = F.shape[0]
+    if ret is None:
+        return None, set(range(n))
+    Dlo, Dhi = ret
+    
+    if method == "relextail":
+        # Algorithm 3: explicit test for uniform retention across the box.
+        # If any candidate's categorical profile is not strictly identical at Dlo and Dhi,
+        # the category set can change, meaning retention is not uniform.
+        for i in range(n):
+            prof_lo = compute_profile(Dlo[i], resolutions)
+            prof_hi = compute_profile(Dhi[i], resolutions)
+            if prof_lo[:4] != prof_hi[:4]:  # C_M, C_25, C_50, C_100
+                return None, set(range(n))
+                
     not_elim = set(range(n))
     for y in range(n):
         # y eliminated if some x beats y always
@@ -282,7 +283,9 @@ def _classify_box(F, probes, box, method="lexpr", resolutions=None):
 
 def _box_from_p(F, p):
     ideal0, nadir0 = F.min(axis=0), F.max(axis=0)
-    return (ideal0 * (1 - p), ideal0 * 1.0, nadir0 * (1 - p), nadir0 * (1 + p))
+    eps_f = 1e-6
+    nadir_lo = np.maximum(ideal0 + eps_f, nadir0 * (1 - p))
+    return (ideal0 * (1 - p), ideal0 * 1.0, nadir_lo, nadir0 * (1 + p))
 
 
 def _split(box):

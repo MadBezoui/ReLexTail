@@ -2,69 +2,66 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21771786.svg)](https://doi.org/10.5281/zenodo.21771786)
 
-ReLexTail is a deterministic, resolution-aware lexicographic preorder designed for multicriteria decision making under uncertain normalisation bounds. It integrates active-range probe regrets, discretised maximum and upper-tail empirical CVaR summaries, and exact numerical refinement to provide robust out-of-sample recommendations without relying on hidden preference assumptions.
+This repository contains the official code, data, and reproduction scripts for the paper:
+**"ReLexTail: Resolution-Aware Lexicographic Preorder for Auditable Multicriteria Selection under Uncertain Bounds"**
 
-This repository contains the official Python implementation of the ReLexTail algorithm, along with the complete experimental protocol and scripts used to reproduce the results, tables, and figures presented in the associated manuscript.
+## Overview
+A multicriteria model usually ends with a set of efficient alternatives, not with a recommendation. Turning that set into one choice requires preference modeling that is often fragile. Existing robust and lexicographic methods fail to combine resolution-aware limits with complete transitive upper-tail sorting, often falling into non-transitive pairwise tolerances or giving infinite priority to microscopic worst-case differences. 
 
-## Overview of Results
+We introduce **ReLexTail**, a deterministic resolution-aware lexicographic preorder that integrates active-range probe regrets, discretised maximum and upper-tail empirical CVaR summaries, and exact numerical refinement. 
 
-Our comprehensive evaluation on 500 instances across diverse synthetic and surrogate families demonstrates that exact LexPR and classical lexicographic minimax approaches are highly fragile to microscopic variations in normalization bounds. Specifically:
-- **Point Flip Rate**: Exact LexPR experiences an 18.3% point flip rate under a 5% bound perturbation, owing to its infinite priority to microscopic differences in the absolute worst probe.
-- **ReLexTail Stability**: By introducing a resolution parameter $\delta=0.01$, ReLexTail reduces this point flip rate to just 6.2%.
-- **Category Stability**: The category-optimal set ($W_{\text{cat}}$) of ReLexTail achieved a 0.0% flip rate under the tested protocol, significantly improving structural stability before exact numerical refinement breaks ties.
-- **Quality-Stability Trade-off**: ReLexTail improves upon both exact LexPR and standard scalarization baselines (like TOPSIS, MMR, and ASF) in the quality-stability trade-off, balancing hidden-preference tail regret and structural stability.
-- **Certified Bounds**: Using interval branch-and-bound techniques, ReLexTail allows researchers to construct sound inner and outer possible-winner enclosures when normalisation denominators are bounded away from zero. 
+## Experimental Results
+Our empirical benchmarking on 500 candidate sets (up to 500 points and 15 criteria, evaluating against knapsack, job-shop instances, WFG2, DTLZ, Energy, and Concrete surrogate matrices) demonstrates that ReLexTail successfully:
+- Preserves the stability benefits of active-range normalisation.
+- Defines a complete and transitive preorder (eliminating the 82% nontransitive indifference cycles observed in standard pairwise $\delta$-tolerances on exact leximax).
+- Significantly improves hidden-preference tail regret.
+- Allows fully auditable resolution through category assignment and numerical refinement.
 
-## Repository Structure
+## Requirements and Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/MadBezoui/ReLexTail.git
+   cd ReLexTail
+   ```
+2. Create and activate a Conda environment:
+   ```bash
+   conda env create -f environment.yml
+   conda activate lexpr_env
+   ```
 
-- **`Experimental/code/lexpr/`**: Core Python package implementing the algorithm.
-  - `robust_relex.py`: The ReLexTail implementation, sorting, and categorization mechanics.
-  - `certified.py`: Interval branch-and-bound certification for robust inner/outer enclosures.
-  - `metrics.py`: Regret definitions, evaluations, and caching logic.
-  - `experiments.py` & `experiments_phase6.py`: Main logic for redundant instances, quality-stability frontiers, and ablation studies.
-  
-- **`Experimental/scripts/`**: Orchestration scripts.
-  - `reproduce_all.py`: Master runner to regenerate all tables and figures.
-
-- **`Experimental/manuscript/generated/`**: Output directory for generated artifacts.
-
-## Reproducing the Experiments
-
-The experiments rely on standard scientific Python libraries (such as `numpy`, `pandas`, `scipy`) and solvers for the continuous formulations.
-
-### 1. Installation
-
-Set up a virtual environment and install the package:
-
+## Reproducibility (v2.0.0)
+To regenerate all results, figures, and tables exactly as they appear in the manuscript, run the master reproduction script from the root directory:
 ```bash
-cd Experimental/code
-pip install -r requirements.txt
-pip install -e .
+python Experimental/scripts/reproduce_all.py
+```
+This script sequentially executes all six phases of the experimental pipeline:
+1. **P1 (Combinatorial)**: Generates random knapsack and job-shop multicriteria sets.
+2. **P2 (Continuous)**: Samples WFG/DTLZ test functions.
+3. **P3 (Surrogates)**: Fits neural networks on UCI Energy and Concrete datasets and generates candidate points.
+4. **P4 (Sensitivity)**: Tests interval bounds against perturbations.
+5. **P5 (Certification)**: Validates ReLexTail enclosures via interval branch-and-bound against exact brute-force enumerations.
+6. **P6 (Benchmarking)**: Evaluates ReLexTail against exact LexPR, Leximax, SMAA, TOPSIS, MMR, and random weights to construct the final quality-stability frontier.
+
+The fully generated tables and figures (e.g. `quality_stability_frontier.pdf`, `fig_supplier_interval.pdf`, and the CSV tables) are written directly into `Experimental/manuscript/generated/`.
+
+## Structure
+- `Experimental/code/lexpr/`: Core library implementing ReLexTail and exact LexPR structures.
+- `Experimental/scripts/`: Top-level reproduction and runner scripts.
+- `Experimental/manuscript/generated/`: Output directory where reproduction scripts save CSV metrics and PDF graphics.
+
+## License & Citation
+If you use this code in your work, please cite the Zenodo archive:
+
+```bibtex
+@misc{bezoui2026archive,
+  author = {Bezoui, Madani},
+  title = {ReLexTail: Resolution-Aware Lexicographic Preorder},
+  year = {2026},
+  publisher = {Zenodo},
+  doi = {10.5281/zenodo.21771786},
+  url = {https://doi.org/10.5281/zenodo.21771786},
+  version = {v2.0.0}
+}
 ```
 
-### 2. Running the Full Protocol
-
-To regenerate the tables and figures, run the master orchestration script. **Note:** Full execution involves computationally intensive tasks (e.g., branch-and-bound certification and SMAA $10,000$-draw runs) and may take several minutes.
-
-```bash
-cd Experimental/scripts
-python3 reproduce_all.py
-```
-
-Outputs will be saved in `Experimental/manuscript/generated/tables/` and `Experimental/manuscript/generated/figures/`.
-
-## Interpreting the Output Data
-
-- **`benchmark_raw.csv`**: Unaggregated results of all candidate sets and perturbations.
-- **`main_comparison.csv`**: Aggregated population-level metrics (Mean Loss and Tail Regret).
-- **`stats_summary.json`**: Rigorous statistical evaluations, including Friedman ranks, Wilcoxon signed-rank tests, and paired 95% confidence intervals against exact LexPR.
-- **`fig_divergence.pdf`**: Shows the proportion of instances where ReLexTail's recommendation diverges from exact LexPR across different candidate set generators.
-- **`fig_certified_decay.pdf`**: Visualizes the shrinkage of the unresolved interval volume as the branch-and-bound certification budget increases.
-
-## Citation
-
-If you use this code in your work, please cite the associated manuscript and use the Zenodo DOI: [10.5281/zenodo.21771786](https://doi.org/10.5281/zenodo.21771786).
-
-## License
-
-This software is released under the MIT License.
+This project is licensed under the MIT License.
