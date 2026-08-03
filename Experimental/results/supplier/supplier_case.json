@@ -1,0 +1,324 @@
+{
+  "suppliers": [
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5",
+    "S6",
+    "S7",
+    "S8",
+    "S9",
+    "S10"
+  ],
+  "criteria": [
+    "Cost",
+    "Defects",
+    "LeadTime",
+    "GHG",
+    "Energy",
+    "SocialRisk",
+    "Resilience"
+  ],
+  "units": [
+    "EUR/unit",
+    "% rejected",
+    "days",
+    "kg CO2e/unit",
+    "kWh/unit",
+    "0-100 index",
+    "0-100 risk"
+  ],
+  "n_suppliers": 10,
+  "n_criteria": 7,
+  "theta": 0.6,
+  "seed": 20260623,
+  "n_efficient": 10,
+  "corr_ghg_energy": 0.9933092517475577,
+  "redundant_clusters": [
+    [
+      "GHG",
+      "Energy"
+    ]
+  ],
+  "recommendations": {
+    "TOPSIS": "S5",
+    "CP": "S5",
+    "VIKOR": "S6",
+    "Knee": "S5",
+    "HV": "S7",
+    "ASF": "S1",
+    "SMAA": "S5",
+    "MMR": "S5",
+    "ChebMMR": "S1",
+    "LexPR": "S7"
+  },
+  "n_distinct_picks": 4,
+  "lexpr_winner": "S7",
+  "certificate": [
+    {
+      "probe": "f2",
+      "regret": 0.787878787090909
+    },
+    {
+      "probe": "f1",
+      "regret": 0.69127516709396
+    },
+    {
+      "probe": "f7",
+      "regret": 0.5257142851885714
+    },
+    {
+      "probe": "f6",
+      "regret": 0.12761904749142855
+    },
+    {
+      "probe": "max(all)",
+      "regret": 0.11888111838730431
+    },
+    {
+      "probe": "f3",
+      "regret": 0.11475409824590158
+    },
+    {
+      "probe": "mean(all)",
+      "regret": 0.08975637474985984
+    },
+    {
+      "probe": "f4",
+      "regret": 0.0
+    },
+    {
+      "probe": "f5",
+      "regret": 0.0
+    }
+  ],
+  "n_probes": 9,
+  "leximax_order": [
+    "S7",
+    "S6",
+    "S1",
+    "S10",
+    "S2",
+    "S4",
+    "S5",
+    "S3",
+    "S9",
+    "S8"
+  ],
+  "relex_diagnostics": {
+    "S7_profile_cats": [
+      40,
+      36,
+      25,
+      14
+    ],
+    "S1_profile_cats": [
+      41,
+      39,
+      38,
+      28
+    ],
+    "S7_exact_M": 0.787878787090909,
+    "S7_exact_T25": 0.7158144557697831,
+    "S7_exact_T50": 0.4870950769018936,
+    "S7_exact_T100": 0.2728754309164372,
+    "S1_exact_M": 0.8019018846998861,
+    "S1_exact_T25": 0.775877733957593,
+    "S1_exact_T50": 0.7483551095849588,
+    "S1_exact_T100": 0.5596142793880297,
+    "decisive_coordinate": "C_M",
+    "delta_cat": 1,
+    "delta_exact": 0.014023097608977131,
+    "mu_cell": 0.012121212909091073
+  },
+  "heldout_loss": {
+    "TOPSIS": {
+      "mean": 0.1775067387037767,
+      "tail": 0.850137512816047,
+      "worst_family": 0.3057068614810742
+    },
+    "CP": {
+      "mean": 0.1775067387037767,
+      "tail": 0.850137512816047,
+      "worst_family": 0.3057068614810742
+    },
+    "VIKOR": {
+      "mean": 0.16448656489902205,
+      "tail": 0.6434590410946496,
+      "worst_family": 0.2851089538761497
+    },
+    "Knee": {
+      "mean": 0.1775067387037767,
+      "tail": 0.850137512816047,
+      "worst_family": 0.3057068614810742
+    },
+    "HV": {
+      "mean": 0.19270638785364946,
+      "tail": 0.6171262943442173,
+      "worst_family": 0.3053811897735712
+    },
+    "ASF": {
+      "mean": 0.5683138121294843,
+      "tail": 0.8582189909834739,
+      "worst_family": 0.7486410902436831
+    },
+    "SMAA": {
+      "mean": 0.1775067387037767,
+      "tail": 0.850137512816047,
+      "worst_family": 0.3057068614810742
+    },
+    "MMR": {
+      "mean": 0.1775067387037767,
+      "tail": 0.850137512816047,
+      "worst_family": 0.3057068614810742
+    },
+    "ChebMMR": {
+      "mean": 0.5683138121294843,
+      "tail": 0.8582189909834739,
+      "worst_family": 0.7486410902436831
+    },
+    "LexPR": {
+      "mean": 0.19270638785364946,
+      "tail": 0.6171262943442173,
+      "worst_family": 0.3053811897735712
+    }
+  },
+  "norm_sensitivity": [
+    {
+      "perturb": 0.0,
+      "flip_rate": 0.0
+    },
+    {
+      "perturb": 0.05,
+      "flip_rate": 0.3466666666666667
+    },
+    {
+      "perturb": 0.1,
+      "flip_rate": 0.4866666666666667
+    },
+    {
+      "perturb": 0.2,
+      "flip_rate": 0.5233333333333333
+    },
+    {
+      "perturb": 0.3,
+      "flip_rate": 0.5766666666666667
+    },
+    {
+      "perturb": 0.5,
+      "flip_rate": 0.73
+    }
+  ],
+  "interval_robust": {
+    "0.05": {
+      "possible": [
+        "S1",
+        "S7"
+      ],
+      "necessary": [],
+      "stability_class_size": 2,
+      "modal_winner": "S7",
+      "modal_frequency": 0.704,
+      "counts": {
+        "S1": 148,
+        "S7": 352
+      }
+    },
+    "0.10": {
+      "possible": [
+        "S1",
+        "S7"
+      ],
+      "necessary": [],
+      "stability_class_size": 2,
+      "modal_winner": "S7",
+      "modal_frequency": 0.574,
+      "counts": {
+        "S1": 213,
+        "S7": 287
+      }
+    },
+    "0.20": {
+      "possible": [
+        "S1",
+        "S7"
+      ],
+      "necessary": [],
+      "stability_class_size": 2,
+      "modal_winner": "S7",
+      "modal_frequency": 0.506,
+      "counts": {
+        "S1": 247,
+        "S7": 253
+      }
+    }
+  },
+  "iia_reversal": {
+    "TOPSIS": 0.1111111111111111,
+    "CP": 0.1111111111111111,
+    "ASF": 0.2222222222222222,
+    "MMR": 0.1111111111111111,
+    "LexPR": 0.1111111111111111
+  },
+  "iia_interior_fraction": 0.3333333333333333,
+  "ablation": {
+    "adaptive": {
+      "winner": "S7",
+      "n_probes": 11,
+      "mean_loss": 0.19270638785364946,
+      "tail_loss": 0.6171262943442173,
+      "cert_sharpness": 0.787878787090909,
+      "winner_efficient": true
+    },
+    "no_clusters": {
+      "winner": "S7",
+      "n_probes": 9,
+      "mean_loss": 0.19270638785364946,
+      "tail_loss": 0.6171262943442173,
+      "cert_sharpness": 0.787878787090909,
+      "winner_efficient": true
+    },
+    "singletons": {
+      "winner": "S1",
+      "n_probes": 7,
+      "mean_loss": 0.5683138121294843,
+      "tail_loss": 0.8582189909834739,
+      "cert_sharpness": 0.7592592585000001,
+      "winner_efficient": true
+    },
+    "no_singletons": {
+      "winner": "S6",
+      "n_probes": 4,
+      "mean_loss": 0.16448656489902205,
+      "tail_loss": 0.6434590410946496,
+      "cert_sharpness": 0.11888111838730431,
+      "winner_efficient": true
+    },
+    "max_only": {
+      "winner": "S1",
+      "n_probes": 9,
+      "mean_loss": 0.5683138121294843,
+      "tail_loss": 0.8582189909834739,
+      "cert_sharpness": 0.7592592585000001,
+      "winner_efficient": true
+    },
+    "random": {
+      "winner": "S5",
+      "n_probes": 11,
+      "mean_loss": 0.1775067387037767,
+      "tail_loss": 0.850137512816047,
+      "cert_sharpness": 0.30681454478708065,
+      "winner_efficient": true
+    },
+    "dedup": {
+      "winner": "S7",
+      "n_probes": 11,
+      "mean_loss": 0.19270638785364946,
+      "tail_loss": 0.6171262943442173,
+      "cert_sharpness": 0.787878787090909,
+      "winner_efficient": true,
+      "n_duplicates_removed": 0
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "binding_labels": [
+    "peak stress",
+    "non-renewable fraction"
+  ],
+  "candidate_index": 104,
+  "display_labels": [
+    "peak stress",
+    "non-renewable fraction",
+    "max(ramping wear, peak stress)",
+    "max(cost, emissions, non-renewable fraction)",
+    "cost",
+    "mean(cost, emissions, non-renewable fraction)",
+    "mean(ramping wear, peak stress)",
+    "emissions",
+    "unreliability",
+    "ramping wear",
+    "grand mean",
+    "grand maximum"
+  ],
+  "git_commit": "d66d94d912c400bf8cbaf5f38723a6381f1d0663",
+  "git_dirty": true,
+  "omitted_probe_count": 0,
+  "params": {
+    "beta": 0.01,
+    "figure": "smartgrid_certificate",
+    "normalization": "empirical candidate-set bounds",
+    "probe_family": "adaptive",
+    "seed": 2024,
+    "tau": 0.0001
+  },
+  "params_sha256": "6856d879053f7799592dfb033d13bede8b6fc05fa5f68207f2ec73c9bdceac8e",
+  "probe_count": 12,
+  "run_id": null
+}

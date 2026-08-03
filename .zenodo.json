@@ -1,0 +1,13 @@
+{
+  "title": "ReLexTail: Resolution-Aware Lexicographic Preorder",
+  "description": "Source code and experimental artifacts for the ReLexTail method.",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "Bezoui, Madani"
+    }
+  ],
+  "access_right": "open",
+  "license": "MIT",
+  "version": "1.0.0"
+}

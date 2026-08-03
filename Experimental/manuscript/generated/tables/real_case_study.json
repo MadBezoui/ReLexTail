@@ -1,0 +1,8 @@
+{
+  "dataset": "California Housing Subset",
+  "N": 150,
+  "m": 4,
+  "delta_used": 0.02,
+  "winner_index": 90,
+  "class_size": 1
+}

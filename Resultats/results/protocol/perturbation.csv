@@ -1,0 +1,701 @@
+experiment,instance,m,N,geometry,uncertainty,lexpr_flip_rate,asf_flip_rate,removals,lexpr_flipped,asf_flipped
+Bound Uncertainty,0,3,300,knapsack,0.05,0.08,0.18,,,
+Bound Uncertainty,0,3,300,knapsack,0.1,0.12,0.34,,,
+Bound Uncertainty,0,3,300,knapsack,0.2,0.28,0.54,,,
+Bound Uncertainty,0,3,300,knapsack,0.5,0.76,1.0,,,
+IIA,0,3,300,knapsack,,,,1.0,False,False
+IIA,0,3,300,knapsack,,,,2.0,False,False
+IIA,0,3,300,knapsack,,,,3.0,False,False
+Bound Uncertainty,1,3,100,convex,0.05,0.06,0.04,,,
+Bound Uncertainty,1,3,100,convex,0.1,0.16,0.3,,,
+Bound Uncertainty,1,3,100,convex,0.2,0.22,0.62,,,
+Bound Uncertainty,1,3,100,convex,0.5,0.7,1.0,,,
+IIA,1,3,100,convex,,,,1.0,False,False
+IIA,1,3,100,convex,,,,2.0,False,False
+IIA,1,3,100,convex,,,,3.0,True,True
+Bound Uncertainty,2,5,300,asymmetric,0.05,0.08,0.18,,,
+Bound Uncertainty,2,5,300,asymmetric,0.1,0.18,0.42,,,
+Bound Uncertainty,2,5,300,asymmetric,0.2,0.36,0.48,,,
+Bound Uncertainty,2,5,300,asymmetric,0.5,0.76,1.0,,,
+IIA,2,5,300,asymmetric,,,,1.0,False,False
+IIA,2,5,300,asymmetric,,,,2.0,False,False
+IIA,2,5,300,asymmetric,,,,3.0,False,False
+Bound Uncertainty,3,5,100,jobshop,0.05,0.1,0.2,,,
+Bound Uncertainty,3,5,100,jobshop,0.1,0.18,0.24,,,
+Bound Uncertainty,3,5,100,jobshop,0.2,0.4,0.5,,,
+Bound Uncertainty,3,5,100,jobshop,0.5,0.84,1.0,,,
+IIA,3,5,100,jobshop,,,,1.0,False,False
+IIA,3,5,100,jobshop,,,,2.0,True,False
+IIA,3,5,100,jobshop,,,,3.0,False,False
+Bound Uncertainty,4,5,100,wfg2,0.05,0.0,0.08,,,
+Bound Uncertainty,4,5,100,wfg2,0.1,0.1,0.4,,,
+Bound Uncertainty,4,5,100,wfg2,0.2,0.22,0.48,,,
+Bound Uncertainty,4,5,100,wfg2,0.5,0.78,1.0,,,
+IIA,4,5,100,wfg2,,,,1.0,False,False
+IIA,4,5,100,wfg2,,,,2.0,False,False
+IIA,4,5,100,wfg2,,,,3.0,False,False
+Bound Uncertainty,5,3,300,knapsack,0.05,0.1,0.04,,,
+Bound Uncertainty,5,3,300,knapsack,0.1,0.12,0.2,,,
+Bound Uncertainty,5,3,300,knapsack,0.2,0.38,0.54,,,
+Bound Uncertainty,5,3,300,knapsack,0.5,0.82,1.0,,,
+IIA,5,3,300,knapsack,,,,1.0,False,False
+IIA,5,3,300,knapsack,,,,2.0,False,False
+IIA,5,3,300,knapsack,,,,3.0,False,False
+Bound Uncertainty,6,3,100,water,0.05,0.02,0.1,,,
+Bound Uncertainty,6,3,100,water,0.1,0.24,0.24,,,
+Bound Uncertainty,6,3,100,water,0.2,0.32,0.48,,,
+Bound Uncertainty,6,3,100,water,0.5,0.82,1.0,,,
+IIA,6,3,100,water,,,,1.0,False,False
+IIA,6,3,100,water,,,,2.0,False,False
+IIA,6,3,100,water,,,,3.0,False,False
+Bound Uncertainty,7,3,300,wfg2,0.05,0.06,0.2,,,
+Bound Uncertainty,7,3,300,wfg2,0.1,0.14,0.2,,,
+Bound Uncertainty,7,3,300,wfg2,0.2,0.28,0.62,,,
+Bound Uncertainty,7,3,300,wfg2,0.5,0.82,1.0,,,
+IIA,7,3,300,wfg2,,,,1.0,False,False
+IIA,7,3,300,wfg2,,,,2.0,False,False
+IIA,7,3,300,wfg2,,,,3.0,False,False
+Bound Uncertainty,8,3,300,asymmetric,0.05,0.08,0.1,,,
+Bound Uncertainty,8,3,300,asymmetric,0.1,0.14,0.38,,,
+Bound Uncertainty,8,3,300,asymmetric,0.2,0.2,0.48,,,
+Bound Uncertainty,8,3,300,asymmetric,0.5,0.84,1.0,,,
+IIA,8,3,300,asymmetric,,,,1.0,False,False
+IIA,8,3,300,asymmetric,,,,2.0,False,False
+IIA,8,3,300,asymmetric,,,,3.0,False,False
+Bound Uncertainty,9,5,100,cars,0.05,0.06,0.14,,,
+Bound Uncertainty,9,5,100,cars,0.1,0.08,0.28,,,
+Bound Uncertainty,9,5,100,cars,0.2,0.28,0.54,,,
+Bound Uncertainty,9,5,100,cars,0.5,0.74,1.0,,,
+IIA,9,5,100,cars,,,,1.0,False,False
+IIA,9,5,100,cars,,,,2.0,False,False
+IIA,9,5,100,cars,,,,3.0,True,True
+Bound Uncertainty,10,3,300,asymmetric,0.05,0.12,0.08,,,
+Bound Uncertainty,10,3,300,asymmetric,0.1,0.08,0.22,,,
+Bound Uncertainty,10,3,300,asymmetric,0.2,0.36,0.46,,,
+Bound Uncertainty,10,3,300,asymmetric,0.5,0.82,1.0,,,
+IIA,10,3,300,asymmetric,,,,1.0,False,False
+IIA,10,3,300,asymmetric,,,,2.0,False,False
+IIA,10,3,300,asymmetric,,,,3.0,False,False
+Bound Uncertainty,11,3,300,concrete,0.05,0.1,0.14,,,
+Bound Uncertainty,11,3,300,concrete,0.1,0.2,0.22,,,
+Bound Uncertainty,11,3,300,concrete,0.2,0.26,0.56,,,
+Bound Uncertainty,11,3,300,concrete,0.5,0.84,1.0,,,
+IIA,11,3,300,concrete,,,,1.0,False,False
+IIA,11,3,300,concrete,,,,2.0,False,False
+IIA,11,3,300,concrete,,,,3.0,False,False
+Bound Uncertainty,12,5,100,concrete,0.05,0.1,0.2,,,
+Bound Uncertainty,12,5,100,concrete,0.1,0.12,0.3,,,
+Bound Uncertainty,12,5,100,concrete,0.2,0.2,0.5,,,
+Bound Uncertainty,12,5,100,concrete,0.5,0.72,1.0,,,
+IIA,12,5,100,concrete,,,,1.0,False,False
+IIA,12,5,100,concrete,,,,2.0,False,False
+IIA,12,5,100,concrete,,,,3.0,False,False
+Bound Uncertainty,13,5,100,knapsack,0.05,0.14,0.08,,,
+Bound Uncertainty,13,5,100,knapsack,0.1,0.08,0.32,,,
+Bound Uncertainty,13,5,100,knapsack,0.2,0.3,0.42,,,
+Bound Uncertainty,13,5,100,knapsack,0.5,0.62,1.0,,,
+IIA,13,5,100,knapsack,,,,1.0,False,False
+IIA,13,5,100,knapsack,,,,2.0,False,False
+IIA,13,5,100,knapsack,,,,3.0,False,False
+Bound Uncertainty,14,3,100,degenerate,0.05,0.06,0.06,,,
+Bound Uncertainty,14,3,100,degenerate,0.1,0.1,0.3,,,
+Bound Uncertainty,14,3,100,degenerate,0.2,0.26,0.46,,,
+Bound Uncertainty,14,3,100,degenerate,0.5,0.72,1.0,,,
+IIA,14,3,100,degenerate,,,,1.0,False,False
+IIA,14,3,100,degenerate,,,,2.0,True,True
+IIA,14,3,100,degenerate,,,,3.0,True,True
+Bound Uncertainty,15,3,100,cars,0.05,0.08,0.08,,,
+Bound Uncertainty,15,3,100,cars,0.1,0.16,0.26,,,
+Bound Uncertainty,15,3,100,cars,0.2,0.4,0.56,,,
+Bound Uncertainty,15,3,100,cars,0.5,0.72,1.0,,,
+IIA,15,3,100,cars,,,,1.0,True,True
+IIA,15,3,100,cars,,,,2.0,False,False
+IIA,15,3,100,cars,,,,3.0,True,True
+Bound Uncertainty,16,3,300,manyknee,0.05,0.08,0.12,,,
+Bound Uncertainty,16,3,300,manyknee,0.1,0.08,0.34,,,
+Bound Uncertainty,16,3,300,manyknee,0.2,0.38,0.46,,,
+Bound Uncertainty,16,3,300,manyknee,0.5,0.62,1.0,,,
+IIA,16,3,300,manyknee,,,,1.0,False,False
+IIA,16,3,300,manyknee,,,,2.0,False,False
+IIA,16,3,300,manyknee,,,,3.0,False,False
+Bound Uncertainty,17,3,300,linear,0.05,0.08,0.1,,,
+Bound Uncertainty,17,3,300,linear,0.1,0.14,0.28,,,
+Bound Uncertainty,17,3,300,linear,0.2,0.36,0.5,,,
+Bound Uncertainty,17,3,300,linear,0.5,0.74,1.0,,,
+IIA,17,3,300,linear,,,,1.0,False,False
+IIA,17,3,300,linear,,,,2.0,True,False
+IIA,17,3,300,linear,,,,3.0,False,False
+Bound Uncertainty,18,3,100,manyknee,0.05,0.04,0.1,,,
+Bound Uncertainty,18,3,100,manyknee,0.1,0.2,0.24,,,
+Bound Uncertainty,18,3,100,manyknee,0.2,0.22,0.44,,,
+Bound Uncertainty,18,3,100,manyknee,0.5,0.74,1.0,,,
+IIA,18,3,100,manyknee,,,,1.0,False,False
+IIA,18,3,100,manyknee,,,,2.0,False,False
+IIA,18,3,100,manyknee,,,,3.0,False,False
+Bound Uncertainty,19,5,300,disconnected,0.05,0.1,0.1,,,
+Bound Uncertainty,19,5,300,disconnected,0.1,0.1,0.3,,,
+Bound Uncertainty,19,5,300,disconnected,0.2,0.22,0.48,,,
+Bound Uncertainty,19,5,300,disconnected,0.5,0.64,1.0,,,
+IIA,19,5,300,disconnected,,,,1.0,False,False
+IIA,19,5,300,disconnected,,,,2.0,False,False
+IIA,19,5,300,disconnected,,,,3.0,False,False
+Bound Uncertainty,20,3,100,knapsack,0.05,0.08,0.1,,,
+Bound Uncertainty,20,3,100,knapsack,0.1,0.16,0.38,,,
+Bound Uncertainty,20,3,100,knapsack,0.2,0.38,0.58,,,
+Bound Uncertainty,20,3,100,knapsack,0.5,0.78,1.0,,,
+IIA,20,3,100,knapsack,,,,1.0,False,False
+IIA,20,3,100,knapsack,,,,2.0,False,False
+IIA,20,3,100,knapsack,,,,3.0,True,True
+Bound Uncertainty,21,3,100,linear,0.05,0.12,0.12,,,
+Bound Uncertainty,21,3,100,linear,0.1,0.14,0.22,,,
+Bound Uncertainty,21,3,100,linear,0.2,0.32,0.5,,,
+Bound Uncertainty,21,3,100,linear,0.5,0.72,1.0,,,
+IIA,21,3,100,linear,,,,1.0,False,False
+IIA,21,3,100,linear,,,,2.0,True,True
+IIA,21,3,100,linear,,,,3.0,False,False
+Bound Uncertainty,22,3,100,knapsack,0.05,0.04,0.18,,,
+Bound Uncertainty,22,3,100,knapsack,0.1,0.18,0.22,,,
+Bound Uncertainty,22,3,100,knapsack,0.2,0.3,0.5,,,
+Bound Uncertainty,22,3,100,knapsack,0.5,0.86,1.0,,,
+IIA,22,3,100,knapsack,,,,1.0,False,False
+IIA,22,3,100,knapsack,,,,2.0,False,False
+IIA,22,3,100,knapsack,,,,3.0,False,False
+Bound Uncertainty,23,5,300,cars,0.05,0.08,0.12,,,
+Bound Uncertainty,23,5,300,cars,0.1,0.22,0.14,,,
+Bound Uncertainty,23,5,300,cars,0.2,0.28,0.54,,,
+Bound Uncertainty,23,5,300,cars,0.5,0.78,1.0,,,
+IIA,23,5,300,cars,,,,1.0,False,False
+IIA,23,5,300,cars,,,,2.0,True,True
+IIA,23,5,300,cars,,,,3.0,True,True
+Bound Uncertainty,24,5,300,concave,0.05,0.06,0.12,,,
+Bound Uncertainty,24,5,300,concave,0.1,0.16,0.24,,,
+Bound Uncertainty,24,5,300,concave,0.2,0.3,0.52,,,
+Bound Uncertainty,24,5,300,concave,0.5,0.78,1.0,,,
+IIA,24,5,300,concave,,,,1.0,False,False
+IIA,24,5,300,concave,,,,2.0,False,False
+IIA,24,5,300,concave,,,,3.0,False,False
+Bound Uncertainty,25,5,300,concave,0.05,0.06,0.08,,,
+Bound Uncertainty,25,5,300,concave,0.1,0.2,0.24,,,
+Bound Uncertainty,25,5,300,concave,0.2,0.48,0.44,,,
+Bound Uncertainty,25,5,300,concave,0.5,0.72,1.0,,,
+IIA,25,5,300,concave,,,,1.0,False,False
+IIA,25,5,300,concave,,,,2.0,False,False
+IIA,25,5,300,concave,,,,3.0,False,False
+Bound Uncertainty,26,3,300,asymmetric,0.05,0.06,0.14,,,
+Bound Uncertainty,26,3,300,asymmetric,0.1,0.14,0.28,,,
+Bound Uncertainty,26,3,300,asymmetric,0.2,0.32,0.56,,,
+Bound Uncertainty,26,3,300,asymmetric,0.5,0.62,1.0,,,
+IIA,26,3,300,asymmetric,,,,1.0,False,False
+IIA,26,3,300,asymmetric,,,,2.0,False,False
+IIA,26,3,300,asymmetric,,,,3.0,False,False
+Bound Uncertainty,27,3,100,energy,0.05,0.06,0.22,,,
+Bound Uncertainty,27,3,100,energy,0.1,0.08,0.3,,,
+Bound Uncertainty,27,3,100,energy,0.2,0.24,0.4,,,
+Bound Uncertainty,27,3,100,energy,0.5,0.78,1.0,,,
+IIA,27,3,100,energy,,,,1.0,False,False
+IIA,27,3,100,energy,,,,2.0,False,False
+IIA,27,3,100,energy,,,,3.0,False,False
+Bound Uncertainty,28,5,300,jobshop,0.05,0.06,0.06,,,
+Bound Uncertainty,28,5,300,jobshop,0.1,0.24,0.24,,,
+Bound Uncertainty,28,5,300,jobshop,0.2,0.32,0.6,,,
+Bound Uncertainty,28,5,300,jobshop,0.5,0.76,1.0,,,
+IIA,28,5,300,jobshop,,,,1.0,False,False
+IIA,28,5,300,jobshop,,,,2.0,False,False
+IIA,28,5,300,jobshop,,,,3.0,False,False
+Bound Uncertainty,29,5,100,knapsack,0.05,0.04,0.1,,,
+Bound Uncertainty,29,5,100,knapsack,0.1,0.18,0.22,,,
+Bound Uncertainty,29,5,100,knapsack,0.2,0.3,0.44,,,
+Bound Uncertainty,29,5,100,knapsack,0.5,0.8,1.0,,,
+IIA,29,5,100,knapsack,,,,1.0,False,False
+IIA,29,5,100,knapsack,,,,2.0,False,False
+IIA,29,5,100,knapsack,,,,3.0,False,False
+Bound Uncertainty,30,5,100,knapsack,0.05,0.06,0.12,,,
+Bound Uncertainty,30,5,100,knapsack,0.1,0.18,0.32,,,
+Bound Uncertainty,30,5,100,knapsack,0.2,0.4,0.4,,,
+Bound Uncertainty,30,5,100,knapsack,0.5,0.8,1.0,,,
+IIA,30,5,100,knapsack,,,,1.0,False,False
+IIA,30,5,100,knapsack,,,,2.0,False,False
+IIA,30,5,100,knapsack,,,,3.0,False,False
+Bound Uncertainty,31,5,300,convex,0.05,0.06,0.08,,,
+Bound Uncertainty,31,5,300,convex,0.1,0.24,0.2,,,
+Bound Uncertainty,31,5,300,convex,0.2,0.22,0.56,,,
+Bound Uncertainty,31,5,300,convex,0.5,0.8,1.0,,,
+IIA,31,5,300,convex,,,,1.0,False,False
+IIA,31,5,300,convex,,,,2.0,False,False
+IIA,31,5,300,convex,,,,3.0,False,False
+Bound Uncertainty,32,3,100,concave,0.05,0.04,0.16,,,
+Bound Uncertainty,32,3,100,concave,0.1,0.1,0.3,,,
+Bound Uncertainty,32,3,100,concave,0.2,0.32,0.54,,,
+Bound Uncertainty,32,3,100,concave,0.5,0.74,1.0,,,
+IIA,32,3,100,concave,,,,1.0,False,False
+IIA,32,3,100,concave,,,,2.0,False,False
+IIA,32,3,100,concave,,,,3.0,False,False
+Bound Uncertainty,33,3,300,energy,0.05,0.04,0.12,,,
+Bound Uncertainty,33,3,300,energy,0.1,0.2,0.14,,,
+Bound Uncertainty,33,3,300,energy,0.2,0.24,0.38,,,
+Bound Uncertainty,33,3,300,energy,0.5,0.66,1.0,,,
+IIA,33,3,300,energy,,,,1.0,False,False
+IIA,33,3,300,energy,,,,2.0,False,False
+IIA,33,3,300,energy,,,,3.0,False,False
+Bound Uncertainty,34,5,100,manyknee,0.05,0.08,0.02,,,
+Bound Uncertainty,34,5,100,manyknee,0.1,0.12,0.24,,,
+Bound Uncertainty,34,5,100,manyknee,0.2,0.3,0.56,,,
+Bound Uncertainty,34,5,100,manyknee,0.5,0.92,1.0,,,
+IIA,34,5,100,manyknee,,,,1.0,False,False
+IIA,34,5,100,manyknee,,,,2.0,False,False
+IIA,34,5,100,manyknee,,,,3.0,False,False
+Bound Uncertainty,35,5,100,linear,0.05,0.12,0.18,,,
+Bound Uncertainty,35,5,100,linear,0.1,0.16,0.18,,,
+Bound Uncertainty,35,5,100,linear,0.2,0.3,0.52,,,
+Bound Uncertainty,35,5,100,linear,0.5,0.74,1.0,,,
+IIA,35,5,100,linear,,,,1.0,False,False
+IIA,35,5,100,linear,,,,2.0,False,False
+IIA,35,5,100,linear,,,,3.0,False,False
+Bound Uncertainty,36,5,100,degenerate,0.05,0.08,0.08,,,
+Bound Uncertainty,36,5,100,degenerate,0.1,0.14,0.34,,,
+Bound Uncertainty,36,5,100,degenerate,0.2,0.34,0.6,,,
+Bound Uncertainty,36,5,100,degenerate,0.5,0.8,1.0,,,
+IIA,36,5,100,degenerate,,,,1.0,False,False
+IIA,36,5,100,degenerate,,,,2.0,False,False
+IIA,36,5,100,degenerate,,,,3.0,False,False
+Bound Uncertainty,37,5,300,water,0.05,0.06,0.08,,,
+Bound Uncertainty,37,5,300,water,0.1,0.12,0.3,,,
+Bound Uncertainty,37,5,300,water,0.2,0.4,0.52,,,
+Bound Uncertainty,37,5,300,water,0.5,0.76,1.0,,,
+IIA,37,5,300,water,,,,1.0,False,False
+IIA,37,5,300,water,,,,2.0,False,False
+IIA,37,5,300,water,,,,3.0,False,False
+Bound Uncertainty,38,5,100,water,0.05,0.08,0.08,,,
+Bound Uncertainty,38,5,100,water,0.1,0.14,0.18,,,
+Bound Uncertainty,38,5,100,water,0.2,0.14,0.6,,,
+Bound Uncertainty,38,5,100,water,0.5,0.88,1.0,,,
+IIA,38,5,100,water,,,,1.0,True,True
+IIA,38,5,100,water,,,,2.0,False,False
+IIA,38,5,100,water,,,,3.0,True,True
+Bound Uncertainty,39,3,100,concrete,0.05,0.04,0.2,,,
+Bound Uncertainty,39,3,100,concrete,0.1,0.14,0.22,,,
+Bound Uncertainty,39,3,100,concrete,0.2,0.34,0.44,,,
+Bound Uncertainty,39,3,100,concrete,0.5,0.76,1.0,,,
+IIA,39,3,100,concrete,,,,1.0,False,False
+IIA,39,3,100,concrete,,,,2.0,False,False
+IIA,39,3,100,concrete,,,,3.0,False,False
+Bound Uncertainty,40,5,300,irregular,0.05,0.1,0.02,,,
+Bound Uncertainty,40,5,300,irregular,0.1,0.12,0.18,,,
+Bound Uncertainty,40,5,300,irregular,0.2,0.22,0.42,,,
+Bound Uncertainty,40,5,300,irregular,0.5,0.7,1.0,,,
+IIA,40,5,300,irregular,,,,1.0,False,False
+IIA,40,5,300,irregular,,,,2.0,False,False
+IIA,40,5,300,irregular,,,,3.0,False,False
+Bound Uncertainty,41,5,100,jobshop,0.05,0.06,0.12,,,
+Bound Uncertainty,41,5,100,jobshop,0.1,0.12,0.22,,,
+Bound Uncertainty,41,5,100,jobshop,0.2,0.38,0.46,,,
+Bound Uncertainty,41,5,100,jobshop,0.5,0.82,1.0,,,
+IIA,41,5,100,jobshop,,,,1.0,False,False
+IIA,41,5,100,jobshop,,,,2.0,False,False
+IIA,41,5,100,jobshop,,,,3.0,False,False
+Bound Uncertainty,42,3,300,jobshop,0.05,0.14,0.12,,,
+Bound Uncertainty,42,3,300,jobshop,0.1,0.16,0.34,,,
+Bound Uncertainty,42,3,300,jobshop,0.2,0.28,0.66,,,
+Bound Uncertainty,42,3,300,jobshop,0.5,0.74,1.0,,,
+IIA,42,3,300,jobshop,,,,1.0,False,False
+IIA,42,3,300,jobshop,,,,2.0,False,False
+IIA,42,3,300,jobshop,,,,3.0,False,False
+Bound Uncertainty,43,3,300,irregular,0.05,0.04,0.14,,,
+Bound Uncertainty,43,3,300,irregular,0.1,0.16,0.22,,,
+Bound Uncertainty,43,3,300,irregular,0.2,0.28,0.48,,,
+Bound Uncertainty,43,3,300,irregular,0.5,0.68,1.0,,,
+IIA,43,3,300,irregular,,,,1.0,False,False
+IIA,43,3,300,irregular,,,,2.0,False,False
+IIA,43,3,300,irregular,,,,3.0,False,False
+Bound Uncertainty,44,5,300,jobshop,0.05,0.1,0.12,,,
+Bound Uncertainty,44,5,300,jobshop,0.1,0.08,0.22,,,
+Bound Uncertainty,44,5,300,jobshop,0.2,0.36,0.52,,,
+Bound Uncertainty,44,5,300,jobshop,0.5,0.76,1.0,,,
+IIA,44,5,300,jobshop,,,,1.0,False,False
+IIA,44,5,300,jobshop,,,,2.0,False,False
+IIA,44,5,300,jobshop,,,,3.0,False,False
+Bound Uncertainty,45,5,100,degenerate,0.05,0.1,0.1,,,
+Bound Uncertainty,45,5,100,degenerate,0.1,0.06,0.28,,,
+Bound Uncertainty,45,5,100,degenerate,0.2,0.24,0.52,,,
+Bound Uncertainty,45,5,100,degenerate,0.5,0.8,1.0,,,
+IIA,45,5,100,degenerate,,,,1.0,False,False
+IIA,45,5,100,degenerate,,,,2.0,False,False
+IIA,45,5,100,degenerate,,,,3.0,False,False
+Bound Uncertainty,46,5,300,water,0.05,0.08,0.06,,,
+Bound Uncertainty,46,5,300,water,0.1,0.14,0.3,,,
+Bound Uncertainty,46,5,300,water,0.2,0.32,0.5,,,
+Bound Uncertainty,46,5,300,water,0.5,0.88,1.0,,,
+IIA,46,5,300,water,,,,1.0,True,True
+IIA,46,5,300,water,,,,2.0,True,True
+IIA,46,5,300,water,,,,3.0,False,False
+Bound Uncertainty,47,5,100,linear,0.05,0.06,0.1,,,
+Bound Uncertainty,47,5,100,linear,0.1,0.14,0.28,,,
+Bound Uncertainty,47,5,100,linear,0.2,0.34,0.52,,,
+Bound Uncertainty,47,5,100,linear,0.5,0.74,1.0,,,
+IIA,47,5,100,linear,,,,1.0,False,False
+IIA,47,5,100,linear,,,,2.0,False,False
+IIA,47,5,100,linear,,,,3.0,False,False
+Bound Uncertainty,48,5,100,concave,0.05,0.06,0.1,,,
+Bound Uncertainty,48,5,100,concave,0.1,0.14,0.26,,,
+Bound Uncertainty,48,5,100,concave,0.2,0.24,0.48,,,
+Bound Uncertainty,48,5,100,concave,0.5,0.66,1.0,,,
+IIA,48,5,100,concave,,,,1.0,False,False
+IIA,48,5,100,concave,,,,2.0,True,False
+IIA,48,5,100,concave,,,,3.0,False,False
+Bound Uncertainty,49,3,300,degenerate,0.05,0.08,0.1,,,
+Bound Uncertainty,49,3,300,degenerate,0.1,0.26,0.34,,,
+Bound Uncertainty,49,3,300,degenerate,0.2,0.26,0.5,,,
+Bound Uncertainty,49,3,300,degenerate,0.5,0.82,1.0,,,
+IIA,49,3,300,degenerate,,,,1.0,False,False
+IIA,49,3,300,degenerate,,,,2.0,False,False
+IIA,49,3,300,degenerate,,,,3.0,False,False
+Bound Uncertainty,50,3,300,linear,0.05,0.12,0.16,,,
+Bound Uncertainty,50,3,300,linear,0.1,0.1,0.4,,,
+Bound Uncertainty,50,3,300,linear,0.2,0.3,0.52,,,
+Bound Uncertainty,50,3,300,linear,0.5,0.72,1.0,,,
+IIA,50,3,300,linear,,,,1.0,False,False
+IIA,50,3,300,linear,,,,2.0,False,False
+IIA,50,3,300,linear,,,,3.0,False,False
+Bound Uncertainty,51,5,100,convex,0.05,0.08,0.06,,,
+Bound Uncertainty,51,5,100,convex,0.1,0.2,0.3,,,
+Bound Uncertainty,51,5,100,convex,0.2,0.42,0.44,,,
+Bound Uncertainty,51,5,100,convex,0.5,0.74,1.0,,,
+IIA,51,5,100,convex,,,,1.0,False,False
+IIA,51,5,100,convex,,,,2.0,False,False
+IIA,51,5,100,convex,,,,3.0,False,False
+Bound Uncertainty,52,5,300,jobshop,0.05,0.1,0.08,,,
+Bound Uncertainty,52,5,300,jobshop,0.1,0.14,0.14,,,
+Bound Uncertainty,52,5,300,jobshop,0.2,0.28,0.46,,,
+Bound Uncertainty,52,5,300,jobshop,0.5,0.68,1.0,,,
+IIA,52,5,300,jobshop,,,,1.0,False,False
+IIA,52,5,300,jobshop,,,,2.0,False,False
+IIA,52,5,300,jobshop,,,,3.0,False,False
+Bound Uncertainty,53,5,100,energy,0.05,0.06,0.1,,,
+Bound Uncertainty,53,5,100,energy,0.1,0.14,0.26,,,
+Bound Uncertainty,53,5,100,energy,0.2,0.28,0.52,,,
+Bound Uncertainty,53,5,100,energy,0.5,0.74,1.0,,,
+IIA,53,5,100,energy,,,,1.0,False,False
+IIA,53,5,100,energy,,,,2.0,False,False
+IIA,53,5,100,energy,,,,3.0,False,False
+Bound Uncertainty,54,5,300,irregular,0.05,0.1,0.14,,,
+Bound Uncertainty,54,5,300,irregular,0.1,0.2,0.14,,,
+Bound Uncertainty,54,5,300,irregular,0.2,0.28,0.58,,,
+Bound Uncertainty,54,5,300,irregular,0.5,0.7,1.0,,,
+IIA,54,5,300,irregular,,,,1.0,False,False
+IIA,54,5,300,irregular,,,,2.0,False,False
+IIA,54,5,300,irregular,,,,3.0,False,False
+Bound Uncertainty,55,5,100,asymmetric,0.05,0.06,0.08,,,
+Bound Uncertainty,55,5,100,asymmetric,0.1,0.1,0.18,,,
+Bound Uncertainty,55,5,100,asymmetric,0.2,0.28,0.58,,,
+Bound Uncertainty,55,5,100,asymmetric,0.5,0.7,1.0,,,
+IIA,55,5,100,asymmetric,,,,1.0,False,False
+IIA,55,5,100,asymmetric,,,,2.0,False,False
+IIA,55,5,100,asymmetric,,,,3.0,False,False
+Bound Uncertainty,56,5,300,manyknee,0.05,0.1,0.2,,,
+Bound Uncertainty,56,5,300,manyknee,0.1,0.26,0.28,,,
+Bound Uncertainty,56,5,300,manyknee,0.2,0.34,0.52,,,
+Bound Uncertainty,56,5,300,manyknee,0.5,0.84,1.0,,,
+IIA,56,5,300,manyknee,,,,1.0,False,False
+IIA,56,5,300,manyknee,,,,2.0,False,False
+IIA,56,5,300,manyknee,,,,3.0,False,False
+Bound Uncertainty,57,3,100,knapsack,0.05,0.06,0.1,,,
+Bound Uncertainty,57,3,100,knapsack,0.1,0.16,0.38,,,
+Bound Uncertainty,57,3,100,knapsack,0.2,0.28,0.42,,,
+Bound Uncertainty,57,3,100,knapsack,0.5,0.82,1.0,,,
+IIA,57,3,100,knapsack,,,,1.0,False,False
+IIA,57,3,100,knapsack,,,,2.0,False,False
+IIA,57,3,100,knapsack,,,,3.0,False,False
+Bound Uncertainty,58,3,300,cars,0.05,0.12,0.12,,,
+Bound Uncertainty,58,3,300,cars,0.1,0.08,0.32,,,
+Bound Uncertainty,58,3,300,cars,0.2,0.38,0.52,,,
+Bound Uncertainty,58,3,300,cars,0.5,0.74,1.0,,,
+IIA,58,3,300,cars,,,,1.0,True,True
+IIA,58,3,300,cars,,,,2.0,True,True
+IIA,58,3,300,cars,,,,3.0,True,True
+Bound Uncertainty,59,5,100,concrete,0.05,0.1,0.04,,,
+Bound Uncertainty,59,5,100,concrete,0.1,0.14,0.26,,,
+Bound Uncertainty,59,5,100,concrete,0.2,0.14,0.58,,,
+Bound Uncertainty,59,5,100,concrete,0.5,0.8,1.0,,,
+IIA,59,5,100,concrete,,,,1.0,False,False
+IIA,59,5,100,concrete,,,,2.0,False,False
+IIA,59,5,100,concrete,,,,3.0,False,False
+Bound Uncertainty,60,3,100,concrete,0.05,0.08,0.06,,,
+Bound Uncertainty,60,3,100,concrete,0.1,0.2,0.32,,,
+Bound Uncertainty,60,3,100,concrete,0.2,0.28,0.46,,,
+Bound Uncertainty,60,3,100,concrete,0.5,0.94,1.0,,,
+IIA,60,3,100,concrete,,,,1.0,False,False
+IIA,60,3,100,concrete,,,,2.0,False,False
+IIA,60,3,100,concrete,,,,3.0,False,False
+Bound Uncertainty,61,3,300,degenerate,0.05,0.08,0.12,,,
+Bound Uncertainty,61,3,300,degenerate,0.1,0.2,0.12,,,
+Bound Uncertainty,61,3,300,degenerate,0.2,0.28,0.48,,,
+Bound Uncertainty,61,3,300,degenerate,0.5,0.74,1.0,,,
+IIA,61,3,300,degenerate,,,,1.0,False,False
+IIA,61,3,300,degenerate,,,,2.0,False,False
+IIA,61,3,300,degenerate,,,,3.0,False,False
+Bound Uncertainty,62,3,300,concrete,0.05,0.04,0.12,,,
+Bound Uncertainty,62,3,300,concrete,0.1,0.1,0.18,,,
+Bound Uncertainty,62,3,300,concrete,0.2,0.18,0.46,,,
+Bound Uncertainty,62,3,300,concrete,0.5,0.74,1.0,,,
+IIA,62,3,300,concrete,,,,1.0,False,False
+IIA,62,3,300,concrete,,,,2.0,False,False
+IIA,62,3,300,concrete,,,,3.0,False,False
+Bound Uncertainty,63,5,300,jobshop,0.05,0.08,0.2,,,
+Bound Uncertainty,63,5,300,jobshop,0.1,0.14,0.2,,,
+Bound Uncertainty,63,5,300,jobshop,0.2,0.34,0.5,,,
+Bound Uncertainty,63,5,300,jobshop,0.5,0.72,1.0,,,
+IIA,63,5,300,jobshop,,,,1.0,False,False
+IIA,63,5,300,jobshop,,,,2.0,False,False
+IIA,63,5,300,jobshop,,,,3.0,False,False
+Bound Uncertainty,64,3,300,degenerate,0.05,0.04,0.16,,,
+Bound Uncertainty,64,3,300,degenerate,0.1,0.14,0.32,,,
+Bound Uncertainty,64,3,300,degenerate,0.2,0.24,0.54,,,
+Bound Uncertainty,64,3,300,degenerate,0.5,0.8,1.0,,,
+IIA,64,3,300,degenerate,,,,1.0,False,False
+IIA,64,3,300,degenerate,,,,2.0,False,False
+IIA,64,3,300,degenerate,,,,3.0,True,True
+Bound Uncertainty,65,3,100,concrete,0.05,0.06,0.18,,,
+Bound Uncertainty,65,3,100,concrete,0.1,0.12,0.22,,,
+Bound Uncertainty,65,3,100,concrete,0.2,0.28,0.44,,,
+Bound Uncertainty,65,3,100,concrete,0.5,0.82,1.0,,,
+IIA,65,3,100,concrete,,,,1.0,False,False
+IIA,65,3,100,concrete,,,,2.0,False,False
+IIA,65,3,100,concrete,,,,3.0,False,False
+Bound Uncertainty,66,5,300,cars,0.05,0.08,0.12,,,
+Bound Uncertainty,66,5,300,cars,0.1,0.2,0.26,,,
+Bound Uncertainty,66,5,300,cars,0.2,0.36,0.44,,,
+Bound Uncertainty,66,5,300,cars,0.5,0.8,1.0,,,
+IIA,66,5,300,cars,,,,1.0,False,False
+IIA,66,5,300,cars,,,,2.0,False,False
+IIA,66,5,300,cars,,,,3.0,False,False
+Bound Uncertainty,67,3,100,degenerate,0.05,0.06,0.04,,,
+Bound Uncertainty,67,3,100,degenerate,0.1,0.08,0.2,,,
+Bound Uncertainty,67,3,100,degenerate,0.2,0.28,0.5,,,
+Bound Uncertainty,67,3,100,degenerate,0.5,0.7,1.0,,,
+IIA,67,3,100,degenerate,,,,1.0,False,False
+IIA,67,3,100,degenerate,,,,2.0,False,False
+IIA,67,3,100,degenerate,,,,3.0,False,False
+Bound Uncertainty,68,5,300,concrete,0.05,0.1,0.12,,,
+Bound Uncertainty,68,5,300,concrete,0.1,0.2,0.2,,,
+Bound Uncertainty,68,5,300,concrete,0.2,0.22,0.5,,,
+Bound Uncertainty,68,5,300,concrete,0.5,0.82,1.0,,,
+IIA,68,5,300,concrete,,,,1.0,False,False
+IIA,68,5,300,concrete,,,,2.0,False,False
+IIA,68,5,300,concrete,,,,3.0,False,False
+Bound Uncertainty,69,3,300,concrete,0.05,0.1,0.12,,,
+Bound Uncertainty,69,3,300,concrete,0.1,0.08,0.24,,,
+Bound Uncertainty,69,3,300,concrete,0.2,0.26,0.56,,,
+Bound Uncertainty,69,3,300,concrete,0.5,0.68,1.0,,,
+IIA,69,3,300,concrete,,,,1.0,False,False
+IIA,69,3,300,concrete,,,,2.0,False,False
+IIA,69,3,300,concrete,,,,3.0,True,False
+Bound Uncertainty,70,3,300,linear,0.05,0.12,0.12,,,
+Bound Uncertainty,70,3,300,linear,0.1,0.06,0.32,,,
+Bound Uncertainty,70,3,300,linear,0.2,0.42,0.46,,,
+Bound Uncertainty,70,3,300,linear,0.5,0.6,1.0,,,
+IIA,70,3,300,linear,,,,1.0,False,False
+IIA,70,3,300,linear,,,,2.0,False,False
+IIA,70,3,300,linear,,,,3.0,False,False
+Bound Uncertainty,71,5,100,energy,0.05,0.12,0.14,,,
+Bound Uncertainty,71,5,100,energy,0.1,0.12,0.24,,,
+Bound Uncertainty,71,5,100,energy,0.2,0.38,0.5,,,
+Bound Uncertainty,71,5,100,energy,0.5,0.74,1.0,,,
+IIA,71,5,100,energy,,,,1.0,False,False
+IIA,71,5,100,energy,,,,2.0,False,False
+IIA,71,5,100,energy,,,,3.0,False,False
+Bound Uncertainty,72,5,300,disconnected,0.05,0.1,0.2,,,
+Bound Uncertainty,72,5,300,disconnected,0.1,0.14,0.3,,,
+Bound Uncertainty,72,5,300,disconnected,0.2,0.36,0.5,,,
+Bound Uncertainty,72,5,300,disconnected,0.5,0.82,1.0,,,
+IIA,72,5,300,disconnected,,,,1.0,False,False
+IIA,72,5,300,disconnected,,,,2.0,False,False
+IIA,72,5,300,disconnected,,,,3.0,False,False
+Bound Uncertainty,73,5,100,linear,0.05,0.08,0.06,,,
+Bound Uncertainty,73,5,100,linear,0.1,0.18,0.22,,,
+Bound Uncertainty,73,5,100,linear,0.2,0.26,0.46,,,
+Bound Uncertainty,73,5,100,linear,0.5,0.66,1.0,,,
+IIA,73,5,100,linear,,,,1.0,False,False
+IIA,73,5,100,linear,,,,2.0,False,False
+IIA,73,5,100,linear,,,,3.0,False,False
+Bound Uncertainty,74,5,300,jobshop,0.05,0.04,0.12,,,
+Bound Uncertainty,74,5,300,jobshop,0.1,0.18,0.24,,,
+Bound Uncertainty,74,5,300,jobshop,0.2,0.32,0.36,,,
+Bound Uncertainty,74,5,300,jobshop,0.5,0.72,1.0,,,
+IIA,74,5,300,jobshop,,,,1.0,False,False
+IIA,74,5,300,jobshop,,,,2.0,False,False
+IIA,74,5,300,jobshop,,,,3.0,False,False
+Bound Uncertainty,75,5,100,asymmetric,0.05,0.04,0.14,,,
+Bound Uncertainty,75,5,100,asymmetric,0.1,0.1,0.24,,,
+Bound Uncertainty,75,5,100,asymmetric,0.2,0.44,0.54,,,
+Bound Uncertainty,75,5,100,asymmetric,0.5,0.76,1.0,,,
+IIA,75,5,100,asymmetric,,,,1.0,False,False
+IIA,75,5,100,asymmetric,,,,2.0,False,False
+IIA,75,5,100,asymmetric,,,,3.0,False,False
+Bound Uncertainty,76,3,100,convex,0.05,0.12,0.08,,,
+Bound Uncertainty,76,3,100,convex,0.1,0.18,0.24,,,
+Bound Uncertainty,76,3,100,convex,0.2,0.26,0.46,,,
+Bound Uncertainty,76,3,100,convex,0.5,0.78,1.0,,,
+IIA,76,3,100,convex,,,,1.0,False,False
+IIA,76,3,100,convex,,,,2.0,False,False
+IIA,76,3,100,convex,,,,3.0,False,False
+Bound Uncertainty,77,3,100,jobshop,0.05,0.06,0.18,,,
+Bound Uncertainty,77,3,100,jobshop,0.1,0.1,0.26,,,
+Bound Uncertainty,77,3,100,jobshop,0.2,0.4,0.58,,,
+Bound Uncertainty,77,3,100,jobshop,0.5,0.78,1.0,,,
+IIA,77,3,100,jobshop,,,,1.0,False,False
+IIA,77,3,100,jobshop,,,,2.0,False,False
+IIA,77,3,100,jobshop,,,,3.0,False,False
+Bound Uncertainty,78,5,100,water,0.05,0.08,0.08,,,
+Bound Uncertainty,78,5,100,water,0.1,0.1,0.3,,,
+Bound Uncertainty,78,5,100,water,0.2,0.24,0.48,,,
+Bound Uncertainty,78,5,100,water,0.5,0.76,1.0,,,
+IIA,78,5,100,water,,,,1.0,False,False
+IIA,78,5,100,water,,,,2.0,False,False
+IIA,78,5,100,water,,,,3.0,True,True
+Bound Uncertainty,79,5,100,concrete,0.05,0.14,0.12,,,
+Bound Uncertainty,79,5,100,concrete,0.1,0.16,0.32,,,
+Bound Uncertainty,79,5,100,concrete,0.2,0.28,0.3,,,
+Bound Uncertainty,79,5,100,concrete,0.5,0.72,1.0,,,
+IIA,79,5,100,concrete,,,,1.0,False,False
+IIA,79,5,100,concrete,,,,2.0,False,False
+IIA,79,5,100,concrete,,,,3.0,True,False
+Bound Uncertainty,80,3,100,irregular,0.05,0.06,0.14,,,
+Bound Uncertainty,80,3,100,irregular,0.1,0.2,0.26,,,
+Bound Uncertainty,80,3,100,irregular,0.2,0.32,0.64,,,
+Bound Uncertainty,80,3,100,irregular,0.5,0.74,1.0,,,
+IIA,80,3,100,irregular,,,,1.0,False,False
+IIA,80,3,100,irregular,,,,2.0,False,False
+IIA,80,3,100,irregular,,,,3.0,False,False
+Bound Uncertainty,81,3,300,wfg2,0.05,0.1,0.16,,,
+Bound Uncertainty,81,3,300,wfg2,0.1,0.2,0.2,,,
+Bound Uncertainty,81,3,300,wfg2,0.2,0.34,0.5,,,
+Bound Uncertainty,81,3,300,wfg2,0.5,0.76,1.0,,,
+IIA,81,3,300,wfg2,,,,1.0,False,False
+IIA,81,3,300,wfg2,,,,2.0,False,False
+IIA,81,3,300,wfg2,,,,3.0,False,False
+Bound Uncertainty,82,3,100,convex,0.05,0.1,0.12,,,
+Bound Uncertainty,82,3,100,convex,0.1,0.12,0.14,,,
+Bound Uncertainty,82,3,100,convex,0.2,0.26,0.44,,,
+Bound Uncertainty,82,3,100,convex,0.5,0.74,1.0,,,
+IIA,82,3,100,convex,,,,1.0,False,False
+IIA,82,3,100,convex,,,,2.0,False,False
+IIA,82,3,100,convex,,,,3.0,False,False
+Bound Uncertainty,83,5,100,water,0.05,0.12,0.12,,,
+Bound Uncertainty,83,5,100,water,0.1,0.24,0.22,,,
+Bound Uncertainty,83,5,100,water,0.2,0.3,0.52,,,
+Bound Uncertainty,83,5,100,water,0.5,0.84,1.0,,,
+IIA,83,5,100,water,,,,1.0,False,False
+IIA,83,5,100,water,,,,2.0,False,False
+IIA,83,5,100,water,,,,3.0,False,False
+Bound Uncertainty,84,5,100,concave,0.05,0.04,0.1,,,
+Bound Uncertainty,84,5,100,concave,0.1,0.22,0.22,,,
+Bound Uncertainty,84,5,100,concave,0.2,0.26,0.54,,,
+Bound Uncertainty,84,5,100,concave,0.5,0.84,1.0,,,
+IIA,84,5,100,concave,,,,1.0,False,False
+IIA,84,5,100,concave,,,,2.0,False,False
+IIA,84,5,100,concave,,,,3.0,False,False
+Bound Uncertainty,85,3,300,irregular,0.05,0.06,0.16,,,
+Bound Uncertainty,85,3,300,irregular,0.1,0.16,0.28,,,
+Bound Uncertainty,85,3,300,irregular,0.2,0.4,0.54,,,
+Bound Uncertainty,85,3,300,irregular,0.5,0.7,1.0,,,
+IIA,85,3,300,irregular,,,,1.0,False,False
+IIA,85,3,300,irregular,,,,2.0,False,False
+IIA,85,3,300,irregular,,,,3.0,False,False
+Bound Uncertainty,86,3,100,knapsack,0.05,0.08,0.02,,,
+Bound Uncertainty,86,3,100,knapsack,0.1,0.14,0.22,,,
+Bound Uncertainty,86,3,100,knapsack,0.2,0.22,0.54,,,
+Bound Uncertainty,86,3,100,knapsack,0.5,0.66,1.0,,,
+IIA,86,3,100,knapsack,,,,1.0,False,False
+IIA,86,3,100,knapsack,,,,2.0,False,False
+IIA,86,3,100,knapsack,,,,3.0,False,False
+Bound Uncertainty,87,5,100,concave,0.05,0.04,0.08,,,
+Bound Uncertainty,87,5,100,concave,0.1,0.1,0.34,,,
+Bound Uncertainty,87,5,100,concave,0.2,0.22,0.54,,,
+Bound Uncertainty,87,5,100,concave,0.5,0.74,1.0,,,
+IIA,87,5,100,concave,,,,1.0,False,False
+IIA,87,5,100,concave,,,,2.0,False,True
+IIA,87,5,100,concave,,,,3.0,True,False
+Bound Uncertainty,88,3,300,jobshop,0.05,0.12,0.3,,,
+Bound Uncertainty,88,3,300,jobshop,0.1,0.2,0.28,,,
+Bound Uncertainty,88,3,300,jobshop,0.2,0.22,0.46,,,
+Bound Uncertainty,88,3,300,jobshop,0.5,0.54,1.0,,,
+IIA,88,3,300,jobshop,,,,1.0,False,False
+IIA,88,3,300,jobshop,,,,2.0,False,False
+IIA,88,3,300,jobshop,,,,3.0,False,True
+Bound Uncertainty,89,3,300,linear,0.05,0.02,0.1,,,
+Bound Uncertainty,89,3,300,linear,0.1,0.18,0.28,,,
+Bound Uncertainty,89,3,300,linear,0.2,0.34,0.64,,,
+Bound Uncertainty,89,3,300,linear,0.5,0.68,1.0,,,
+IIA,89,3,300,linear,,,,1.0,False,False
+IIA,89,3,300,linear,,,,2.0,False,False
+IIA,89,3,300,linear,,,,3.0,False,False
+Bound Uncertainty,90,3,100,manyknee,0.05,0.04,0.16,,,
+Bound Uncertainty,90,3,100,manyknee,0.1,0.16,0.24,,,
+Bound Uncertainty,90,3,100,manyknee,0.2,0.3,0.46,,,
+Bound Uncertainty,90,3,100,manyknee,0.5,0.68,1.0,,,
+IIA,90,3,100,manyknee,,,,1.0,False,False
+IIA,90,3,100,manyknee,,,,2.0,True,False
+IIA,90,3,100,manyknee,,,,3.0,False,False
+Bound Uncertainty,91,3,300,disconnected,0.05,0.12,0.12,,,
+Bound Uncertainty,91,3,300,disconnected,0.1,0.28,0.34,,,
+Bound Uncertainty,91,3,300,disconnected,0.2,0.3,0.6,,,
+Bound Uncertainty,91,3,300,disconnected,0.5,0.72,1.0,,,
+IIA,91,3,300,disconnected,,,,1.0,False,False
+IIA,91,3,300,disconnected,,,,2.0,False,False
+IIA,91,3,300,disconnected,,,,3.0,False,False
+Bound Uncertainty,92,3,100,irregular,0.05,0.14,0.04,,,
+Bound Uncertainty,92,3,100,irregular,0.1,0.28,0.24,,,
+Bound Uncertainty,92,3,100,irregular,0.2,0.34,0.5,,,
+Bound Uncertainty,92,3,100,irregular,0.5,0.74,1.0,,,
+IIA,92,3,100,irregular,,,,1.0,False,False
+IIA,92,3,100,irregular,,,,2.0,False,False
+IIA,92,3,100,irregular,,,,3.0,False,False
+Bound Uncertainty,93,5,300,disconnected,0.05,0.08,0.08,,,
+Bound Uncertainty,93,5,300,disconnected,0.1,0.14,0.18,,,
+Bound Uncertainty,93,5,300,disconnected,0.2,0.22,0.46,,,
+Bound Uncertainty,93,5,300,disconnected,0.5,0.7,1.0,,,
+IIA,93,5,300,disconnected,,,,1.0,False,False
+IIA,93,5,300,disconnected,,,,2.0,False,False
+IIA,93,5,300,disconnected,,,,3.0,False,False
+Bound Uncertainty,94,5,100,concave,0.05,0.04,0.06,,,
+Bound Uncertainty,94,5,100,concave,0.1,0.12,0.3,,,
+Bound Uncertainty,94,5,100,concave,0.2,0.28,0.64,,,
+Bound Uncertainty,94,5,100,concave,0.5,0.74,1.0,,,
+IIA,94,5,100,concave,,,,1.0,False,False
+IIA,94,5,100,concave,,,,2.0,False,False
+IIA,94,5,100,concave,,,,3.0,False,False
+Bound Uncertainty,95,5,300,water,0.05,0.04,0.14,,,
+Bound Uncertainty,95,5,300,water,0.1,0.08,0.24,,,
+Bound Uncertainty,95,5,300,water,0.2,0.28,0.5,,,
+Bound Uncertainty,95,5,300,water,0.5,0.86,1.0,,,
+IIA,95,5,300,water,,,,1.0,False,False
+IIA,95,5,300,water,,,,2.0,False,False
+IIA,95,5,300,water,,,,3.0,False,False
+Bound Uncertainty,96,5,300,wfg2,0.05,0.08,0.16,,,
+Bound Uncertainty,96,5,300,wfg2,0.1,0.12,0.2,,,
+Bound Uncertainty,96,5,300,wfg2,0.2,0.26,0.54,,,
+Bound Uncertainty,96,5,300,wfg2,0.5,0.8,1.0,,,
+IIA,96,5,300,wfg2,,,,1.0,False,False
+IIA,96,5,300,wfg2,,,,2.0,False,False
+IIA,96,5,300,wfg2,,,,3.0,False,False
+Bound Uncertainty,97,3,300,linear,0.05,0.06,0.14,,,
+Bound Uncertainty,97,3,300,linear,0.1,0.12,0.38,,,
+Bound Uncertainty,97,3,300,linear,0.2,0.32,0.42,,,
+Bound Uncertainty,97,3,300,linear,0.5,0.84,1.0,,,
+IIA,97,3,300,linear,,,,1.0,False,False
+IIA,97,3,300,linear,,,,2.0,False,False
+IIA,97,3,300,linear,,,,3.0,False,False
+Bound Uncertainty,98,5,100,disconnected,0.05,0.08,0.06,,,
+Bound Uncertainty,98,5,100,disconnected,0.1,0.14,0.24,,,
+Bound Uncertainty,98,5,100,disconnected,0.2,0.16,0.4,,,
+Bound Uncertainty,98,5,100,disconnected,0.5,0.78,1.0,,,
+IIA,98,5,100,disconnected,,,,1.0,False,False
+IIA,98,5,100,disconnected,,,,2.0,False,False
+IIA,98,5,100,disconnected,,,,3.0,False,False
+Bound Uncertainty,99,5,100,manyknee,0.05,0.1,0.12,,,
+Bound Uncertainty,99,5,100,manyknee,0.1,0.18,0.16,,,
+Bound Uncertainty,99,5,100,manyknee,0.2,0.18,0.58,,,
+Bound Uncertainty,99,5,100,manyknee,0.5,0.78,1.0,,,
+IIA,99,5,100,manyknee,,,,1.0,False,False
+IIA,99,5,100,manyknee,,,,2.0,False,False
+IIA,99,5,100,manyknee,,,,3.0,False,False

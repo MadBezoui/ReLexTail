@@ -1,0 +1,158 @@
+"""Instance-difficulty analysis (T3.6).
+
+Turns the "honest non-singleton stability class" message from a caveat into a
+usable diagnostic by asking which instance features predict whether the interval
+stability class will be a singleton or large.
+
+For each instance we record the features a practitioner can compute BEFORE
+committing to a recommendation --
+
+    contrastive margin  Delta_C : the first-decision gap by which the winner
+                                  beats its closest rival (main text, S3.4)
+    K, m, N                     : declared probe count, criteria, candidates
+    rho_max                     : realised maximum positive criterion correlation
+
+-- and the outcomes they are meant to predict:
+
+    flip rate at 20% bound perturbation
+    sampled possible-winner class size at 20%
+
+Outputs scripts/real_results/difficulty.json and
+manuscript/generated/difficulty_table.tex.
+"""
+from __future__ import annotations
+
+import importlib.util
+import json
+import os
+import sys
+
+import numpy as np
+import pandas as pd
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(HERE)
+sys.path.insert(0, ROOT)
+
+from lexpr import problems  # noqa: E402
+
+_spec = importlib.util.spec_from_file_location(
+    "rre", os.path.join(HERE, "run_real_experiments.py")
+)
+rre = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(rre)
+
+SEED = 20260628
+LEVEL = 0.20
+M_DRAWS = 40
+OUT = os.path.join(HERE, "real_results")
+TEXDIR = os.path.abspath(os.path.join(ROOT, "..", "manuscript", "generated"))
+
+
+def contrastive_margin(S, win):
+    """Delta_C: min over rivals of the gap at the first differing sorted coordinate.
+
+    Returns 0.0 when the winner is not unique, which is the correct reading: no
+    contrastive margin is defined for a tied class (main text, S3.4).
+    """
+    w = S[win]
+    best = np.inf
+    for i in range(S.shape[0]):
+        if i == win:
+            continue
+        d = np.where(w != S[i])[0]
+        if d.size == 0:
+            return 0.0
+        best = min(best, float(S[i][d[0]] - w[d[0]]))
+    return 0.0 if not np.isfinite(best) else max(best, 0.0)
+
+
+def main():
+    rng = np.random.default_rng(SEED)
+    rows = []
+    for label, geom, n_inst, (mlo, mhi), cap in rre.FAMILIES:
+        for _ in range(n_inst):
+            m = int(rng.integers(mlo, mhi + 1))
+            N = int(rng.integers(60, cap + 1))
+            F = problems.make_candidate_set(geom, N, m, rng)
+            if F.shape[0] < 3:
+                continue
+            probes = rre.build_probes(F, theta=rre.THETA)[0]
+            D = rre.D_matrix(F, probes)
+            win, S = rre.fast_leximax_argmin(D)
+
+            Fc = F - F.mean(axis=0, keepdims=True)
+            nrm = np.linalg.norm(Fc, axis=0)
+            valid = nrm > 1e-12
+            rho = 0.0
+            if valid.sum() >= 2:
+                Z = Fc[:, valid] / nrm[valid]
+                Cm = np.clip(Z.T @ Z, -1, 1)
+                np.fill_diagonal(Cm, -1)
+                rho = float(Cm.max())
+
+            winners, flips = set(), 0
+            for _d in range(M_DRAWS):
+                idl, ndr = rre.perturb_bounds(F, LEVEL, rng)
+                wl, _ = rre.fast_leximax_argmin(rre.D_matrix(F, probes, idl, ndr))
+                winners.add(wl)
+                flips += int(wl != win)
+
+            rows.append({
+                "family": label, "m": m, "N": F.shape[0], "K": D.shape[1],
+                "rho_max": rho,
+                "margin": contrastive_margin(S, win),
+                "flip_rate": flips / M_DRAWS,
+                "class_size": len(winners),
+            })
+
+    df = pd.DataFrame(rows)
+    df.to_csv(os.path.join(OUT, "difficulty_per_instance.csv"), index=False)
+
+    feats = ["margin", "m", "N", "K", "rho_max"]
+    out = {
+        "seed": SEED, "level": LEVEL, "draws": M_DRAWS, "n": int(len(df)),
+        "spearman_vs_flip": {}, "spearman_vs_class_size": {}, "margin_bins": [],
+    }
+    for f in feats:
+        out["spearman_vs_flip"][f] = round(
+            float(df[f].corr(df["flip_rate"], method="spearman")), 3)
+        out["spearman_vs_class_size"][f] = round(
+            float(df[f].corr(df["class_size"], method="spearman")), 3)
+
+    # Margin quintiles -> the practitioner-facing diagnostic.
+    df["bin"] = pd.qcut(df["margin"], 5, labels=False, duplicates="drop")
+    for bi, g in df.groupby("bin"):
+        out["margin_bins"].append({
+            "quintile": int(bi) + 1,
+            "margin_range": [round(float(g["margin"].min()), 4),
+                             round(float(g["margin"].max()), 4)],
+            "n": int(len(g)),
+            "flip_rate": round(float(g["flip_rate"].mean()), 4),
+            "class_size": round(float(g["class_size"].mean()), 2),
+            "singleton_class_frac": round(float((g["class_size"] == 1).mean()), 4),
+        })
+
+    with open(os.path.join(OUT, "difficulty.json"), "w") as f:
+        json.dump(out, f, indent=2)
+
+    os.makedirs(TEXDIR, exist_ok=True)
+    L = ["% Auto-generated by scripts/run_difficulty.py. Do not edit.",
+         "\\begin{tabular}{crrrrr}", "\\toprule",
+         "Margin & Range of & Inst. & Flip rate & Mean class & Singleton\\\\",
+         "quintile & $\\Delta_{\\mathcal C}$ & & at $20\\%$ & size & class\\\\",
+         "\\midrule"]
+    for b in out["margin_bins"]:
+        lo, hi = b["margin_range"]
+        L.append(f"{b['quintile']} & $[{lo:.3f},\\,{hi:.3f}]$ & {b['n']} & "
+                 f"{b['flip_rate']*100:.1f}\\% & {b['class_size']:.2f} & "
+                 f"{b['singleton_class_frac']*100:.1f}\\%\\\\")
+    L += ["\\bottomrule", "\\end{tabular}", ""]
+    with open(os.path.join(TEXDIR, "difficulty_table.tex"), "w") as f:
+        f.write("\n".join(L))
+
+    print(json.dumps(out, indent=2))
+
+
+if __name__ == "__main__":
+    main()

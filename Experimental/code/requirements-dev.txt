@@ -1,0 +1,4 @@
+-e .
+pytest>=8.2,<9
+pytest-cov>=5,<6
+pyarrow>=12,<25

@@ -1,0 +1,209 @@
+{
+  "seeds": [
+    20260628,
+    20260629,
+    20260630,
+    20260701,
+    20260702,
+    20260703,
+    20260704,
+    20260705,
+    20260706,
+    20260707
+  ],
+  "n_seeds": 10,
+  "instances_per_seed": 500,
+  "m_draws_per_level": 60,
+  "pooled": {
+    "div_lexpr_asf": {
+      "mean": 0.6864,
+      "between_seed_sd": 0.0133,
+      "min_seed": 0.662,
+      "max_seed": 0.708
+    },
+    "div_singletons": {
+      "mean": 0.693,
+      "between_seed_sd": 0.0127,
+      "min_seed": 0.668,
+      "max_seed": 0.714
+    },
+    "div_no_clusters": {
+      "mean": 0.0,
+      "between_seed_sd": 0.0,
+      "min_seed": 0.0,
+      "max_seed": 0.0
+    },
+    "div_no_singletons": {
+      "mean": 0.9086,
+      "between_seed_sd": 0.0093,
+      "min_seed": 0.896,
+      "max_seed": 0.924
+    },
+    "div_grand_mean": {
+      "mean": 0.9756,
+      "between_seed_sd": 0.007,
+      "min_seed": 0.966,
+      "max_seed": 0.984
+    },
+    "div_grand_max": {
+      "mean": 0.6946,
+      "between_seed_sd": 0.0122,
+      "min_seed": 0.676,
+      "max_seed": 0.718
+    },
+    "div_asf_singleton": {
+      "mean": 0.6864,
+      "between_seed_sd": 0.0133,
+      "min_seed": 0.662,
+      "max_seed": 0.708
+    },
+    "flip_lexpr_0.05": {
+      "mean": 0.1802,
+      "between_seed_sd": 0.0073,
+      "min_seed": 0.1669,
+      "max_seed": 0.1914
+    },
+    "flip_asf_0.05": {
+      "mean": 0.3636,
+      "between_seed_sd": 0.0101,
+      "min_seed": 0.3451,
+      "max_seed": 0.3833
+    },
+    "flip_lexpr_0.10": {
+      "mean": 0.2972,
+      "between_seed_sd": 0.0081,
+      "min_seed": 0.2834,
+      "max_seed": 0.3077
+    },
+    "flip_asf_0.10": {
+      "mean": 0.5552,
+      "between_seed_sd": 0.0097,
+      "min_seed": 0.54,
+      "max_seed": 0.573
+    },
+    "flip_lexpr_0.20": {
+      "mean": 0.4468,
+      "between_seed_sd": 0.0078,
+      "min_seed": 0.4341,
+      "max_seed": 0.4582
+    },
+    "flip_asf_0.20": {
+      "mean": 0.751,
+      "between_seed_sd": 0.0075,
+      "min_seed": 0.7401,
+      "max_seed": 0.7619
+    }
+  },
+  "paired": {
+    "flip_diff_0.05": {
+      "mean": 0.1835,
+      "ci95": [
+        0.174,
+        0.1929
+      ],
+      "n": 5000,
+      "supported": true
+    },
+    "flip_diff_0.10": {
+      "mean": 0.258,
+      "ci95": [
+        0.2478,
+        0.268
+      ],
+      "n": 5000,
+      "supported": true
+    },
+    "flip_diff_0.20": {
+      "mean": 0.3042,
+      "ci95": [
+        0.2951,
+        0.3131
+      ],
+      "n": 5000,
+      "supported": true
+    },
+    "tail_loss_diff": {
+      "mean": -0.013,
+      "ci95": [
+        -0.014,
+        -0.0119
+      ],
+      "n": 5000,
+      "supported": true
+    }
+  },
+  "by_family": {
+    "Concrete": {
+      "n_instances": 500,
+      "div_lexpr_asf": 0.706,
+      "flip_lexpr_0.20": 0.5063,
+      "flip_asf_0.20": 0.6192,
+      "flip_diff_0.20_ci95": [
+        0.0868,
+        0.1391
+      ],
+      "tail_lexpr": 0.4543,
+      "tail_asf": 0.4636
+    },
+    "DTLZ": {
+      "n_instances": 1000,
+      "div_lexpr_asf": 0.965,
+      "flip_lexpr_0.20": 0.5374,
+      "flip_asf_0.20": 0.9369,
+      "flip_diff_0.20_ci95": [
+        0.3842,
+        0.4149
+      ],
+      "tail_lexpr": 0.7798,
+      "tail_asf": 0.7563
+    },
+    "Energy": {
+      "n_instances": 500,
+      "div_lexpr_asf": 0.704,
+      "flip_lexpr_0.20": 0.5103,
+      "flip_asf_0.20": 0.6347,
+      "flip_diff_0.20_ci95": [
+        0.0977,
+        0.151
+      ],
+      "tail_lexpr": 0.4539,
+      "tail_asf": 0.4651
+    },
+    "Job-shop": {
+      "n_instances": 1000,
+      "div_lexpr_asf": 0.668,
+      "flip_lexpr_0.20": 0.5818,
+      "flip_asf_0.20": 0.6272,
+      "flip_diff_0.20_ci95": [
+        0.0282,
+        0.0619
+      ],
+      "tail_lexpr": 0.4958,
+      "tail_asf": 0.4975
+    },
+    "Knapsack": {
+      "n_instances": 1000,
+      "div_lexpr_asf": 0.999,
+      "flip_lexpr_0.20": 0.5708,
+      "flip_asf_0.20": 0.9505,
+      "flip_diff_0.20_ci95": [
+        0.366,
+        0.3936
+      ],
+      "tail_lexpr": 0.8532,
+      "tail_asf": 0.7926
+    },
+    "WFG2": {
+      "n_instances": 1000,
+      "div_lexpr_asf": 0.095,
+      "flip_lexpr_0.20": 0.0359,
+      "flip_asf_0.20": 0.6137,
+      "flip_diff_0.20_ci95": [
+        0.56,
+        0.5953
+      ],
+      "tail_lexpr": 0.4025,
+      "tail_asf": 0.4098
+    }
+  }
+}

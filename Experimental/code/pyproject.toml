@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+# NOTE: this project was previously declared as `lexur`, with
+# `include = ["lexur*"]`, while the package directory has always been `lexpr/`.
+# The effect was that `pip install .` installed no package at all and every
+# script had to be run with PYTHONPATH set. Both names are now `lexpr`.
+name = "lexpr"
+version = "1.1.0"
+description = "Lexicographic Probe-Regret selection for auditable multicriteria decision aiding"
+readme = "../README.md"
+license = { text = "MIT" }
+authors = [{ name = "Madani Bezoui", email = "mbezoui@cesi.fr" }]
+keywords = [
+  "multicriteria decision aiding",
+  "regret minimisation",
+  "lexicographic optimisation",
+  "robust optimisation",
+  "auditability",
+]
+classifiers = [
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Mathematics",
+]
+# Verified to run and reproduce the archived results on 3.10 as well as 3.11+.
+requires-python = ">=3.10,<3.13"
+dependencies = [
+  "numpy>=1.26,<2.0",
+  "scipy>=1.11,<1.14",
+  "pandas>=2.1,<2.3",
+  "pyarrow>=14,<20",
+  "matplotlib>=3.8,<3.10",
+  "PyYAML>=6.0,<7",
+  "PuLP>=2.8,<3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-cov>=5"]
+
+[project.scripts]
+# Independent audit-record verifier, documented in README (T6.1).
+lexpr-verify = "lexpr.verify:main"
+
+[project.urls]
+Repository = "https://github.com/madanibezoui/LexPR"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["lexpr*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+

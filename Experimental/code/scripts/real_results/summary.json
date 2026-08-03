@@ -1,0 +1,29 @@
+{
+  "seed": 20260628,
+  "n_instances": 500,
+  "n_unique_winner": 498,
+  "elapsed_sec": 48.9,
+  "ablation_divergence": {
+    "singletons": 0.668,
+    "no_clusters": 0.0,
+    "no_singletons": 0.9,
+    "grand_mean": 0.97,
+    "grand_max": 0.676,
+    "asf_singleton": 0.662
+  },
+  "lexpr_vs_asf_divergence": 0.662,
+  "explanation_depth_mean": 1.0361,
+  "explanation_depth_std": 0.2165,
+  "flip_rate_lexpr": {
+    "0.05": 0.1681,
+    "0.1": 0.287,
+    "0.2": 0.4383
+  },
+  "flip_rate_asf": {
+    "0.05": 0.3613,
+    "0.1": 0.5548,
+    "0.2": 0.752
+  },
+  "tail_loss_lexpr_mean": 0.5965,
+  "tail_loss_asf_mean": 0.5836
+}

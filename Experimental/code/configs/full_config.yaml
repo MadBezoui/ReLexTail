@@ -1,0 +1,140 @@
+seed: 20260618
+candidate_sizes:
+- 100
+- 300
+- 1000
+criteria:
+- 3
+- 5
+- 8
+- 10
+- 15
+- 20
+geometries:
+- linear
+- convex
+- concave
+- disconnected
+- degenerate
+- asymmetric
+- manyknee
+- cars
+- water
+- irregular
+replications: 50
+utilities_per_family: 2000
+dirichlet_alphas:
+- 0.2
+- 1.0
+- 5.0
+families:
+- linear
+- sparse_linear
+- chebyshev
+- aug_asf
+- lp_compromise
+- ces
+- owa
+- choquet
+- satisfice
+- group_regret
+methods:
+- TOPSIS
+- CP
+- VIKOR
+- Knee
+- HV
+- RW
+- ASF
+- SMAA
+- MMR
+- ChebMMR
+- LUR
+- LUR-noclust
+- LUR-interval
+theta: 0.6
+tail_q: 0.9
+noninferiority:
+  metric: tail_loss
+  margin_absolute: 0.01
+  confidence: 0.95
+  controls:
+  - ASF
+  - MMR
+  bootstrap_unit:
+  - N
+  - m
+  - geometry
+  - replication
+  bootstrap_repetitions: 10000
+redundancy:
+  latent:
+  - 3
+  - 5
+  - 8
+  structures:
+  - - 1
+    - 1
+    - 1
+  - - 5
+    - 1
+    - 1
+  - - 10
+    - 5
+    - 1
+  - - 8
+    - 8
+    - 8
+  correlations:
+  - 1.0
+  - 0.99
+  - 0.9
+  - 0.7
+  - 0.5
+  replications: 50
+gates:
+  dominated_injection:
+  - 0.0
+  - 1.0
+  - 5.0
+  - 10.0
+  affine_tests: 10000
+  nadir_errors:
+  - 0.0
+  - 0.01
+  - 0.05
+  - 0.1
+  - 0.2
+  - 0.5
+stochastic:
+  train_scenarios: 200
+  test_scenarios: 10000
+  alphas:
+  - 0.5
+  - 0.8
+  - 0.95
+multistakeholder:
+  stakeholders:
+  - 3
+  - 5
+  - 10
+  - 20
+family_scopes:
+  linear: in_class
+  sparse_linear: in_class
+  chebyshev: in_class
+  aug_asf: in_class
+  lp_compromise: adjacent
+  ces: adjacent
+  owa: adjacent
+  choquet: out_of_class
+  satisfice: out_of_class
+  group_regret: adversarial
+probe_validation:
+  replications: 50
+  candidate_size: 300
+  criteria: [3, 5, 8]
+  thetas: [0.3, 0.5, 0.6, 0.7, 0.9]
+  max_worst_regret_gap: 0.05
+  max_certificate_gap: 0.1
+  min_winner_agreement: 0.8

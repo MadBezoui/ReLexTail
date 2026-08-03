@@ -1,0 +1,141 @@
+{
+  "seeds": [
+    20260628,
+    20260629,
+    20260630,
+    20260701,
+    20260702,
+    20260703,
+    20260704,
+    20260705,
+    20260706,
+    20260707
+  ],
+  "n_instances": 5000,
+  "flip": {
+    "raw": {
+      "0.05": 0.3861,
+      "0.10": 0.5984,
+      "0.20": 0.8096
+    },
+    "lexpr": {
+      "0.05": 0.1836,
+      "0.10": 0.2944,
+      "0.20": 0.4322
+    },
+    "asfk": {
+      "0.05": 0.1795,
+      "0.10": 0.2906,
+      "0.20": 0.4292
+    },
+    "mmrk": {
+      "0.05": 0.1845,
+      "0.10": 0.295,
+      "0.20": 0.4324
+    },
+    "lexpr1": {
+      "0.05": 0.0,
+      "0.10": 0.0,
+      "0.20": 0.0
+    },
+    "asf1": {
+      "0.05": 0.0,
+      "0.10": 0.0,
+      "0.20": 0.0
+    }
+  },
+  "tail": {
+    "raw": 0.5841,
+    "lexpr": 0.5971,
+    "asfk": 0.5973,
+    "mmrk": 0.5973,
+    "lexpr1": 0.5842,
+    "asf1": 0.5841
+  },
+  "agreement": {
+    "lexpr_vs_asfk": 0.9796,
+    "lexpr_vs_mmrk": 0.9764
+  },
+  "paired_vs_lexpr": {
+    "flip_0.20_asfk_minus_lexpr": {
+      "mean": -0.003,
+      "ci95": [
+        -0.0041,
+        -0.0019
+      ],
+      "supported": true
+    },
+    "tail_asfk_minus_lexpr": {
+      "mean": 0.0003,
+      "ci95": [
+        0.0001,
+        0.0004
+      ],
+      "supported": true
+    },
+    "flip_0.20_mmrk_minus_lexpr": {
+      "mean": 0.0003,
+      "ci95": [
+        -0.0008,
+        0.0014
+      ],
+      "supported": false
+    },
+    "tail_mmrk_minus_lexpr": {
+      "mean": 0.0002,
+      "ci95": [
+        0.0001,
+        0.0003
+      ],
+      "supported": true
+    },
+    "flip_0.20_lexpr1_minus_lexpr": {
+      "mean": -0.4322,
+      "ci95": [
+        -0.4406,
+        -0.4239
+      ],
+      "supported": true
+    },
+    "tail_lexpr1_minus_lexpr": {
+      "mean": -0.0128,
+      "ci95": [
+        -0.0139,
+        -0.0118
+      ],
+      "supported": true
+    },
+    "flip_0.20_asf1_minus_lexpr": {
+      "mean": -0.4322,
+      "ci95": [
+        -0.4406,
+        -0.4239
+      ],
+      "supported": true
+    },
+    "tail_asf1_minus_lexpr": {
+      "mean": -0.013,
+      "ci95": [
+        -0.014,
+        -0.012
+      ],
+      "supported": true
+    },
+    "flip_0.20_raw_minus_lexpr": {
+      "mean": 0.3775,
+      "ci95": [
+        0.3689,
+        0.3856
+      ],
+      "supported": true
+    },
+    "tail_raw_minus_lexpr": {
+      "mean": -0.013,
+      "ci95": [
+        -0.014,
+        -0.012
+      ],
+      "supported": true
+    }
+  }
+}

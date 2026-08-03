@@ -1,0 +1,201 @@
+regime,instance,m,N,diverged,lexpr_winner,asf_winner,rho,redundancy_ratio,density,geometry
+Redundant block,0,5,100,False,52,52,0.9,0.6,,
+Redundant block,1,5,100,False,45,45,0.9,0.6,,
+Redundant block,2,5,100,False,11,11,0.9,0.6,,
+Redundant block,3,5,100,False,93,93,0.9,0.6,,
+Redundant block,4,5,100,False,0,0,0.9,0.6,,
+Redundant block,5,5,100,False,50,50,0.9,0.6,,
+Redundant block,6,5,100,False,3,3,0.9,0.6,,
+Redundant block,7,5,100,False,68,68,0.9,0.6,,
+Redundant block,8,5,100,False,28,28,0.9,0.6,,
+Redundant block,9,5,100,False,47,47,0.9,0.6,,
+Redundant block,10,5,100,False,32,32,0.9,0.6,,
+Redundant block,11,5,100,False,56,56,0.9,0.6,,
+Redundant block,12,5,100,False,66,66,0.9,0.6,,
+Redundant block,13,5,100,False,2,2,0.9,0.6,,
+Redundant block,14,5,100,False,20,20,0.9,0.6,,
+Redundant block,15,5,100,False,57,57,0.9,0.6,,
+Redundant block,16,5,100,False,12,12,0.9,0.6,,
+Redundant block,17,5,100,False,37,37,0.9,0.6,,
+Redundant block,18,5,100,False,75,75,0.9,0.6,,
+Redundant block,19,5,100,False,18,18,0.9,0.6,,
+Redundant block,20,5,100,False,77,77,0.9,0.6,,
+Redundant block,21,5,100,False,4,4,0.9,0.6,,
+Redundant block,22,5,100,False,37,37,0.9,0.6,,
+Redundant block,23,5,100,True,82,27,0.9,0.6,,
+Redundant block,24,5,100,False,76,76,0.9,0.6,,
+Redundant block,25,5,100,False,35,35,0.9,0.6,,
+Redundant block,26,5,100,False,82,82,0.9,0.6,,
+Redundant block,27,5,100,False,21,21,0.9,0.6,,
+Redundant block,28,5,100,False,84,84,0.9,0.6,,
+Redundant block,29,5,100,False,13,13,0.9,0.6,,
+Redundant block,30,5,100,True,92,83,0.9,0.6,,
+Redundant block,31,5,100,False,35,35,0.9,0.6,,
+Redundant block,32,5,100,False,70,70,0.9,0.6,,
+Redundant block,33,5,100,False,40,40,0.9,0.6,,
+Redundant block,34,5,100,False,74,74,0.9,0.6,,
+Redundant block,35,5,100,False,64,64,0.9,0.6,,
+Redundant block,36,5,100,False,56,56,0.9,0.6,,
+Redundant block,37,5,100,False,69,69,0.9,0.6,,
+Redundant block,38,5,100,False,46,46,0.9,0.6,,
+Redundant block,39,5,100,False,98,98,0.9,0.6,,
+Many-objective,0,10,200,True,199,121,0.0,,sparse,
+Many-objective,1,15,200,True,178,42,0.0,,sparse,
+Many-objective,2,15,200,True,119,108,0.0,,sparse,
+Many-objective,3,15,200,True,79,117,0.0,,sparse,
+Many-objective,4,15,200,False,32,32,0.0,,sparse,
+Many-objective,5,10,200,True,163,73,0.0,,sparse,
+Many-objective,6,10,200,True,168,94,0.0,,sparse,
+Many-objective,7,10,200,False,182,182,0.0,,sparse,
+Many-objective,8,15,200,True,43,36,0.0,,sparse,
+Many-objective,9,10,200,True,3,157,0.0,,sparse,
+Many-objective,10,15,200,True,126,165,0.0,,sparse,
+Many-objective,11,15,200,True,29,171,0.0,,sparse,
+Many-objective,12,10,200,True,193,181,0.0,,sparse,
+Many-objective,13,15,200,False,28,28,0.0,,sparse,
+Many-objective,14,10,200,True,152,67,0.0,,sparse,
+Many-objective,15,10,200,True,164,26,0.0,,sparse,
+Many-objective,16,15,200,True,180,82,0.0,,sparse,
+Many-objective,17,15,200,True,176,80,0.0,,sparse,
+Many-objective,18,10,200,True,128,199,0.0,,sparse,
+Many-objective,19,10,200,False,163,163,0.0,,sparse,
+Many-objective,20,10,200,True,11,39,0.0,,sparse,
+Many-objective,21,10,200,False,44,44,0.0,,sparse,
+Many-objective,22,15,200,True,120,48,0.0,,sparse,
+Many-objective,23,10,200,False,148,148,0.0,,sparse,
+Many-objective,24,15,200,False,191,191,0.0,,sparse,
+Many-objective,25,15,200,True,54,121,0.0,,sparse,
+Many-objective,26,10,200,True,18,184,0.0,,sparse,
+Many-objective,27,10,200,False,171,171,0.0,,sparse,
+Many-objective,28,15,200,True,31,36,0.0,,sparse,
+Many-objective,29,15,200,True,29,172,0.0,,sparse,
+Many-objective,30,15,200,True,19,161,0.0,,sparse,
+Many-objective,31,15,200,False,172,172,0.0,,sparse,
+Many-objective,32,10,200,True,87,75,0.0,,sparse,
+Many-objective,33,15,200,False,16,16,0.0,,sparse,
+Many-objective,34,15,200,True,155,150,0.0,,sparse,
+Many-objective,35,10,200,True,97,89,0.0,,sparse,
+Many-objective,36,15,200,False,192,192,0.0,,sparse,
+Many-objective,37,10,200,True,8,160,0.0,,sparse,
+Many-objective,38,15,200,True,90,68,0.0,,sparse,
+Many-objective,39,10,200,True,178,167,0.0,,sparse,
+Dense near-ties,0,3,1000,True,227,743,0.5,,dense,
+Dense near-ties,1,3,1000,True,166,726,0.5,,dense,
+Dense near-ties,2,3,1000,True,603,297,0.5,,dense,
+Dense near-ties,3,3,1000,True,892,561,0.5,,dense,
+Dense near-ties,4,3,1000,True,480,746,0.5,,dense,
+Dense near-ties,5,3,1000,True,926,853,0.5,,dense,
+Dense near-ties,6,3,1000,True,198,897,0.5,,dense,
+Dense near-ties,7,3,1000,True,57,596,0.5,,dense,
+Dense near-ties,8,3,1000,True,418,675,0.5,,dense,
+Dense near-ties,9,3,1000,True,492,629,0.5,,dense,
+Dense near-ties,10,3,1000,True,692,119,0.5,,dense,
+Dense near-ties,11,3,1000,True,227,774,0.5,,dense,
+Dense near-ties,12,3,1000,True,144,460,0.5,,dense,
+Dense near-ties,13,3,1000,True,725,977,0.5,,dense,
+Dense near-ties,14,3,1000,True,273,246,0.5,,dense,
+Dense near-ties,15,3,1000,True,291,244,0.5,,dense,
+Dense near-ties,16,3,1000,True,941,400,0.5,,dense,
+Dense near-ties,17,3,1000,True,954,650,0.5,,dense,
+Dense near-ties,18,3,1000,True,50,129,0.5,,dense,
+Dense near-ties,19,3,1000,True,192,48,0.5,,dense,
+Dense near-ties,20,3,1000,True,467,216,0.5,,dense,
+Dense near-ties,21,3,1000,True,554,681,0.5,,dense,
+Dense near-ties,22,3,1000,True,214,596,0.5,,dense,
+Dense near-ties,23,3,1000,True,209,285,0.5,,dense,
+Dense near-ties,24,3,1000,True,205,30,0.5,,dense,
+Dense near-ties,25,3,1000,True,466,524,0.5,,dense,
+Dense near-ties,26,3,1000,True,278,508,0.5,,dense,
+Dense near-ties,27,3,1000,True,81,614,0.5,,dense,
+Dense near-ties,28,3,1000,True,223,412,0.5,,dense,
+Dense near-ties,29,3,1000,True,46,759,0.5,,dense,
+Dense near-ties,30,3,1000,True,524,367,0.5,,dense,
+Dense near-ties,31,3,1000,True,626,21,0.5,,dense,
+Dense near-ties,32,3,1000,True,380,229,0.5,,dense,
+Dense near-ties,33,3,1000,True,4,313,0.5,,dense,
+Dense near-ties,34,3,1000,True,661,640,0.5,,dense,
+Dense near-ties,35,3,1000,True,207,310,0.5,,dense,
+Dense near-ties,36,3,1000,True,638,434,0.5,,dense,
+Dense near-ties,37,3,1000,True,813,36,0.5,,dense,
+Dense near-ties,38,3,1000,True,969,390,0.5,,dense,
+Dense near-ties,39,3,1000,True,75,720,0.5,,dense,
+Adversarial ASF,0,5,100,True,74,85,0.0,,normal,
+Adversarial ASF,1,5,100,True,10,40,0.0,,normal,
+Adversarial ASF,2,5,100,True,86,69,0.0,,normal,
+Adversarial ASF,3,5,100,True,8,30,0.0,,normal,
+Adversarial ASF,4,5,100,True,87,9,0.0,,normal,
+Adversarial ASF,5,5,100,True,52,14,0.0,,normal,
+Adversarial ASF,6,5,100,True,36,4,0.0,,normal,
+Adversarial ASF,7,5,100,True,45,98,0.0,,normal,
+Adversarial ASF,8,5,100,True,65,43,0.0,,normal,
+Adversarial ASF,9,5,100,True,7,99,0.0,,normal,
+Adversarial ASF,10,5,100,True,56,72,0.0,,normal,
+Adversarial ASF,11,5,100,True,29,34,0.0,,normal,
+Adversarial ASF,12,5,100,True,45,65,0.0,,normal,
+Adversarial ASF,13,5,100,True,60,97,0.0,,normal,
+Adversarial ASF,14,5,100,True,88,7,0.0,,normal,
+Adversarial ASF,15,5,100,True,42,78,0.0,,normal,
+Adversarial ASF,16,5,100,True,84,94,0.0,,normal,
+Adversarial ASF,17,5,100,True,31,24,0.0,,normal,
+Adversarial ASF,18,5,100,True,90,8,0.0,,normal,
+Adversarial ASF,19,5,100,True,17,63,0.0,,normal,
+Adversarial ASF,20,5,100,True,49,52,0.0,,normal,
+Adversarial ASF,21,5,100,True,45,11,0.0,,normal,
+Adversarial ASF,22,5,100,True,38,49,0.0,,normal,
+Adversarial ASF,23,5,100,True,91,10,0.0,,normal,
+Adversarial ASF,24,5,100,True,2,60,0.0,,normal,
+Adversarial ASF,25,5,100,True,82,26,0.0,,normal,
+Adversarial ASF,26,5,100,True,65,8,0.0,,normal,
+Adversarial ASF,27,5,100,True,73,42,0.0,,normal,
+Adversarial ASF,28,5,100,True,55,2,0.0,,normal,
+Adversarial ASF,29,5,100,True,45,8,0.0,,normal,
+Adversarial ASF,30,5,100,True,12,79,0.0,,normal,
+Adversarial ASF,31,5,100,True,53,42,0.0,,normal,
+Adversarial ASF,32,5,100,True,45,27,0.0,,normal,
+Adversarial ASF,33,5,100,True,97,9,0.0,,normal,
+Adversarial ASF,34,5,100,True,60,47,0.0,,normal,
+Adversarial ASF,35,5,100,True,43,12,0.0,,normal,
+Adversarial ASF,36,5,100,True,72,25,0.0,,normal,
+Adversarial ASF,37,5,100,True,60,19,0.0,,normal,
+Adversarial ASF,38,5,100,True,23,20,0.0,,normal,
+Adversarial ASF,39,5,100,True,78,99,0.0,,normal,
+Non-convex,0,5,200,False,22,22,0.0,,,disconnected
+Non-convex,1,5,200,False,52,52,0.0,,,wfg2
+Non-convex,2,5,178,False,1,1,0.0,,,wfg2
+Non-convex,3,5,198,False,109,109,0.0,,,wfg2
+Non-convex,4,5,200,True,114,157,0.0,,,wfg2
+Non-convex,5,5,200,False,137,137,0.0,,,disconnected
+Non-convex,6,5,200,False,166,166,0.0,,,disconnected
+Non-convex,7,5,200,True,178,191,0.0,,,disconnected
+Non-convex,8,5,200,False,182,182,0.0,,,wfg2
+Non-convex,9,5,136,False,75,75,0.0,,,disconnected
+Non-convex,10,5,200,False,10,10,0.0,,,wfg2
+Non-convex,11,5,200,False,45,45,0.0,,,wfg2
+Non-convex,12,5,200,False,155,155,0.0,,,disconnected
+Non-convex,13,5,200,False,126,126,0.0,,,wfg2
+Non-convex,14,5,198,False,104,104,0.0,,,disconnected
+Non-convex,15,5,200,False,158,158,0.0,,,disconnected
+Non-convex,16,5,194,False,145,145,0.0,,,wfg2
+Non-convex,17,5,200,False,82,82,0.0,,,wfg2
+Non-convex,18,5,200,False,2,2,0.0,,,disconnected
+Non-convex,19,5,200,False,50,50,0.0,,,disconnected
+Non-convex,20,5,197,False,125,125,0.0,,,disconnected
+Non-convex,21,5,188,False,18,18,0.0,,,disconnected
+Non-convex,22,5,200,False,52,52,0.0,,,wfg2
+Non-convex,23,5,200,False,108,108,0.0,,,disconnected
+Non-convex,24,5,200,False,160,160,0.0,,,wfg2
+Non-convex,25,5,189,False,103,103,0.0,,,wfg2
+Non-convex,26,5,194,False,173,173,0.0,,,disconnected
+Non-convex,27,5,200,False,23,23,0.0,,,disconnected
+Non-convex,28,5,200,False,159,159,0.0,,,wfg2
+Non-convex,29,5,180,False,172,172,0.0,,,wfg2
+Non-convex,30,5,199,False,160,160,0.0,,,wfg2
+Non-convex,31,5,185,False,148,148,0.0,,,wfg2
+Non-convex,32,5,179,False,51,51,0.0,,,disconnected
+Non-convex,33,5,186,False,111,111,0.0,,,wfg2
+Non-convex,34,5,190,True,143,90,0.0,,,wfg2
+Non-convex,35,5,195,True,145,176,0.0,,,disconnected
+Non-convex,36,5,197,False,104,104,0.0,,,wfg2
+Non-convex,37,5,200,False,56,56,0.0,,,disconnected
+Non-convex,38,5,200,False,181,181,0.0,,,wfg2
+Non-convex,39,5,199,False,176,176,0.0,,,disconnected

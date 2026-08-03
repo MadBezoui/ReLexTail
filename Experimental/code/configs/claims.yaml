@@ -1,0 +1,26 @@
+claims:
+  C1:
+    statement: finite-set LUR excludes dominated alternatives and is positive-affine invariant
+    stage: core
+    gates: [dominated_injection, affine_invariance]
+  C2:
+    statement: LUR is non-inferior to ASF and MMR on tail held-out loss
+    stage: core
+    gates: [tail_noninferiority_asf, tail_noninferiority_mmr]
+  C3:
+    statement: adaptive probes approximate the full probe objective where tractable
+    stage: core
+    gates: [probe_tail_gap, probe_certificate_gap, probe_tolerance_overlap]
+  C4:
+    statement: correlation-aware probes reduce redundancy sensitivity
+    stage: core
+    gates: [redundancy_grouped_loss, cluster_recovery]
+  C5:
+    statement: LUR reports instability when normalization bounds are unreliable
+    stage: core
+    gates: [normalization_quality, normalization_certificate, normalization_abstention]
+  C6: {statement: exact direct LP LUR matches exhaustive reference, stage: extension, gates: [direct_lp_exactness]}
+  C7: {statement: exact direct MILP LUR matches exhaustive reference, stage: extension, gates: [direct_milp_exactness]}
+  C8: {statement: stochastic LUR controls calibrated out-of-sample risk, stage: extension, gates: [stochastic_calibration]}
+  C9: {statement: Rawlsian LUR protects stakeholders across independent metrics, stage: extension, gates: [stakeholder_tradeoff]}
+  C10: {statement: the certificate aids a real decision, stage: extension, gates: [real_case_reproducibility, certificate_utility]}

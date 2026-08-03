@@ -1,0 +1,701 @@
+ablation,instance,m,N,diverged_from_base,pareto_violation
+Full adaptive,0,5,100,False,False
+Singletons only,0,5,100,False,False
+No clustering,0,5,100,False,False
+No singletons,0,5,100,False,False
+Grand mean only,0,5,100,False,False
+Grand max only,0,5,100,False,False
+ASF-equivalent singleton,0,5,100,False,False
+Full adaptive,1,5,200,False,False
+Singletons only,1,5,200,False,False
+No clustering,1,5,200,True,False
+No singletons,1,5,200,False,False
+Grand mean only,1,5,200,True,False
+Grand max only,1,5,200,False,False
+ASF-equivalent singleton,1,5,200,True,False
+Full adaptive,2,8,100,False,False
+Singletons only,2,8,100,False,False
+No clustering,2,8,100,False,False
+No singletons,2,8,100,False,False
+Grand mean only,2,8,100,False,False
+Grand max only,2,8,100,False,False
+ASF-equivalent singleton,2,8,100,False,False
+Full adaptive,3,5,200,False,False
+Singletons only,3,5,200,False,False
+No clustering,3,5,200,False,False
+No singletons,3,5,200,False,False
+Grand mean only,3,5,200,False,False
+Grand max only,3,5,200,False,False
+ASF-equivalent singleton,3,5,200,False,False
+Full adaptive,4,5,200,False,False
+Singletons only,4,5,200,False,False
+No clustering,4,5,200,False,False
+No singletons,4,5,200,False,False
+Grand mean only,4,5,200,False,False
+Grand max only,4,5,200,False,False
+ASF-equivalent singleton,4,5,200,True,False
+Full adaptive,5,5,200,False,False
+Singletons only,5,5,200,False,False
+No clustering,5,5,200,True,False
+No singletons,5,5,200,False,False
+Grand mean only,5,5,200,False,False
+Grand max only,5,5,200,True,False
+ASF-equivalent singleton,5,5,200,True,False
+Full adaptive,6,8,100,False,False
+Singletons only,6,8,100,False,False
+No clustering,6,8,100,False,False
+No singletons,6,8,100,False,False
+Grand mean only,6,8,100,True,False
+Grand max only,6,8,100,False,False
+ASF-equivalent singleton,6,8,100,True,False
+Full adaptive,7,5,200,False,False
+Singletons only,7,5,200,False,False
+No clustering,7,5,200,True,False
+No singletons,7,5,200,False,False
+Grand mean only,7,5,200,True,False
+Grand max only,7,5,200,False,False
+ASF-equivalent singleton,7,5,200,False,False
+Full adaptive,8,8,200,False,False
+Singletons only,8,8,200,False,False
+No clustering,8,8,200,True,False
+No singletons,8,8,200,True,False
+Grand mean only,8,8,200,True,False
+Grand max only,8,8,200,True,False
+ASF-equivalent singleton,8,8,200,False,False
+Full adaptive,9,8,100,False,False
+Singletons only,9,8,100,True,False
+No clustering,9,8,100,True,False
+No singletons,9,8,100,False,False
+Grand mean only,9,8,100,True,False
+Grand max only,9,8,100,False,False
+ASF-equivalent singleton,9,8,100,False,False
+Full adaptive,10,8,100,False,False
+Singletons only,10,8,100,False,False
+No clustering,10,8,100,False,False
+No singletons,10,8,100,True,False
+Grand mean only,10,8,100,False,False
+Grand max only,10,8,100,True,False
+ASF-equivalent singleton,10,8,100,False,False
+Full adaptive,11,5,200,False,False
+Singletons only,11,5,200,False,False
+No clustering,11,5,200,False,False
+No singletons,11,5,200,False,False
+Grand mean only,11,5,200,False,False
+Grand max only,11,5,200,False,False
+ASF-equivalent singleton,11,5,200,False,False
+Full adaptive,12,5,100,False,False
+Singletons only,12,5,100,True,False
+No clustering,12,5,100,False,False
+No singletons,12,5,100,False,False
+Grand mean only,12,5,100,False,False
+Grand max only,12,5,100,False,False
+ASF-equivalent singleton,12,5,100,False,False
+Full adaptive,13,8,200,False,False
+Singletons only,13,8,200,True,False
+No clustering,13,8,200,False,False
+No singletons,13,8,200,False,False
+Grand mean only,13,8,200,True,False
+Grand max only,13,8,200,False,False
+ASF-equivalent singleton,13,8,200,False,False
+Full adaptive,14,8,200,False,False
+Singletons only,14,8,200,False,False
+No clustering,14,8,200,False,False
+No singletons,14,8,200,False,False
+Grand mean only,14,8,200,False,False
+Grand max only,14,8,200,False,False
+ASF-equivalent singleton,14,8,200,False,False
+Full adaptive,15,8,200,False,False
+Singletons only,15,8,200,True,False
+No clustering,15,8,200,False,False
+No singletons,15,8,200,False,False
+Grand mean only,15,8,200,False,False
+Grand max only,15,8,200,False,False
+ASF-equivalent singleton,15,8,200,False,False
+Full adaptive,16,8,100,False,False
+Singletons only,16,8,100,False,False
+No clustering,16,8,100,False,False
+No singletons,16,8,100,False,False
+Grand mean only,16,8,100,False,False
+Grand max only,16,8,100,False,False
+ASF-equivalent singleton,16,8,100,True,False
+Full adaptive,17,8,100,False,False
+Singletons only,17,8,100,False,False
+No clustering,17,8,100,False,False
+No singletons,17,8,100,False,False
+Grand mean only,17,8,100,False,False
+Grand max only,17,8,100,False,False
+ASF-equivalent singleton,17,8,100,True,False
+Full adaptive,18,8,100,False,False
+Singletons only,18,8,100,False,False
+No clustering,18,8,100,True,False
+No singletons,18,8,100,False,False
+Grand mean only,18,8,100,False,False
+Grand max only,18,8,100,False,False
+ASF-equivalent singleton,18,8,100,False,False
+Full adaptive,19,8,100,False,False
+Singletons only,19,8,100,False,False
+No clustering,19,8,100,False,False
+No singletons,19,8,100,True,False
+Grand mean only,19,8,100,False,False
+Grand max only,19,8,100,False,False
+ASF-equivalent singleton,19,8,100,False,False
+Full adaptive,20,8,100,False,False
+Singletons only,20,8,100,False,False
+No clustering,20,8,100,False,False
+No singletons,20,8,100,False,False
+Grand mean only,20,8,100,True,False
+Grand max only,20,8,100,False,False
+ASF-equivalent singleton,20,8,100,False,False
+Full adaptive,21,8,100,False,False
+Singletons only,21,8,100,False,False
+No clustering,21,8,100,False,False
+No singletons,21,8,100,False,False
+Grand mean only,21,8,100,True,False
+Grand max only,21,8,100,True,False
+ASF-equivalent singleton,21,8,100,False,False
+Full adaptive,22,8,200,False,False
+Singletons only,22,8,200,False,False
+No clustering,22,8,200,False,False
+No singletons,22,8,200,False,False
+Grand mean only,22,8,200,False,False
+Grand max only,22,8,200,False,False
+ASF-equivalent singleton,22,8,200,True,False
+Full adaptive,23,5,100,False,False
+Singletons only,23,5,100,False,False
+No clustering,23,5,100,False,False
+No singletons,23,5,100,False,True
+Grand mean only,23,5,100,False,False
+Grand max only,23,5,100,True,False
+ASF-equivalent singleton,23,5,100,False,False
+Full adaptive,24,8,200,False,False
+Singletons only,24,8,200,False,False
+No clustering,24,8,200,True,False
+No singletons,24,8,200,True,False
+Grand mean only,24,8,200,False,False
+Grand max only,24,8,200,False,False
+ASF-equivalent singleton,24,8,200,True,False
+Full adaptive,25,8,100,False,False
+Singletons only,25,8,100,False,False
+No clustering,25,8,100,False,False
+No singletons,25,8,100,False,False
+Grand mean only,25,8,100,True,False
+Grand max only,25,8,100,False,False
+ASF-equivalent singleton,25,8,100,False,False
+Full adaptive,26,8,100,False,False
+Singletons only,26,8,100,False,False
+No clustering,26,8,100,False,False
+No singletons,26,8,100,True,False
+Grand mean only,26,8,100,False,False
+Grand max only,26,8,100,False,False
+ASF-equivalent singleton,26,8,100,False,False
+Full adaptive,27,5,200,False,False
+Singletons only,27,5,200,False,False
+No clustering,27,5,200,False,False
+No singletons,27,5,200,False,False
+Grand mean only,27,5,200,True,False
+Grand max only,27,5,200,False,False
+ASF-equivalent singleton,27,5,200,True,False
+Full adaptive,28,8,100,False,False
+Singletons only,28,8,100,False,False
+No clustering,28,8,100,False,False
+No singletons,28,8,100,False,False
+Grand mean only,28,8,100,False,False
+Grand max only,28,8,100,False,False
+ASF-equivalent singleton,28,8,100,True,False
+Full adaptive,29,8,100,False,False
+Singletons only,29,8,100,False,False
+No clustering,29,8,100,False,False
+No singletons,29,8,100,False,False
+Grand mean only,29,8,100,False,False
+Grand max only,29,8,100,False,False
+ASF-equivalent singleton,29,8,100,False,False
+Full adaptive,30,5,200,False,False
+Singletons only,30,5,200,False,False
+No clustering,30,5,200,False,False
+No singletons,30,5,200,False,False
+Grand mean only,30,5,200,False,False
+Grand max only,30,5,200,True,False
+ASF-equivalent singleton,30,5,200,False,False
+Full adaptive,31,8,200,False,False
+Singletons only,31,8,200,True,False
+No clustering,31,8,200,False,False
+No singletons,31,8,200,False,False
+Grand mean only,31,8,200,True,False
+Grand max only,31,8,200,False,False
+ASF-equivalent singleton,31,8,200,False,False
+Full adaptive,32,8,200,False,False
+Singletons only,32,8,200,False,False
+No clustering,32,8,200,False,False
+No singletons,32,8,200,False,False
+Grand mean only,32,8,200,False,False
+Grand max only,32,8,200,False,False
+ASF-equivalent singleton,32,8,200,True,False
+Full adaptive,33,8,100,False,False
+Singletons only,33,8,100,True,False
+No clustering,33,8,100,True,False
+No singletons,33,8,100,False,False
+Grand mean only,33,8,100,True,False
+Grand max only,33,8,100,False,False
+ASF-equivalent singleton,33,8,100,True,False
+Full adaptive,34,8,100,False,False
+Singletons only,34,8,100,False,False
+No clustering,34,8,100,False,False
+No singletons,34,8,100,False,True
+Grand mean only,34,8,100,False,False
+Grand max only,34,8,100,False,False
+ASF-equivalent singleton,34,8,100,False,False
+Full adaptive,35,5,200,False,False
+Singletons only,35,5,200,False,False
+No clustering,35,5,200,False,False
+No singletons,35,5,200,False,False
+Grand mean only,35,5,200,False,False
+Grand max only,35,5,200,True,False
+ASF-equivalent singleton,35,5,200,False,False
+Full adaptive,36,5,200,False,False
+Singletons only,36,5,200,False,False
+No clustering,36,5,200,False,False
+No singletons,36,5,200,True,False
+Grand mean only,36,5,200,True,False
+Grand max only,36,5,200,True,False
+ASF-equivalent singleton,36,5,200,True,False
+Full adaptive,37,8,200,False,False
+Singletons only,37,8,200,True,False
+No clustering,37,8,200,False,False
+No singletons,37,8,200,False,False
+Grand mean only,37,8,200,False,False
+Grand max only,37,8,200,False,False
+ASF-equivalent singleton,37,8,200,False,False
+Full adaptive,38,5,200,False,False
+Singletons only,38,5,200,False,False
+No clustering,38,5,200,True,False
+No singletons,38,5,200,False,False
+Grand mean only,38,5,200,False,False
+Grand max only,38,5,200,False,False
+ASF-equivalent singleton,38,5,200,True,False
+Full adaptive,39,8,100,False,False
+Singletons only,39,8,100,False,False
+No clustering,39,8,100,True,False
+No singletons,39,8,100,True,False
+Grand mean only,39,8,100,False,False
+Grand max only,39,8,100,False,False
+ASF-equivalent singleton,39,8,100,False,False
+Full adaptive,40,5,200,False,False
+Singletons only,40,5,200,False,False
+No clustering,40,5,200,False,False
+No singletons,40,5,200,False,False
+Grand mean only,40,5,200,False,False
+Grand max only,40,5,200,False,False
+ASF-equivalent singleton,40,5,200,False,False
+Full adaptive,41,5,100,False,False
+Singletons only,41,5,100,False,False
+No clustering,41,5,100,True,False
+No singletons,41,5,100,False,False
+Grand mean only,41,5,100,False,False
+Grand max only,41,5,100,False,False
+ASF-equivalent singleton,41,5,100,False,False
+Full adaptive,42,5,200,False,False
+Singletons only,42,5,200,False,False
+No clustering,42,5,200,True,False
+No singletons,42,5,200,False,False
+Grand mean only,42,5,200,True,False
+Grand max only,42,5,200,False,False
+ASF-equivalent singleton,42,5,200,False,False
+Full adaptive,43,5,100,False,False
+Singletons only,43,5,100,False,False
+No clustering,43,5,100,False,False
+No singletons,43,5,100,True,False
+Grand mean only,43,5,100,False,False
+Grand max only,43,5,100,False,False
+ASF-equivalent singleton,43,5,100,False,False
+Full adaptive,44,8,100,False,False
+Singletons only,44,8,100,False,False
+No clustering,44,8,100,True,False
+No singletons,44,8,100,False,False
+Grand mean only,44,8,100,True,False
+Grand max only,44,8,100,False,False
+ASF-equivalent singleton,44,8,100,True,False
+Full adaptive,45,5,100,False,False
+Singletons only,45,5,100,False,False
+No clustering,45,5,100,False,False
+No singletons,45,5,100,False,False
+Grand mean only,45,5,100,False,False
+Grand max only,45,5,100,True,False
+ASF-equivalent singleton,45,5,100,False,False
+Full adaptive,46,5,200,False,False
+Singletons only,46,5,200,False,False
+No clustering,46,5,200,False,False
+No singletons,46,5,200,False,True
+Grand mean only,46,5,200,True,False
+Grand max only,46,5,200,True,False
+ASF-equivalent singleton,46,5,200,False,False
+Full adaptive,47,5,200,False,False
+Singletons only,47,5,200,False,False
+No clustering,47,5,200,False,False
+No singletons,47,5,200,False,False
+Grand mean only,47,5,200,False,False
+Grand max only,47,5,200,True,False
+ASF-equivalent singleton,47,5,200,True,False
+Full adaptive,48,8,100,False,False
+Singletons only,48,8,100,False,False
+No clustering,48,8,100,True,False
+No singletons,48,8,100,False,False
+Grand mean only,48,8,100,True,False
+Grand max only,48,8,100,False,False
+ASF-equivalent singleton,48,8,100,False,False
+Full adaptive,49,5,100,False,False
+Singletons only,49,5,100,False,False
+No clustering,49,5,100,False,False
+No singletons,49,5,100,False,False
+Grand mean only,49,5,100,False,False
+Grand max only,49,5,100,False,False
+ASF-equivalent singleton,49,5,100,False,False
+Full adaptive,50,5,100,False,False
+Singletons only,50,5,100,True,False
+No clustering,50,5,100,True,False
+No singletons,50,5,100,False,True
+Grand mean only,50,5,100,False,False
+Grand max only,50,5,100,False,False
+ASF-equivalent singleton,50,5,100,False,False
+Full adaptive,51,8,100,False,False
+Singletons only,51,8,100,False,False
+No clustering,51,8,100,True,False
+No singletons,51,8,100,False,False
+Grand mean only,51,8,100,True,False
+Grand max only,51,8,100,True,False
+ASF-equivalent singleton,51,8,100,False,False
+Full adaptive,52,5,200,False,False
+Singletons only,52,5,200,False,False
+No clustering,52,5,200,True,False
+No singletons,52,5,200,False,False
+Grand mean only,52,5,200,False,False
+Grand max only,52,5,200,True,False
+ASF-equivalent singleton,52,5,200,False,False
+Full adaptive,53,5,200,False,False
+Singletons only,53,5,200,True,False
+No clustering,53,5,200,True,False
+No singletons,53,5,200,False,False
+Grand mean only,53,5,200,False,False
+Grand max only,53,5,200,False,False
+ASF-equivalent singleton,53,5,200,False,False
+Full adaptive,54,5,100,False,False
+Singletons only,54,5,100,True,False
+No clustering,54,5,100,True,False
+No singletons,54,5,100,False,False
+Grand mean only,54,5,100,False,False
+Grand max only,54,5,100,True,False
+ASF-equivalent singleton,54,5,100,True,False
+Full adaptive,55,5,100,False,False
+Singletons only,55,5,100,False,False
+No clustering,55,5,100,True,False
+No singletons,55,5,100,False,False
+Grand mean only,55,5,100,True,False
+Grand max only,55,5,100,False,False
+ASF-equivalent singleton,55,5,100,True,False
+Full adaptive,56,5,200,False,False
+Singletons only,56,5,200,False,False
+No clustering,56,5,200,False,False
+No singletons,56,5,200,False,False
+Grand mean only,56,5,200,False,False
+Grand max only,56,5,200,True,False
+ASF-equivalent singleton,56,5,200,True,False
+Full adaptive,57,8,200,False,False
+Singletons only,57,8,200,False,False
+No clustering,57,8,200,False,False
+No singletons,57,8,200,True,False
+Grand mean only,57,8,200,False,False
+Grand max only,57,8,200,False,False
+ASF-equivalent singleton,57,8,200,True,False
+Full adaptive,58,8,200,False,False
+Singletons only,58,8,200,True,False
+No clustering,58,8,200,False,False
+No singletons,58,8,200,False,True
+Grand mean only,58,8,200,True,False
+Grand max only,58,8,200,False,False
+ASF-equivalent singleton,58,8,200,False,False
+Full adaptive,59,8,100,False,False
+Singletons only,59,8,100,False,False
+No clustering,59,8,100,False,False
+No singletons,59,8,100,False,False
+Grand mean only,59,8,100,False,False
+Grand max only,59,8,100,True,False
+ASF-equivalent singleton,59,8,100,False,False
+Full adaptive,60,5,200,False,False
+Singletons only,60,5,200,False,False
+No clustering,60,5,200,False,False
+No singletons,60,5,200,False,False
+Grand mean only,60,5,200,True,False
+Grand max only,60,5,200,False,False
+ASF-equivalent singleton,60,5,200,False,False
+Full adaptive,61,5,100,False,False
+Singletons only,61,5,100,False,False
+No clustering,61,5,100,True,False
+No singletons,61,5,100,False,False
+Grand mean only,61,5,100,True,False
+Grand max only,61,5,100,False,False
+ASF-equivalent singleton,61,5,100,False,False
+Full adaptive,62,5,200,False,False
+Singletons only,62,5,200,True,False
+No clustering,62,5,200,False,False
+No singletons,62,5,200,False,False
+Grand mean only,62,5,200,False,False
+Grand max only,62,5,200,True,False
+ASF-equivalent singleton,62,5,200,False,False
+Full adaptive,63,8,200,False,False
+Singletons only,63,8,200,False,False
+No clustering,63,8,200,False,False
+No singletons,63,8,200,False,False
+Grand mean only,63,8,200,True,False
+Grand max only,63,8,200,False,False
+ASF-equivalent singleton,63,8,200,False,False
+Full adaptive,64,8,200,False,False
+Singletons only,64,8,200,False,False
+No clustering,64,8,200,False,False
+No singletons,64,8,200,False,False
+Grand mean only,64,8,200,False,False
+Grand max only,64,8,200,False,False
+ASF-equivalent singleton,64,8,200,False,False
+Full adaptive,65,8,200,False,False
+Singletons only,65,8,200,False,False
+No clustering,65,8,200,True,False
+No singletons,65,8,200,False,False
+Grand mean only,65,8,200,False,False
+Grand max only,65,8,200,False,False
+ASF-equivalent singleton,65,8,200,True,False
+Full adaptive,66,5,200,False,False
+Singletons only,66,5,200,False,False
+No clustering,66,5,200,False,False
+No singletons,66,5,200,False,False
+Grand mean only,66,5,200,False,False
+Grand max only,66,5,200,False,False
+ASF-equivalent singleton,66,5,200,False,False
+Full adaptive,67,5,100,False,False
+Singletons only,67,5,100,False,False
+No clustering,67,5,100,False,False
+No singletons,67,5,100,False,False
+Grand mean only,67,5,100,True,False
+Grand max only,67,5,100,True,False
+ASF-equivalent singleton,67,5,100,True,False
+Full adaptive,68,5,100,False,False
+Singletons only,68,5,100,False,False
+No clustering,68,5,100,False,False
+No singletons,68,5,100,False,False
+Grand mean only,68,5,100,False,False
+Grand max only,68,5,100,False,False
+ASF-equivalent singleton,68,5,100,False,False
+Full adaptive,69,5,100,False,False
+Singletons only,69,5,100,True,False
+No clustering,69,5,100,False,False
+No singletons,69,5,100,False,False
+Grand mean only,69,5,100,True,False
+Grand max only,69,5,100,True,False
+ASF-equivalent singleton,69,5,100,False,False
+Full adaptive,70,5,200,False,False
+Singletons only,70,5,200,True,False
+No clustering,70,5,200,False,False
+No singletons,70,5,200,False,False
+Grand mean only,70,5,200,False,False
+Grand max only,70,5,200,False,False
+ASF-equivalent singleton,70,5,200,True,False
+Full adaptive,71,8,100,False,False
+Singletons only,71,8,100,False,False
+No clustering,71,8,100,False,False
+No singletons,71,8,100,False,False
+Grand mean only,71,8,100,False,False
+Grand max only,71,8,100,True,False
+ASF-equivalent singleton,71,8,100,True,False
+Full adaptive,72,5,200,False,False
+Singletons only,72,5,200,False,False
+No clustering,72,5,200,False,False
+No singletons,72,5,200,True,False
+Grand mean only,72,5,200,True,False
+Grand max only,72,5,200,False,False
+ASF-equivalent singleton,72,5,200,True,False
+Full adaptive,73,8,200,False,False
+Singletons only,73,8,200,False,False
+No clustering,73,8,200,False,False
+No singletons,73,8,200,False,False
+Grand mean only,73,8,200,False,False
+Grand max only,73,8,200,True,False
+ASF-equivalent singleton,73,8,200,False,False
+Full adaptive,74,5,200,False,False
+Singletons only,74,5,200,False,False
+No clustering,74,5,200,False,False
+No singletons,74,5,200,True,False
+Grand mean only,74,5,200,True,False
+Grand max only,74,5,200,True,False
+ASF-equivalent singleton,74,5,200,False,False
+Full adaptive,75,5,100,False,False
+Singletons only,75,5,100,False,False
+No clustering,75,5,100,True,False
+No singletons,75,5,100,False,True
+Grand mean only,75,5,100,True,False
+Grand max only,75,5,100,True,False
+ASF-equivalent singleton,75,5,100,True,False
+Full adaptive,76,8,200,False,False
+Singletons only,76,8,200,False,False
+No clustering,76,8,200,False,False
+No singletons,76,8,200,False,False
+Grand mean only,76,8,200,False,False
+Grand max only,76,8,200,False,False
+ASF-equivalent singleton,76,8,200,False,False
+Full adaptive,77,5,100,False,False
+Singletons only,77,5,100,False,False
+No clustering,77,5,100,False,False
+No singletons,77,5,100,True,False
+Grand mean only,77,5,100,False,False
+Grand max only,77,5,100,True,False
+ASF-equivalent singleton,77,5,100,True,False
+Full adaptive,78,5,100,False,False
+Singletons only,78,5,100,False,False
+No clustering,78,5,100,True,False
+No singletons,78,5,100,False,False
+Grand mean only,78,5,100,False,False
+Grand max only,78,5,100,True,False
+ASF-equivalent singleton,78,5,100,True,False
+Full adaptive,79,5,100,False,False
+Singletons only,79,5,100,False,False
+No clustering,79,5,100,False,False
+No singletons,79,5,100,False,False
+Grand mean only,79,5,100,True,False
+Grand max only,79,5,100,False,False
+ASF-equivalent singleton,79,5,100,True,False
+Full adaptive,80,8,100,False,False
+Singletons only,80,8,100,False,False
+No clustering,80,8,100,False,False
+No singletons,80,8,100,False,False
+Grand mean only,80,8,100,False,False
+Grand max only,80,8,100,True,False
+ASF-equivalent singleton,80,8,100,False,False
+Full adaptive,81,5,100,False,False
+Singletons only,81,5,100,False,False
+No clustering,81,5,100,True,False
+No singletons,81,5,100,False,False
+Grand mean only,81,5,100,False,False
+Grand max only,81,5,100,False,False
+ASF-equivalent singleton,81,5,100,False,False
+Full adaptive,82,8,100,False,False
+Singletons only,82,8,100,False,False
+No clustering,82,8,100,False,False
+No singletons,82,8,100,False,False
+Grand mean only,82,8,100,False,False
+Grand max only,82,8,100,True,False
+ASF-equivalent singleton,82,8,100,False,False
+Full adaptive,83,8,200,False,False
+Singletons only,83,8,200,True,False
+No clustering,83,8,200,False,False
+No singletons,83,8,200,False,False
+Grand mean only,83,8,200,True,False
+Grand max only,83,8,200,False,False
+ASF-equivalent singleton,83,8,200,True,False
+Full adaptive,84,8,200,False,False
+Singletons only,84,8,200,False,False
+No clustering,84,8,200,True,False
+No singletons,84,8,200,False,False
+Grand mean only,84,8,200,False,False
+Grand max only,84,8,200,False,False
+ASF-equivalent singleton,84,8,200,False,False
+Full adaptive,85,8,100,False,False
+Singletons only,85,8,100,False,False
+No clustering,85,8,100,False,False
+No singletons,85,8,100,False,False
+Grand mean only,85,8,100,False,False
+Grand max only,85,8,100,False,False
+ASF-equivalent singleton,85,8,100,False,False
+Full adaptive,86,5,100,False,False
+Singletons only,86,5,100,True,False
+No clustering,86,5,100,False,False
+No singletons,86,5,100,False,False
+Grand mean only,86,5,100,False,False
+Grand max only,86,5,100,True,False
+ASF-equivalent singleton,86,5,100,True,False
+Full adaptive,87,8,100,False,False
+Singletons only,87,8,100,False,False
+No clustering,87,8,100,False,False
+No singletons,87,8,100,False,False
+Grand mean only,87,8,100,False,False
+Grand max only,87,8,100,False,False
+ASF-equivalent singleton,87,8,100,False,False
+Full adaptive,88,8,100,False,False
+Singletons only,88,8,100,False,False
+No clustering,88,8,100,False,False
+No singletons,88,8,100,True,False
+Grand mean only,88,8,100,False,False
+Grand max only,88,8,100,False,False
+ASF-equivalent singleton,88,8,100,True,False
+Full adaptive,89,8,200,False,False
+Singletons only,89,8,200,False,False
+No clustering,89,8,200,False,False
+No singletons,89,8,200,False,False
+Grand mean only,89,8,200,True,False
+Grand max only,89,8,200,False,False
+ASF-equivalent singleton,89,8,200,False,False
+Full adaptive,90,5,200,False,False
+Singletons only,90,5,200,False,False
+No clustering,90,5,200,False,False
+No singletons,90,5,200,False,False
+Grand mean only,90,5,200,True,False
+Grand max only,90,5,200,True,False
+ASF-equivalent singleton,90,5,200,True,False
+Full adaptive,91,5,200,False,False
+Singletons only,91,5,200,False,False
+No clustering,91,5,200,False,False
+No singletons,91,5,200,False,False
+Grand mean only,91,5,200,True,False
+Grand max only,91,5,200,False,False
+ASF-equivalent singleton,91,5,200,False,False
+Full adaptive,92,8,200,False,False
+Singletons only,92,8,200,False,False
+No clustering,92,8,200,False,False
+No singletons,92,8,200,True,False
+Grand mean only,92,8,200,False,False
+Grand max only,92,8,200,True,False
+ASF-equivalent singleton,92,8,200,True,False
+Full adaptive,93,5,200,False,False
+Singletons only,93,5,200,False,False
+No clustering,93,5,200,False,False
+No singletons,93,5,200,False,False
+Grand mean only,93,5,200,False,False
+Grand max only,93,5,200,False,False
+ASF-equivalent singleton,93,5,200,True,False
+Full adaptive,94,5,200,False,False
+Singletons only,94,5,200,False,False
+No clustering,94,5,200,False,False
+No singletons,94,5,200,False,False
+Grand mean only,94,5,200,True,False
+Grand max only,94,5,200,False,False
+ASF-equivalent singleton,94,5,200,True,False
+Full adaptive,95,8,200,False,False
+Singletons only,95,8,200,True,False
+No clustering,95,8,200,False,False
+No singletons,95,8,200,False,False
+Grand mean only,95,8,200,False,False
+Grand max only,95,8,200,True,False
+ASF-equivalent singleton,95,8,200,True,False
+Full adaptive,96,8,100,False,False
+Singletons only,96,8,100,False,False
+No clustering,96,8,100,False,False
+No singletons,96,8,100,True,False
+Grand mean only,96,8,100,True,False
+Grand max only,96,8,100,True,False
+ASF-equivalent singleton,96,8,100,False,False
+Full adaptive,97,8,200,False,False
+Singletons only,97,8,200,False,False
+No clustering,97,8,200,False,False
+No singletons,97,8,200,False,False
+Grand mean only,97,8,200,False,False
+Grand max only,97,8,200,False,False
+ASF-equivalent singleton,97,8,200,False,False
+Full adaptive,98,5,100,False,False
+Singletons only,98,5,100,True,False
+No clustering,98,5,100,True,False
+No singletons,98,5,100,True,False
+Grand mean only,98,5,100,False,False
+Grand max only,98,5,100,False,False
+ASF-equivalent singleton,98,5,100,False,False
+Full adaptive,99,5,100,False,False
+Singletons only,99,5,100,False,False
+No clustering,99,5,100,False,False
+No singletons,99,5,100,False,False
+Grand mean only,99,5,100,False,False
+Grand max only,99,5,100,False,False
+ASF-equivalent singleton,99,5,100,False,False

@@ -1,0 +1,7 @@
+numpy<2.0,>=1.26
+scipy<1.14,>=1.11
+pandas<2.3,>=2.1
+pyarrow<20,>=14
+matplotlib<3.10,>=3.8
+PyYAML<7,>=6.0
+PuLP<3,>=2.8

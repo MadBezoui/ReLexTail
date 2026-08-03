@@ -1,0 +1,77 @@
+{
+  "seed": 20260628,
+  "level": 0.2,
+  "draws": 40,
+  "n": 500,
+  "spearman_vs_flip": {
+    "margin": -0.386,
+    "m": -0.292,
+    "N": 0.058,
+    "K": -0.292,
+    "rho_max": -0.432
+  },
+  "spearman_vs_class_size": {
+    "margin": -0.191,
+    "m": -0.338,
+    "N": 0.146,
+    "K": -0.338,
+    "rho_max": -0.502
+  },
+  "margin_bins": [
+    {
+      "quintile": 1,
+      "margin_range": [
+        0.0,
+        0.0046
+      ],
+      "n": 100,
+      "flip_rate": 0.585,
+      "class_size": 6.19,
+      "singleton_class_frac": 0.12
+    },
+    {
+      "quintile": 2,
+      "margin_range": [
+        0.0047,
+        0.0105
+      ],
+      "n": 100,
+      "flip_rate": 0.549,
+      "class_size": 6.0,
+      "singleton_class_frac": 0.12
+    },
+    {
+      "quintile": 3,
+      "margin_range": [
+        0.0105,
+        0.0183
+      ],
+      "n": 100,
+      "flip_rate": 0.4505,
+      "class_size": 5.78,
+      "singleton_class_frac": 0.16
+    },
+    {
+      "quintile": 4,
+      "margin_range": [
+        0.0184,
+        0.0311
+      ],
+      "n": 100,
+      "flip_rate": 0.4158,
+      "class_size": 5.59,
+      "singleton_class_frac": 0.17
+    },
+    {
+      "quintile": 5,
+      "margin_range": [
+        0.0312,
+        0.1611
+      ],
+      "n": 100,
+      "flip_rate": 0.264,
+      "class_size": 4.33,
+      "singleton_class_frac": 0.34
+    }
+  ]
+}
