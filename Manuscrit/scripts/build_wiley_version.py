@@ -158,11 +158,11 @@ protocol, per-instance results, statistical summaries, the certification
 benchmark with its raw results, and figure sources accompany the submission as
 supporting information, together with the UCI Energy Efficiency file under
 CC BY 4.0 and its SHA-256 checksum. The UCI dataset is independently available
-at \url{https://doi.org/10.24432/C51307}. An earlier project archive is at
-\url{https://doi.org/10.5281/zenodo.21771786} and the repository is
-\url{https://github.com/MadBezoui/ReLexTail}; the experiments reported here are
-larger than that archive and must not be attributed to it. A version-specific
-DOI for this revision is to be published before acceptance.
+at \url{https://doi.org/10.24432/C51307}. The code and data archive for this
+exact version is deposited at \url{https://doi.org/10.5281/zenodo.22558690} and the
+repository is \url{https://github.com/MadBezoui/ReLexTail}. It supersedes the
+earlier and smaller release archived at \url{https://doi.org/10.5281/zenodo.21771786},
+to which the experiments reported here must not be attributed.
 
 \bibliography{refs}
 

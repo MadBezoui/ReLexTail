@@ -5,9 +5,10 @@
 Code, data and reproduction scripts for **"Resolution-Aware Lexicographic
 Tail-Regret Selection under Uncertain Normalisation Bounds"** (M. Bezoui).
 
-The current manuscript is `Manuscrit/main.pdf`. The Zenodo DOI above resolves to
-an **earlier** archive; the experiments in the current manuscript are larger and
-partly different and must not be attributed to that unchanged release.
+The current manuscript is `Manuscrit/main.pdf`. The DOI above archives **this**
+version (v2.1.0). It supersedes the earlier and smaller release archived at
+[`10.5281/zenodo.21771786`](https://doi.org/10.5281/zenodo.21771786), to which the
+experiments reported here must not be attributed.
 
 ## What the method is
 
@@ -107,24 +108,27 @@ than hidden; it is not a passing repository-wide suite.
 
 ## Licence
 
-**No project-wide licence is currently declared.** The earlier README stated MIT,
-but no `LICENSE` file exists in this repository, so that statement was not
-effective. Choosing and adding a licence before public archival release is an
-author-side action and is deliberately not made here. The bundled UCI Energy
-Efficiency file keeps its separate CC BY 4.0 attribution and checksum
-(`Manuscrit/submission/data/external/README.md`).
+MIT, see [`LICENSE`](LICENSE). The same licence is declared in `.zenodo.json`, so
+the repository and the archived record agree.
+
+The Wiley LaTeX authoring template is **not** redistributed here. `USG.cls`, its
+supporting styles and the STIX fonts remain Wiley's; download them from Wiley
+Author Services and regenerate the journal-formatted manuscript with
+`Manuscrit/scripts/build_wiley_version.py`.
+
+The bundled UCI Energy Efficiency file keeps its separate CC BY 4.0 attribution
+and checksum (`Manuscrit/submission/data/external/README.md`).
 
 ## Citation
 
 ```bibtex
-@misc{bezoui2026archive,
+@software{bezoui2026relextail,
   author    = {Bezoui, Madani},
-  title     = {ReLexTail: Resolution-Aware Lexicographic Preorder},
+  title     = {ReLexTail: resolution-aware lexicographic tail-regret selection},
   year      = {2026},
   publisher = {Zenodo},
+  version   = {v2.1.0},
   doi       = {10.5281/zenodo.22558690},
-  url       = {https://doi.org/10.5281/zenodo.22558690},
-  version   = {v2.0.0},
-  note      = {Earlier archive; the current manuscript supersedes its experiments}
+  url       = {https://doi.org/10.5281/zenodo.22558690}
 }
 ```

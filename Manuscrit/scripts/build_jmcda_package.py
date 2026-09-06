@@ -181,11 +181,11 @@ protocol files, per-instance results and figure sources accompany the
 submission as supporting information, together with the UCI Energy Efficiency
 file under CC BY 4.0 and its SHA-256 checksum. That dataset is cited in the
 reference list and is independently available at
-\url{https://doi.org/10.24432/C51307}. An earlier project archive is at
-\url{https://doi.org/10.5281/zenodo.22558690} and the repository is
-\url{https://github.com/MadBezoui/ReLexTail}; the experiments reported here are
-larger than that archive and must not be attributed to it. A version-specific
-DOI for this revision is to be published before acceptance.
+\url{https://doi.org/10.24432/C51307}. The code and data archive for this exact
+version is deposited at \url{https://doi.org/10.5281/zenodo.22558690} and the repository is
+\url{https://github.com/MadBezoui/ReLexTail}. It supersedes the earlier and
+smaller release archived at \url{https://doi.org/10.5281/zenodo.21771786}, to which the
+experiments reported here must not be attributed.
 
 \vspace{4pt}
 \noindent\textbf{Prior publication and preprints.} The manuscript is original,
@@ -494,10 +494,13 @@ abstract**, and a **Data Availability Statement**.
 - [ ] **Select the Wiley data availability statement** that matches this
   submission from the list in the journal's data sharing policy; the wording
   supplied here is a draft.
-- [ ] **Publish a version-specific DOI** for this revision and update the
-  statement. The existing Zenodo DOI resolves to an earlier, smaller archive.
-- [ ] **Choose a licence** for the repository. None is declared. The bundled UCI
-  file keeps its separate CC BY 4.0 attribution.
+- [x] **Version-specific DOI published** for this revision
+  (`10.5281/zenodo.22558690`) and carried into the manuscript, the title page
+  and the repository README. The earlier release (`10.5281/zenodo.21771786`)
+  is cited as superseded.
+- [x] **Licence chosen**: MIT, `LICENSE` at the repository root, matching the
+  `license` field of `.zenodo.json`. The bundled UCI file keeps its separate
+  CC BY 4.0 attribution.
 - [ ] **Open access** is decided after acceptance and carries an APC; check
   institutional or funder eligibility then, not now.
 - [ ] Submit via the **Wiley Authors submission portal**; editorial contact is
