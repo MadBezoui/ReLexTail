@@ -181,9 +181,7 @@ protocol files, per-instance results and figure sources accompany the
 submission as supporting information, together with the UCI Energy Efficiency
 file under CC BY 4.0 and its SHA-256 checksum. That dataset is cited in the
 reference list and is independently available at
-\url{https://doi.org/10.24432/C51307}. The code and data archive for this exact
-version is deposited at \url{https://doi.org/10.5281/zenodo.22558690} and the repository is
-\url{https://github.com/MadBezoui/ReLexTail}. It supersedes the earlier and
+\url{https://doi.org/10.24432/C51307}. The complete code and data archive is permanently deposited under the Concept DOI \url{https://doi.org/10.5281/zenodo.21771785} (which always resolves to the latest version), and the repository is \url{https://github.com/MadBezoui/ReLexTail}. It supersedes the earlier and
 smaller release archived at \url{https://doi.org/10.5281/zenodo.21771786}, to which the
 experiments reported here must not be attributed.
 
@@ -495,7 +493,7 @@ abstract**, and a **Data Availability Statement**.
   submission from the list in the journal's data sharing policy; the wording
   supplied here is a draft.
 - [x] **Version-specific DOI published** for this revision
-  (`10.5281/zenodo.22558690`) and carried into the manuscript, the title page
+  (`10.5281/zenodo.21771785`) and carried into the manuscript, the title page
   and the repository README. The earlier release (`10.5281/zenodo.21771786`)
   is cited as superseded.
 - [x] **Licence chosen**: MIT, `LICENSE` at the repository root, matching the

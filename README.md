@@ -1,12 +1,11 @@
 # ReLexTail: resolution-aware lexicographic tail-regret selection
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22558690.svg)](https://doi.org/10.5281/zenodo.22558690)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21771785.svg)](https://doi.org/10.5281/zenodo.21771785)
 
 Code, data and reproduction scripts for **"Resolution-Aware Lexicographic
 Tail-Regret Selection under Uncertain Normalisation Bounds"** (M. Bezoui).
 
-The current manuscript is `Manuscrit/main.pdf`. The DOI above archives **this**
-version (v2.1.0). It supersedes the earlier and smaller release archived at
+The current manuscript is `Manuscrit/main.pdf`. The DOI above resolves to the latest archived version. It supersedes the earlier and smaller release archived at
 [`10.5281/zenodo.21771786`](https://doi.org/10.5281/zenodo.21771786), to which the
 experiments reported here must not be attributed.
 
@@ -127,8 +126,7 @@ and checksum (`Manuscrit/submission/data/external/README.md`).
   title     = {ReLexTail: resolution-aware lexicographic tail-regret selection},
   year      = {2026},
   publisher = {Zenodo},
-  version   = {v2.1.0},
-  doi       = {10.5281/zenodo.22558690},
-  url       = {https://doi.org/10.5281/zenodo.22558690}
+  doi       = {10.5281/zenodo.21771785},
+  url       = {https://doi.org/10.5281/zenodo.21771785}
 }
 ```
