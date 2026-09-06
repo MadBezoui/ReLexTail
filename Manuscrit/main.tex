@@ -1,0 +1,51 @@
+% Submission revision for Journal of Multi-Criteria Decision Analysis.
+% Reproduce: see submission/README.md. Original source and PDF are preserved.
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=3cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{graphicx,booktabs,array}
+\usepackage[natbibapa]{apacite}
+\usepackage{caption}
+\usepackage{microtype}
+\usepackage{placeins}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\graphicspath{{submission/figures/}}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small Resolution-aware tail-regret selection}\fancyhead[R]{\small M. Bezoui}\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}
+\setlength{\emergencystretch}{2em}
+\captionsetup{font=small,labelfont=bf}
+\renewcommand{\topfraction}{.92}\renewcommand{\bottomfraction}{.85}\renewcommand{\textfraction}{.08}\renewcommand{\floatpagefraction}{.8}
+\setcounter{topnumber}{3}\setcounter{bottomnumber}{2}\setcounter{totalnumber}{5}
+\newcommand{\R}{\mathbb R}\newcommand{\Q}{\mathcal Q}\newcommand{\ideal}{z^\star}\newcommand{\nadir}{z^{\mathrm{nad}}}
+\newtheorem{theorem}{Theorem}\newtheorem{proposition}{Proposition}\newtheorem{lemma}{Lemma}
+% Numbers for the certification section are generated from enhanced/results/
+% by enhanced/analysis/make_macros.py.  A missing or stale file makes the build
+% fail on an undefined control sequence, which is intentional.
+\input{submission/generated_certrelex}
+\title{Resolution-Aware Lexicographic Tail-Regret Selection under Uncertain Normalisation Bounds}
+\author{Madani Bezoui\\[3pt]\small CESI LINEACT, UR 7527\\\small 3 rue Bois de la Champelle, Vand\oe uvre-l\`es-Nancy, France\\\small\href{mailto:mbezoui@cesi.fr}{mbezoui@cesi.fr}\\\small ORCID: \url{https://orcid.org/0000-0002-8342-7039}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+Selecting a recommendation from a multicriteria candidate set requires a declared preference rule and a treatment of uncertain normalisation bounds. Exact lexicographic minimax gives arbitrarily small worst-case differences absolute priority, hard to justify at finite decision resolution. We introduce ReLexTail, a preorder that first compares fixed-resolution categories of maximum and upper-tail active-range probe disappointments, then applies exact tail and ordered-profile refinements. The construction is complete and transitive, Pareto-compatible under monotone separating probes, and invariant to uniform replication of the probe multiset. A sufficient category-stability condition is distinguished from stability of the fully refined recommendation, and a sequential linear and mixed-integer characterisation covers continuous polyhedra. We then certify the decision rather than every coordinate. We prove that a recommendation can be certified throughout a bound box with no candidate retaining any category, and that keeping a probe's shared normalisation anchors inside a single quotient yields an enclosure contained in the independent one. Rational examples show both gaps are real: the all-candidate condition certifies nothing on an instance whose decision is certain over the whole box, and anchor slack alone decides whether another box is certified. On a benchmark of \crxInstances{} candidate sets with splits locked before the run, the two changes raise the certified decision radius by \crxPOneMean{} and \crxPTwoMean{} at a matched budget, and an exact oracle and an independent replay verifier falsified none of the emitted certificates. A separate 90-instance study with 500 matched perturbations at eight levels and 10,000 held-out preference vectors gives 19.30\% point changes at resolution 0.02 against 20.88\% for exact probe-lexicographic selection, with a paired interval including zero, and mean upper-tail regret 0.5411 against 0.5428. Grid shifts, ablations and a public building-simulation check expose boundary dependence. Decision quality against external preference populations and any calibration guarantee remain untested.
+\end{abstract}
+\noindent\textbf{Keywords:} multicriteria decision analysis; lexicographic selection; regret; conditional value-at-risk; normalisation uncertainty; robustness
+\input{submission/introduction}
+\input{submission/method}
+\input{submission/properties}
+\input{submission/computation}
+\input{submission/certification}
+\input{submission/experiments}
+\input{submission/discussion}
+\FloatBarrier
+\bibliographystyle{apacite}
+\bibliography{refs}
+\clearpage
+\renewcommand{\listfigurename}{Figure legends}
+\listoffigures
+\end{document}

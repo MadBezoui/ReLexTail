@@ -30,7 +30,13 @@ def _eval_method(F, test_seed, n_test, name=None, delta=None, nadir=None, ideal=
     else:
         idx = methods.select(name, F, nadir=nadir, ideal=ideal, rng=rng)
 
-    loss, family_loss = metrics.out_of_class_loss(
+    # Manuscript metric: empirical upper-25% CVaR of the range-normalised
+    # hidden-preference regret Delta L_w (NOT the mean).  metrics.tail_loss
+    # computes exactly CVaR_{0.25}^{up} of (best-U)/(best-worst).
+    loss = metrics.tail_loss(
+        F, idx, np.random.default_rng(test_seed), n_per_family=n_test, q=0.75
+    )
+    _, family_loss = metrics.out_of_class_loss(
         F, idx, np.random.default_rng(test_seed), n_per_family=n_test, by_family=True
     )
     return idx, loss, family_loss

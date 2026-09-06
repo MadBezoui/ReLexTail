@@ -1,67 +1,130 @@
-# ReLexTail: Resolution-Aware Lexicographic Preorder
+# ReLexTail: resolution-aware lexicographic tail-regret selection
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21771786.svg)](https://doi.org/10.5281/zenodo.21771786)
 
-This repository contains the official code, data, and reproduction scripts for the paper:
-**"ReLexTail: Resolution-Aware Lexicographic Preorder for Auditable Multicriteria Selection under Uncertain Bounds"**
+Code, data and reproduction scripts for **"Resolution-Aware Lexicographic
+Tail-Regret Selection under Uncertain Normalisation Bounds"** (M. Bezoui).
 
-## Overview
-A multicriteria model usually ends with a set of efficient alternatives, not with a recommendation. Turning that set into one choice requires preference modeling that is often fragile. Existing robust and lexicographic methods fail to combine resolution-aware limits with complete transitive upper-tail sorting, often falling into non-transitive pairwise tolerances or giving infinite priority to microscopic worst-case differences. 
+The current manuscript is `Manuscrit/main.pdf`. The Zenodo DOI above resolves to
+an **earlier** archive; the experiments in the current manuscript are larger and
+partly different and must not be attributed to that unchanged release.
 
-We introduce **ReLexTail**, a deterministic resolution-aware lexicographic preorder that integrates active-range probe regrets, discretised maximum and upper-tail empirical CVaR summaries, and exact numerical refinement. 
+## What the method is
 
-## Experimental Results
-Our empirical benchmarking on 500 candidate sets (up to 500 points and 15 criteria, evaluating against knapsack, job-shop instances, WFG2, DTLZ, Energy, and Concrete surrogate matrices) demonstrates that ReLexTail successfully:
-- Preserves the stability benefits of active-range normalisation.
-- Defines a complete and transitive preorder (eliminating the 82% nontransitive indifference cycles observed in standard pairwise $\delta$-tolerances on exact leximax).
-- Significantly improves hidden-preference tail regret.
-- Allows fully auditable resolution through category assignment and numerical refinement.
+A multicriteria model usually ends with a set of efficient alternatives, not
+with a recommendation. ReLexTail turns that set into one choice by a declared,
+auditable rule: it evaluates a declared multiset of monotone *probes*, converts
+each probe value into an active-range *disappointment* in `[0,1]`, and compares
+alternatives lexicographically on
 
-## Requirements and Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/MadBezoui/ReLexTail.git
-   cd ReLexTail
-   ```
-2. Create and activate a Conda environment:
-   ```bash
-   conda env create -f environment.yml
-   conda activate lexpr_env
-   ```
+```
+Psi = ( C_M, C_25, C_50, C_100, T_25, T_50, T_100, M, sorted disappointments )
+```
 
-## Reproducibility (v2.0.0)
-To regenerate all results, figures, and tables exactly as they appear in the manuscript, run the master reproduction script from the root directory:
+— fixed-resolution categories of the maximum and of the upper-tail means first,
+then the exact tail means, then the full sorted profile. Fixed cells give a
+*transitive* categorical equality, which pairwise indifference tolerances do
+not. The building blocks — ordered aggregation, empirical CVaR, lexicographic
+optimisation — are established tools and are not claimed as new.
+
+## What is established, and what is not
+
+| Claim | Status |
+|---|---|
+| Complete transitive preorder, exact refinement, boundary/tie conventions | proved |
+| Conditional Pareto compatibility, replication invariance | proved, under stated assumptions |
+| Category stability under a sup-norm perturbation | proved, sufficient only (can be vacuous) |
+| Sound interval possible-winner elimination | proved |
+| A decision certified with no candidate retaining any category | proved, with a rational example |
+| Shared-anchor enclosures contained in independent ones | proved, with a rational example |
+| No emitted certificate falsified by an exact oracle or independent replay | measured |
+| Decision focus and dependency preservation raise the certified radius | measured on a locked split |
+| Upper-tail regret differs from exact LexPR at delta = 0.02 | measured, small and metric-dependent |
+| Point-stability gain at delta = 0.02 | **not supported** — the paired interval includes zero |
+| Lower external regret at matched coverage; calibration guarantee | **unestablished** — not tested |
+| Benefit on measured operational data | **unestablished** — no field data |
+| Priority over the closest literature | **unestablished** — full-text verification pending |
+
+The full register is `Manuscrit/submission/discussion.tex` (Table: claim-to-evidence)
+and `enhanced/protocol/claim_registry.csv`. Earlier versions of this README
+carried performance claims — a 500-instance benchmark, an 82% cycle rate, a
+"significant" tail-regret improvement — that the current manuscript does not
+support. They have been removed rather than restated.
+
+## Layout
+
+```
+Manuscrit/          submission sources, figures, data and the built PDF
+  submission/       one .tex per section, plus generated numbers and figures
+  scripts/          the 90-instance study, extensions, figures, validation
+Experimental/       the earlier full pipeline (P1-P6) and the lexpr library
+enhanced/           decision-focused certification: Track A of the plan
+Plan_for_Enhanced_Version.md   the research programme this work is scoped from
+autoreview.md, autoreview_audit.md   self-review and its verifiable audit
+```
+
+## Reproduce
+
+Python 3.10+ with `numpy`, `pandas`, `matplotlib`, `scipy`, `pytest`
+(pinned in `Manuscrit/requirements.txt`), plus TeX Live for the PDF. There is no
+`environment.yml` and no Conda environment is required.
+
+```bash
+pip install -r Manuscrit/requirements.txt
+```
+
+**The manuscript study** (90 instances, extensions, all figures, the PDF and the
+validation report):
+
+```bash
+python Manuscrit/scripts/reproduce_submission.py
+```
+
+**The certification results** (Section 5 of the manuscript):
+
+```bash
+python enhanced/reproduce.py
+cd Manuscrit && latexmk -pdf main.tex
+```
+
+`enhanced/reproduce.py` runs the tests, recomputes the three frozen rational
+examples, runs the locked benchmark, builds the tables and figures, and writes
+`Manuscrit/submission/generated_certrelex.tex`. The manuscript reads every
+certification number from that file, so a missing or stale one fails the LaTeX
+build rather than printing a stale figure. See `enhanced/README.md`.
+
+**The earlier full pipeline**:
+
 ```bash
 python Experimental/scripts/reproduce_all.py
 ```
-This script sequentially executes all six phases of the experimental pipeline:
-1. **P1 (Combinatorial)**: Generates random knapsack and job-shop multicriteria sets.
-2. **P2 (Continuous)**: Samples WFG/DTLZ test functions.
-3. **P3 (Surrogates)**: Fits neural networks on UCI Energy and Concrete datasets and generates candidate points.
-4. **P4 (Sensitivity)**: Tests interval bounds against perturbations.
-5. **P5 (Certification)**: Validates ReLexTail enclosures via interval branch-and-bound against exact brute-force enumerations.
-6. **P6 (Benchmarking)**: Evaluates ReLexTail against exact LexPR, Leximax, SMAA, TOPSIS, MMR, and random weights to construct the final quality-stability frontier.
 
-The fully generated tables and figures (e.g. `quality_stability_frontier.pdf`, `fig_supplier_interval.pdf`, and the CSV tables) are written directly into `Experimental/manuscript/generated/`.
+Outputs land in `Experimental/manuscript/generated/`. Note that parts of the
+legacy test suite still fail against the current API — several tests expect an
+enclosure tuple where the engine now conservatively returns `None` for
+unresolved retention, and one imports a removed symbol. That is recorded rather
+than hidden; it is not a passing repository-wide suite.
 
-## Structure
-- `Experimental/code/lexpr/`: Core library implementing ReLexTail and exact LexPR structures.
-- `Experimental/scripts/`: Top-level reproduction and runner scripts.
-- `Experimental/manuscript/generated/`: Output directory where reproduction scripts save CSV metrics and PDF graphics.
+## Licence
 
-## License & Citation
-If you use this code in your work, please cite the Zenodo archive:
+**No project-wide licence is currently declared.** The earlier README stated MIT,
+but no `LICENSE` file exists in this repository, so that statement was not
+effective. Choosing and adding a licence before public archival release is an
+author-side action and is deliberately not made here. The bundled UCI Energy
+Efficiency file keeps its separate CC BY 4.0 attribution and checksum
+(`Manuscrit/submission/data/external/README.md`).
+
+## Citation
 
 ```bibtex
 @misc{bezoui2026archive,
-  author = {Bezoui, Madani},
-  title = {ReLexTail: Resolution-Aware Lexicographic Preorder},
-  year = {2026},
+  author    = {Bezoui, Madani},
+  title     = {ReLexTail: Resolution-Aware Lexicographic Preorder},
+  year      = {2026},
   publisher = {Zenodo},
-  doi = {10.5281/zenodo.21771786},
-  url = {https://doi.org/10.5281/zenodo.21771786},
-  version = {v2.0.0}
+  doi       = {10.5281/zenodo.21771786},
+  url       = {https://doi.org/10.5281/zenodo.21771786},
+  version   = {v2.0.0},
+  note      = {Earlier archive; the current manuscript supersedes its experiments}
 }
 ```
-
-This project is licensed under the MIT License.

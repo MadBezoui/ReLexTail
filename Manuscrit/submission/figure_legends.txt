@@ -1,0 +1,29 @@
+Figure 1. Overview of the decision procedure and graphical abstract. The declared model determines active-range disappointments. Category comparisons precede exact refinement. Under uncertain bounds, sampling and interval certification answer different questions and require different reports.
+
+Figure 2. Fixed resolution cells and boundary sensitivity, illustrated at $\delta=0.05$. Filled endpoints belong to the lower category and open endpoints to the upper category. Scores 0.049 and 0.051 are close but occupy different cells. This is a constructed explanation of the rule, not an empirical result.
+
+Figure 3. Two distinct uses of an upper tail. Selection aggregates the declared probes of a candidate. Evaluation aggregates range-normalised regret across held-out preference vectors. The latter weights are shared across methods and are never used to select a candidate.
+
+Figure 4. New interval illustration for six candidates and three criteria, with ReLexTail resolution 0.02. Each curve uses the same criterion matrix and range-relative uncertainty box. The horizontal axis reports processed boxes, which may be fewer than the budget after early termination. The narrowest box resolves immediately; larger boxes can retain substantial unresolved volume despite increased effort.
+
+Figure 5. Theoretical solver-stage counts under the declared no-reuse continuous-polyhedral formulation. ReLexTail uses $6m+8$ LP calls and four integer category stages; exact LexPR uses $6m+5$ LP calls. These are formulation counts, not measured runtimes or evidence that MILP cost is constant.
+
+Figure 6. Dependency preservation tightens the comparison that decides. Each point is one instance at the root box $\mathcal B(0.02)$; the dashed line is equality. Left: widest disappointment enclosure. Right: enclosure width of the profile coordinate at which the nominal winner and its closest rival first differ. Points below the diagonal are instances where keeping the shared anchors inside one quotient narrows the enclosure.
+
+Figure 7. Certified lower bound on the decision radius at a matched budget of 300 processed boxes, on the two locked splits. A0 is the all-candidate retention condition, A1 adds decision focus, A2 adds shared-anchor enclosures, A3 adds decision-relevant branching. Boxes show quartiles with the median; points are individual instances. A value of zero means ``not certified within this budget'', not a radius of zero.
+
+Figure 8. Anytime behaviour and the two-sided radius bracket. Panel A: mean certified volume of the focal box against the processed-box budget, for the all-candidate retention condition and for the enhanced engine; certified volume is nondecreasing in the budget because certified leaves are never revisited. Panel B: for each instance with a verified switch witness and a strictly positive certified radius, the interval between the certified lower bound and the smallest level at which the exact rational oracle names a different unique winner. A bar's height is what remains unresolved between proof and counterexample, not an error bar.
+
+Figure 9. Matched quality--stability results at $p=0.05$ on all 90 synthetic instances. Lower values are preferred on both axes in panel A; labels on the ReLexTail curve give resolution widths. Panel B separates changes to the point from changes to the category-optimal set. Connecting lines identify tested resolutions and do not imply monotone behaviour between them.
+
+Figure 10. Family-specific paired differences between ReLexTail at $\delta=0.02$ and LexPR, at $p=0.05$. Each family contains 30 candidate sets spanning three criterion counts. Points are mean differences; bars are 95\% percentile-bootstrap intervals from 4,000 paired instance resamples. Negative values favour ReLexTail. The intervals are descriptive and not adjusted for multiple comparisons.
+
+Figure 11. Nominal recommendation disagreement between ReLexTail at $\delta=0.02$ and exact LexPR, by synthetic geometry. Each denominator is 30 candidate sets. This concerns unperturbed recommendations and is distinct from the point-change rates under perturbed bounds.
+
+Figure 12. Additional checks using the frozen synthetic directions and a public simulation dataset. Panel A shifts fixed-cell origins at three resolutions. Panel B changes the category prefix or removes singleton probes. Panel C identifies the first full-profile difference from the nearest nominal rival. Panel D is a single UCI building-simulation instance and must not be read as population evidence; its nonmonotone jump illustrates why widths require sensitivity analysis.
+
+Figure 13. Labelled probe disappointments for the recommended supplier S7 and its nearest rival S6. Values are recomputed from the saved criterion matrix with nine canonical probes. Bars explain the individual concerns; optimality follows from comparing complete profiles across all ten candidates.
+
+Figure 14. Supplier tail spectrum and category comparison at $\delta=0.02$. S7 and S6 tie in maximum category, but S7 has a lower upper-25\% tail category, highlighted in panel B. Later coordinates need not favour S7 once that first strict difference settles the comparison.
+
+Figure 15. Supplier sampling sensitivity for ReLexTail at $\delta=0.02$, using 300 independent uniform bound draws at each level and nominal-range perturbations. Panel A reports point changes. Panel B reports distinct observed winners, an inner sampling approximation rather than a certified outer bound. The $p=0.5$ endpoint is sampled only and is excluded from closed-box certification.

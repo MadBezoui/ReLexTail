@@ -1,0 +1,54 @@
+\section{Discussion and conclusions}
+\label{sec:discussion}
+ReLexTail offers a specific form of noncompensatory decision aiding: a deterioration to a worse maximum category cannot be offset by improvements elsewhere, while differences inside that category may be deferred in favour of broader-tail concerns. This is a preference commitment. An analyst should elicit whether that commitment is appropriate before selecting the probe family or widths. The method is most useful when named concerns, finite resolution and a reproducible explanation are important parts of the decision process.
+
+Resolution is not a statistical confidence level or a solver tolerance. It sets category widths on the active-range disappointment scale. A width of 0.02 means two percentage points of a probe's available range, not two percentage points of a physical criterion. Equal widths across risk coordinates are convenient for comparison but need not fit every application. A practical report should record the elicitation exercise, state the chosen widths, compare nearby widths and explain whether category membership or the final point is the intended recommendation. The four-origin analysis shows that the focal point-change rate remains within a narrow two-percentage-point band, but other widths and the UCI example remain visibly boundary-dependent. Grid sensitivity is therefore a required diagnostic, not a proof of robustness.
+
+The finite-set properties are conditional on the declared representation. Positional anonymity does not make the rule preference-free, since repeated probes change their influence. Pareto compatibility requires retained separating probes. Active anchors introduce dependence on the candidate set. Category stability concerns perturbations that avoid every relevant boundary and does not imply stability of exact refinements. The method's auditability comes from exposing these conditions and replaying its comparisons, not from eliminating modelling choices.
+
+The computational study shows modest tail-regret gains over exact LexPR at some widths and deterioration in point stability at a coarser width. The enlarged paired analysis does not establish a point-stability gain at $\delta=0.02$, because its interval includes zero. Tail25-D also captures much of the external tail-regret difference, so the categories should be justified by resolution semantics and set-valued reporting rather than by that metric alone. These findings argue for reporting the full trade-off rather than selecting a favourable metric. The three synthetic geometries and uniform linear test preferences restrict external validity. The public building data are themselves simulated and reduce to four nondominated objective profiles under our chosen objectives; they provide reproducibility and a boundary stress test, not stakeholder or field validation. Operational applications, additional utility families and prospective elicitation studies would be needed to establish practical benefit.
+
+Interval analysis addresses a different uncertainty question. Its sound outer set can remain large even when random draws repeatedly select one point. This is an informative distinction between absence of observed switches and proof that switching is impossible. Section~\ref{sec:certrelex} narrows that gap along the two axes where the earlier engine was conservative for reasons unrelated to the decision. Requiring all candidates to retain all categories is sufficient but not necessary, and Proposition~\ref{prop:vacuous} exhibits an instance where it certifies nothing while the recommendation is certain over the whole box; widening the shared normalisation anchors independently is sound but loose, and Proposition~\ref{prop:slack} exhibits an instance where that slack alone decides whether the box is certified. Neither change touches the declared rule, and neither is a new result in interval analysis: what is new is the identification of which shared quantities occur in this rule and the measured consequence for certification. The continuous-polyhedral formulation establishes a computational characterisation, while independent numerical validation of a full solver implementation remains future work.
+
+The scope of the certification evidence should not be overstated. It concerns generated instances on a declared shortlist size, with a resolution and a focal level fixed in advance; a certified radius reported as zero means only that the budget did not suffice. Nothing in it bears on decision quality. Whether the recommendation carries lower external regret than a competing method at matched coverage, and whether a calibrated emission policy can meet a prespecified risk target, are separate statistical claims that require a separate experimental track with independent decision episodes; that track was not run here, and no part of the certification result substitutes for it. The upper-tail regret comparison reported in Section~\ref{sec:experiments} remains a small, metric-dependent effect on one synthetic population. Table~\ref{tab:claims} states, for each claim the paper makes, what kind of evidence supports it.
+
+\begin{table}[tbp]\centering\small
+\caption{Claim-to-evidence register. ``Proved'' means a proof appears in this paper; ``measured'' means the number is produced by the released scripts from released data; ``unestablished'' means the paper does not claim it.}
+\label{tab:claims}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{.44\linewidth}>{\raggedright\arraybackslash}p{.15\linewidth}>{\raggedright\arraybackslash}p{.33\linewidth}@{}}\toprule
+Claim & Status & Evidence\\\midrule
+ReLexTail is a complete transitive preorder with exact refinement & proved & Section~\ref{sec:theory}\\
+Conditional Pareto compatibility and replication invariance & proved, conditional & Section~\ref{sec:theory}, stated assumptions\\
+Category stability under a sup-norm perturbation & proved, sufficient only & Theorem~\ref{thm:categorystability}\\
+Interval elimination is sound & proved & Proposition~\ref{prop:certsound}\\
+A decision can be certified with no category retained & proved & Proposition~\ref{prop:decisionfocus}\\
+The all-candidate condition can certify nothing while the decision is certain & proved by exhibition & Proposition~\ref{prop:vacuous}, rational example\\
+Shared-anchor enclosures are contained in independent ones & proved & Proposition~\ref{prop:sharedanchor}\\
+That containment can decide certification & proved by exhibition & Proposition~\ref{prop:slack}, rational example\\
+No emitted certificate was falsified & measured & Section~\ref{sec:certrelex-experiments}, exact oracle and independent replay\\
+Decision focus and dependency preservation raise the certified radius & measured, locked split & Section~\ref{sec:certrelex-experiments}, paired contrasts P1 and P2\\
+Upper-tail regret differs from exact LexPR at $\delta=0.02$ & measured, small & Section~\ref{sec:experiments}, paired interval\\
+Point-stability gain at $\delta=0.02$ & not supported & paired interval includes zero\\
+Sequential polyhedral characterisation & proved & Section~\ref{sec:compute}\\
+End-to-end continuous solver & unestablished & no validated implementation\\
+Lower external regret at matched coverage & unestablished & track not run\\
+Calibrated risk or coverage guarantee & unestablished & track not run\\
+Benefit on measured operational data & unestablished & no field data with repeated observations\\
+Priority over the closest literature & unestablished & full-text verification pending\\\bottomrule
+\end{tabular}
+\end{table}
+
+The paper establishes a complete and transitive resolution-aware preorder, conditional Pareto compatibility, replication invariance, a local category-stability guarantee, and a decision-focused dependency-preserving certificate with a two-sided radius bracket and an independent replay path. Its numerical evidence identifies a qualified, metric-dependent quality trade-off on the stated synthetic population rather than a general stability advantage, together with a clearer certification result on a separate locked benchmark. The supplier illustration makes the decisive upper-tail comparison explicit. Together these results support ReLexTail as a transparent modelling option when the resolution of declared concerns matters, with sensitivity, unresolved uncertainty and the untested claims reported alongside the recommendation.
+
+\section*{Declarations}
+\noindent\textbf{Author contributions (CRediT).} Madani Bezoui: conceptualization, methodology, software, formal analysis, investigation, visualization, writing--original draft, and writing--review and editing.
+
+\noindent\textbf{Funding and acknowledgments.} This research received no external funding. No additional acknowledgments are declared.
+
+\noindent\textbf{Competing interests.} The author declares no competing interests.
+
+\noindent\textbf{Ethics.} No human participants, animals or personal data were involved. The supplier data are constructed.
+
+\noindent\textbf{Data and code availability.} The submission source package includes the scripts, generated candidate matrices, perturbation directions, protocol, per-instance results, statistical summaries, figure sources and the UCI Energy Efficiency file under CC BY 4.0 with its SHA-256 checksum. The UCI dataset is independently available at \url{https://doi.org/10.24432/C51307}. The earlier public project archive is available at \url{https://doi.org/10.5281/zenodo.21771786}, and the project repository is \url{https://github.com/MadBezoui/ReLexTail}. The revised experiment and figures are identified by the accompanying submission package and must not be attributed to an unchanged earlier release. Publishing a new immutable DOI for this exact revision remains an author-side release action. The complete local reproduction command is documented in the package README.
+
+\noindent\textbf{Use of artificial intelligence.} An AI assistant assisted with manuscript revision, code preparation, numerical consistency checks and figure preparation. Reported numerical results were computed by the supplied deterministic and seeded scripts. The author is responsible for checking and approving the scientific content and all submission declarations.

@@ -1,0 +1,481 @@
+{
+  "source": "UCI Energy Efficiency, DOI 10.24432/C51307",
+  "license": "CC BY 4.0",
+  "sha256": "db44dbe453acd464b5cf65be2fb01a28aa9c5b2630300e65fbe28cde35f5d96f",
+  "raw_rows": 768,
+  "unique_objective_profiles": 756,
+  "nondominated_profiles": 4,
+  "objectives_all_minimise": [
+    "surface area X2",
+    "heating load Y1",
+    "cooling load Y2"
+  ],
+  "front": [
+    {
+      "source_row": 0,
+      "X2": 514.5,
+      "Y1": 15.55,
+      "Y2": 21.33
+    },
+    {
+      "source_row": 14,
+      "X2": 612.5,
+      "Y1": 16.95,
+      "Y2": 21.16
+    },
+    {
+      "source_row": 24,
+      "X2": 686.0,
+      "Y1": 6.07,
+      "Y2": 10.9
+    },
+    {
+      "source_row": 26,
+      "X2": 686.0,
+      "Y1": 6.01,
+      "Y2": 10.94
+    }
+  ],
+  "results": [
+    {
+      "p": 0.01,
+      "method": "LexPR",
+      "nominal_source_row": 26,
+      "nominal_category_size": 1,
+      "flip": 0.362,
+      "mean_regret": 0.3009416591037335,
+      "tail_regret": 0.7960860821148033,
+      "category_change": null
+    },
+    {
+      "p": 0.01,
+      "method": "Mean-D",
+      "nominal_source_row": 26,
+      "nominal_category_size": 1,
+      "flip": 0.0,
+      "mean_regret": 0.185903689398792,
+      "tail_regret": 0.7345036534190001,
+      "category_change": null
+    },
+    {
+      "p": 0.01,
+      "method": "Weighted-sum",
+      "nominal_source_row": 26,
+      "nominal_category_size": 1,
+      "flip": 0.0,
+      "mean_regret": 0.185903689398792,
+      "tail_regret": 0.7345036534190001,
+      "category_change": null
+    },
+    {
+      "p": 0.01,
+      "method": "ReLexTail 0.001",
+      "nominal_source_row": 26,
+      "nominal_category_size": 1,
+      "flip": 0.362,
+      "mean_regret": 0.3009416591037335,
+      "tail_regret": 0.7960860821148033,
+      "category_change": 0.46
+    },
+    {
+      "p": 0.01,
+      "method": "ReLexTail 0.005",
+      "nominal_source_row": 26,
+      "nominal_category_size": 2,
+      "flip": 0.36,
+      "mean_regret": 0.3003060902103361,
+      "tail_regret": 0.7957458477021193,
+      "category_change": 0.412
+    },
+    {
+      "p": 0.01,
+      "method": "ReLexTail 0.01",
+      "nominal_source_row": 26,
+      "nominal_category_size": 2,
+      "flip": 0.352,
+      "mean_regret": 0.2977638146367462,
+      "tail_regret": 0.7943849100513833,
+      "category_change": 0.38
+    },
+    {
+      "p": 0.01,
+      "method": "ReLexTail 0.02",
+      "nominal_source_row": 26,
+      "nominal_category_size": 2,
+      "flip": 0.346,
+      "mean_regret": 0.29585710795655384,
+      "tail_regret": 0.7933642068133314,
+      "category_change": 0.36
+    },
+    {
+      "p": 0.01,
+      "method": "ReLexTail 0.03",
+      "nominal_source_row": 26,
+      "nominal_category_size": 2,
+      "flip": 0.35,
+      "mean_regret": 0.2971282457433488,
+      "tail_regret": 0.7940446756386993,
+      "category_change": 0.354
+    },
+    {
+      "p": 0.01,
+      "method": "ReLexTail 0.05",
+      "nominal_source_row": 26,
+      "nominal_category_size": 2,
+      "flip": 0.0,
+      "mean_regret": 0.185903689398792,
+      "tail_regret": 0.7345036534190001,
+      "category_change": 0.01
+    },
+    {
+      "p": 0.01,
+      "method": "ReLexTail 0.075",
+      "nominal_source_row": 26,
+      "nominal_category_size": 2,
+      "flip": 0.348,
+      "mean_regret": 0.2964926768499513,
+      "tail_regret": 0.7937044412260155,
+      "category_change": 0.354
+    },
+    {
+      "p": 0.01,
+      "method": "ReLexTail 0.1",
+      "nominal_source_row": 26,
+      "nominal_category_size": 2,
+      "flip": 0.192,
+      "mean_regret": 0.24691830316494884,
+      "tail_regret": 0.7671661570366637,
+      "category_change": 0.198
+    },
+    {
+      "p": 0.05,
+      "method": "LexPR",
+      "nominal_source_row": 26,
+      "nominal_category_size": 1,
+      "flip": 0.326,
+      "mean_regret": 0.2895014190225792,
+      "tail_regret": 0.7899618626864915,
+      "category_change": null
+    },
+    {
+      "p": 0.05,
+      "method": "Mean-D",
+      "nominal_source_row": 26,
+      "nominal_category_size": 1,
+      "flip": 0.0,
+      "mean_regret": 0.185903689398792,
+      "tail_regret": 0.7345036534190001,
+      "category_change": null
+    },
+    {
+      "p": 0.05,
+      "method": "Weighted-sum",
+      "nominal_source_row": 26,
+      "nominal_category_size": 1,
+      "flip": 0.0,
+      "mean_regret": 0.185903689398792,
+      "tail_regret": 0.7345036534190001,
+      "category_change": null
+    },
+    {
+      "p": 0.05,
+      "method": "ReLexTail 0.001",
+      "nominal_source_row": 26,
+      "nominal_category_size": 1,
+      "flip": 0.326,
+      "mean_regret": 0.2895014190225792,
+      "tail_regret": 0.7899618626864915,
+      "category_change": 0.396
+    },
+    {
+      "p": 0.05,
+      "method": "ReLexTail 0.005",
+      "nominal_source_row": 26,
+      "nominal_category_size": 2,
+      "flip": 0.322,
+      "mean_regret": 0.2882302812357842,
+      "tail_regret": 0.7892813938611234,
+      "category_change": 0.356
+    },
+    {
+      "p": 0.05,
+      "method": "ReLexTail 0.01",
+      "nominal_source_row": 26,
+      "nominal_category_size": 2,
+      "flip": 0.32,
+      "mean_regret": 0.28759471234238676,
+      "tail_regret": 0.7889411594484396,
+      "category_change": 0.34
+    },
+    {
+      "p": 0.05,
+      "method": "ReLexTail 0.02",
+      "nominal_source_row": 26,
+      "nominal_category_size": 2,
+      "flip": 0.32,
+      "mean_regret": 0.28759471234238676,
+      "tail_regret": 0.7889411594484396,
+      "category_change": 0.33
+    },
+    {
+      "p": 0.05,
+      "method": "ReLexTail 0.03",
+      "nominal_source_row": 26,
+      "nominal_category_size": 2,
+      "flip": 0.312,
+      "mean_regret": 0.2850524367687968,
+      "tail_regret": 0.7875802217977034,
+      "category_change": 0.32
+    },
+    {
+      "p": 0.05,
+      "method": "ReLexTail 0.05",
+      "nominal_source_row": 26,
+      "nominal_category_size": 2,
+      "flip": 0.0,
+      "mean_regret": 0.185903689398792,
+      "tail_regret": 0.7345036534190001,
+      "category_change": 0.006
+    },
+    {
+      "p": 0.05,
+      "method": "ReLexTail 0.075",
+      "nominal_source_row": 26,
+      "nominal_category_size": 2,
+      "flip": 0.32,
+      "mean_regret": 0.28759471234238676,
+      "tail_regret": 0.7889411594484396,
+      "category_change": 0.322
+    },
+    {
+      "p": 0.05,
+      "method": "ReLexTail 0.1",
+      "nominal_source_row": 26,
+      "nominal_category_size": 2,
+      "flip": 0.17,
+      "mean_regret": 0.2399270453375767,
+      "tail_regret": 0.7634235784971398,
+      "category_change": 0.172
+    },
+    {
+      "p": 0.1,
+      "method": "LexPR",
+      "nominal_source_row": 26,
+      "nominal_category_size": 1,
+      "flip": 0.322,
+      "mean_regret": 0.2882302812357842,
+      "tail_regret": 0.7892813938611234,
+      "category_change": null
+    },
+    {
+      "p": 0.1,
+      "method": "Mean-D",
+      "nominal_source_row": 26,
+      "nominal_category_size": 1,
+      "flip": 0.0,
+      "mean_regret": 0.185903689398792,
+      "tail_regret": 0.7345036534190001,
+      "category_change": null
+    },
+    {
+      "p": 0.1,
+      "method": "Weighted-sum",
+      "nominal_source_row": 26,
+      "nominal_category_size": 1,
+      "flip": 0.0,
+      "mean_regret": 0.185903689398792,
+      "tail_regret": 0.7345036534190001,
+      "category_change": null
+    },
+    {
+      "p": 0.1,
+      "method": "ReLexTail 0.001",
+      "nominal_source_row": 26,
+      "nominal_category_size": 1,
+      "flip": 0.322,
+      "mean_regret": 0.2882302812357842,
+      "tail_regret": 0.7892813938611234,
+      "category_change": 0.368
+    },
+    {
+      "p": 0.1,
+      "method": "ReLexTail 0.005",
+      "nominal_source_row": 26,
+      "nominal_category_size": 2,
+      "flip": 0.322,
+      "mean_regret": 0.2882302812357842,
+      "tail_regret": 0.7892813938611234,
+      "category_change": 0.36
+    },
+    {
+      "p": 0.1,
+      "method": "ReLexTail 0.01",
+      "nominal_source_row": 26,
+      "nominal_category_size": 2,
+      "flip": 0.32,
+      "mean_regret": 0.28759471234238676,
+      "tail_regret": 0.7889411594484395,
+      "category_change": 0.34
+    },
+    {
+      "p": 0.1,
+      "method": "ReLexTail 0.02",
+      "nominal_source_row": 26,
+      "nominal_category_size": 2,
+      "flip": 0.318,
+      "mean_regret": 0.28695914344898926,
+      "tail_regret": 0.7886009250357554,
+      "category_change": 0.332
+    },
+    {
+      "p": 0.1,
+      "method": "ReLexTail 0.03",
+      "nominal_source_row": 26,
+      "nominal_category_size": 2,
+      "flip": 0.316,
+      "mean_regret": 0.28632357455559176,
+      "tail_regret": 0.7882606906230715,
+      "category_change": 0.328
+    },
+    {
+      "p": 0.1,
+      "method": "ReLexTail 0.05",
+      "nominal_source_row": 26,
+      "nominal_category_size": 2,
+      "flip": 0.0,
+      "mean_regret": 0.185903689398792,
+      "tail_regret": 0.7345036534190001,
+      "category_change": 0.004
+    },
+    {
+      "p": 0.1,
+      "method": "ReLexTail 0.075",
+      "nominal_source_row": 26,
+      "nominal_category_size": 2,
+      "flip": 0.32,
+      "mean_regret": 0.28759471234238676,
+      "tail_regret": 0.7889411594484395,
+      "category_change": 0.322
+    },
+    {
+      "p": 0.1,
+      "method": "ReLexTail 0.1",
+      "nominal_source_row": 26,
+      "nominal_category_size": 2,
+      "flip": 0.18,
+      "mean_regret": 0.24310488980456404,
+      "tail_regret": 0.7651247505605597,
+      "category_change": 0.184
+    },
+    {
+      "p": 0.2,
+      "method": "LexPR",
+      "nominal_source_row": 26,
+      "nominal_category_size": 1,
+      "flip": 0.368,
+      "mean_regret": 0.30284836578392593,
+      "tail_regret": 0.7971067853528554,
+      "category_change": null
+    },
+    {
+      "p": 0.2,
+      "method": "Mean-D",
+      "nominal_source_row": 26,
+      "nominal_category_size": 1,
+      "flip": 0.008,
+      "mean_regret": 0.1884459649723819,
+      "tail_regret": 0.7358645910697362,
+      "category_change": null
+    },
+    {
+      "p": 0.2,
+      "method": "Weighted-sum",
+      "nominal_source_row": 26,
+      "nominal_category_size": 1,
+      "flip": 0.074,
+      "mean_regret": 0.18660087712093734,
+      "tail_regret": 0.7348950963542877,
+      "category_change": null
+    },
+    {
+      "p": 0.2,
+      "method": "ReLexTail 0.001",
+      "nominal_source_row": 26,
+      "nominal_category_size": 1,
+      "flip": 0.366,
+      "mean_regret": 0.30221279689052855,
+      "tail_regret": 0.7967665509401713,
+      "category_change": 0.396
+    },
+    {
+      "p": 0.2,
+      "method": "ReLexTail 0.005",
+      "nominal_source_row": 26,
+      "nominal_category_size": 2,
+      "flip": 0.366,
+      "mean_regret": 0.30221279689052855,
+      "tail_regret": 0.7967665509401713,
+      "category_change": 0.394
+    },
+    {
+      "p": 0.2,
+      "method": "ReLexTail 0.01",
+      "nominal_source_row": 26,
+      "nominal_category_size": 2,
+      "flip": 0.366,
+      "mean_regret": 0.30221279689052855,
+      "tail_regret": 0.7967665509401713,
+      "category_change": 0.386
+    },
+    {
+      "p": 0.2,
+      "method": "ReLexTail 0.02",
+      "nominal_source_row": 26,
+      "nominal_category_size": 2,
+      "flip": 0.366,
+      "mean_regret": 0.30221279689052855,
+      "tail_regret": 0.7967665509401713,
+      "category_change": 0.378
+    },
+    {
+      "p": 0.2,
+      "method": "ReLexTail 0.03",
+      "nominal_source_row": 26,
+      "nominal_category_size": 2,
+      "flip": 0.362,
+      "mean_regret": 0.30094165910373355,
+      "tail_regret": 0.7960860821148034,
+      "category_change": 0.372
+    },
+    {
+      "p": 0.2,
+      "method": "ReLexTail 0.05",
+      "nominal_source_row": 26,
+      "nominal_category_size": 2,
+      "flip": 0.06,
+      "mean_regret": 0.204970756200716,
+      "tail_regret": 0.7447106857995199,
+      "category_change": 0.064
+    },
+    {
+      "p": 0.2,
+      "method": "ReLexTail 0.075",
+      "nominal_source_row": 26,
+      "nominal_category_size": 2,
+      "flip": 0.366,
+      "mean_regret": 0.30221279689052855,
+      "tail_regret": 0.7967665509401713,
+      "category_change": 0.37
+    },
+    {
+      "p": 0.2,
+      "method": "ReLexTail 0.1",
+      "nominal_source_row": 26,
+      "nominal_category_size": 2,
+      "flip": 0.24,
+      "mean_regret": 0.26217195660648807,
+      "tail_regret": 0.7753317829410796,
+      "category_change": 0.242
+    }
+  ]
+}

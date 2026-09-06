@@ -1,0 +1,14 @@
+{
+  "certrelex_version": "0.1.0",
+  "python": "3.11.7 (main, Dec 15 2023, 12:09:56) [Clang 14.0.6 ]",
+  "platform": "macOS-15.5-arm64-arm-64bit",
+  "machine": "arm64",
+  "numpy": "1.26.4",
+  "resolution": "0.02",
+  "focal_level": 0.02,
+  "shortlist": 10,
+  "box_budget": 300,
+  "time_limit": 20.0,
+  "n_instances": 192,
+  "wall_seconds": 1341.573184967041
+}

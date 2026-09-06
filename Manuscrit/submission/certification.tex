@@ -1,0 +1,313 @@
+\section{Decision-focused certification}
+\label{sec:certrelex}
+
+Section~\ref{sec:compute} certifies with a condition that asks more than the
+decision needs. Theorem~\ref{thm:categorystability} requires \emph{every}
+candidate to keep \emph{every} risk coordinate inside its cell, and
+Proposition~\ref{prop:certsound} is applied through enclosures in which the
+shared normalisation anchors are widened independently for each candidate. This
+section replaces both with conditions matched to the question actually asked --
+does the recommendation survive? -- proves that neither replacement weakens
+soundness, and measures what the change buys. The declared rule is untouched:
+on fixed inputs the engine of this section and the engine of
+Section~\ref{sec:compute} select the same alternative. What differs is what can
+be proved about that alternative and at what cost.
+
+\subsection{The decision region and its radius}
+Fix $A$, a retained multiset $\Q$, a resolution vector $\delta$ and the grid
+convention of Section~\ref{sec:relextail}. For a nominal winner $x_0$ that is
+unique, the \emph{decision region} is
+\begin{equation}
+\mathcal R_{x_0}=\bigl\{b:\Psi(x_0;b)<_{\mathrm{lex}}\Psi(y;b)\ \text{for every }y\neq x_0\bigr\},
+\label{eq:decisionregion}
+\end{equation}
+and for the nested boxes $\mathcal B(p)$ of Equation~\eqref{eq:box} the
+\emph{decision radius} is
+$\rho^\star(x_0)=\sup\{p:\mathcal B(p)\subseteq\mathcal R_{x_0}\}$.
+The computational object is a certified inner region for
+$\mathcal R_{x_0}$, reported together with the leaves that were not resolved.
+Three conventions matter and are not negotiable in what follows. A qualifying
+set that turns out to be empty is reported as ``no unique-winner certificate'',
+never converted into positive stability. A tied nominal optimum requires a
+separately defined set-preservation contract and is recorded and skipped rather
+than resolved by tie-breaking. And the procedure is one-sided: failure to
+certify at level $p$ means only that the budget did not suffice, so an upper
+bound on $\rho^\star$ can come only from a verified counterexample, never from
+a failed search.
+
+\subsection{Certifying the decision, not every coordinate}
+\begin{proposition}[Decision-focused soundness]
+\label{prop:decisionfocus}
+Let $\beta$ be a box on which the retained multiset is fixed, and let
+$D^L(\cdot;\beta)\le D(\cdot;b)\le D^U(\cdot;\beta)$ coordinatewise for every
+$b\in\beta$. If
+\[
+\Psi\bigl(D^U(x_0;\beta)\bigr)<_{\mathrm{lex}}\Psi\bigl(D^L(y;\beta)\bigr)
+\qquad\text{for every }y\neq x_0,
+\]
+then $\beta\subseteq\mathcal R_{x_0}$. No candidate is required to retain any
+category, and no coordinate of $\Psi$ beyond the first differing one is
+examined.
+\end{proposition}
+\begin{proof}
+Every coordinate of $\Psi$ is a nondecreasing functional of $D$
+coordinatewise: order statistics, the maximum, the upper-tail means of
+Equation~\eqref{eq:tail} and the category map $B_\delta$ of
+Equation~\eqref{eq:category} all are. Hence for $b\in\beta$,
+$\Psi(D(x_0;b))\le\Psi(D^U(x_0;\beta))$ and
+$\Psi(D^L(y;\beta))\le\Psi(D(y;b))$ componentwise, and componentwise
+inequality implies $\le_{\mathrm{lex}}$. The lexicographic order is total and
+transitive, so
+$\Psi(x_0;b)\le_{\mathrm{lex}}\Psi(D^U(x_0;\beta))<_{\mathrm{lex}}
+\Psi(D^L(y;\beta))\le_{\mathrm{lex}}\Psi(y;b)$ for every $y\ne x_0$ and every
+$b\in\beta$.
+\end{proof}
+
+The chain uses no retention of categories anywhere. Category retention is
+therefore sufficient but not necessary, and the gap is not a technicality.
+
+\begin{proposition}[The global condition can be vacuous while the decision is certain]
+\label{prop:vacuous}
+There exist a candidate set with rational entries, a resolution vector and a
+level $p>0$ such that every candidate changes at least one categorical
+coordinate between the lower and the upper enclosure over
+$\mathcal B(p)$ -- so $\mu_{\mathrm{cell}}$ of
+Theorem~\ref{thm:categorystability} certifies nothing -- while the test of
+Proposition~\ref{prop:decisionfocus} certifies the unique winner against every
+rival on the whole of $\mathcal B(p)$ without any subdivision.
+\end{proposition}
+\begin{proof}
+By exhibition. Example~E-A of the reproducibility archive is a
+$5\times4$ matrix whose entries are integer multiples of $1/64$, hence exact in
+binary double precision. At $p=0.01$ all \crxExampleALeaving{} candidates leave
+at least one cell, so the all-candidate condition refuses the root box; the
+pairwise test of Proposition~\ref{prop:decisionfocus} succeeds against all four
+rivals at that same root box. Both facts are recomputed by
+\texttt{certrelex.examples.check\_boundary}.
+\end{proof}
+
+The mechanism is the one anticipated in Section~\ref{sec:theory}: a coordinate
+may be free to move because it belongs to an alternative that is not in
+contention, because it sits on a boundary that is structurally invariant, or
+because it occurs after a comparison that is already decided. None of those
+motions can change the recommendation, and a condition that forbids them
+measures the wrong thing.
+
+\subsection{Preserving the shared normalisation anchors}
+Write $v_x(b)=q(r(x;b))$ for a retained aggregate probe. All candidates share
+the same two anchors $q^\star(b)$ and $q^w(b)$ at a given $b$, and
+Equation~\eqref{eq:disap} reads $D_q(x;b)=g\bigl(v_x(b),q^\star(b),q^w(b)\bigr)$
+with
+\begin{equation}
+g(v,a,c)=\frac{v-a}{c-a}.
+\label{eq:sharedquotient}
+\end{equation}
+Widening $v-a$ and $c-a$ into two independent intervals and dividing them lets
+the numerator take an extreme value against a denominator that the same $a$
+could not have produced. Keeping $a$ inside a single expression removes that.
+
+\begin{proposition}[Shared-anchor enclosure]
+\label{prop:sharedanchor}
+Let $v\in[v^L,v^U]$, $a\in[a^L,a^U]$, $c\in[c^L,c^U]$ with $c^L>a^U$. Then
+$g$ is strictly increasing in $v$ and, for each fixed $v$, monotone in $a$ and
+in $c$ separately, with
+\[
+\frac{\partial g}{\partial c}=-\frac{v-a}{(c-a)^2},\qquad
+\frac{\partial g}{\partial a}=\frac{v-c}{(c-a)^2},
+\]
+each of constant sign in the variable being varied. Consequently the range of
+$g$ over the product box is attained at the four corners of
+$[a^L,a^U]\times[c^L,c^U]$, evaluated at $v=v^L$ for the minimum and $v=v^U$
+for the maximum. The resulting interval is contained in the independent
+quotient $[v^L-a^U,\ v^U-a^L]/[c^L-a^U,\ c^U-a^L]$, and the containment is
+strict whenever $a^L<a^U$ and $v^L\ge a^U$.
+\end{proposition}
+\begin{proof}
+The two derivatives are as displayed. For fixed $v$ the sign of
+$\partial g/\partial c$ is that of $-(v-a)$, which does not depend on $c$; the
+sign of $\partial g/\partial a$ is that of $v-c$, which does not depend on $a$.
+A function that is monotone in each variable separately on a rectangle attains
+its extrema at the rectangle's corners: minimise first over $c$ at an endpoint,
+then over $a$ at an endpoint. Monotonicity in $v$ places the minimum at $v^L$
+and the maximum at $v^U$. For containment, note that each corner value is one
+of the four quotients $(v-a)/(c-a)$ with $a\in\{a^L,a^U\}$ and
+$c\in\{c^L,c^U\}$, and every such quotient lies in the independent interval
+because $v-a$ lies in $[v^L-a^U,v^U-a^L]$ and $c-a$ in $[c^L-a^U,c^U-a^L]$. If
+$v^L\ge a^U$ the corner minimum is $(v^L-a^U)/(c^U-a^U)$, whereas the
+independent lower endpoint is $(v^L-a^U)/(c^U-a^L)$; the denominators differ by
+$a^U-a^L>0$ with a nonnegative numerator, so the inequality is strict, and
+symmetrically at the upper end.
+\end{proof}
+
+Two further identities are used and are not claimed as new. Singleton
+disappointments are bound-invariant by Equation~\eqref{eq:singleton}, so
+$m$ of the at most $m+2$ canonical coordinates carry no width however large the
+box is; the verifier of Section~\ref{sec:certrelex-replay} rechecks that
+invariance at the box corners rather than assuming it. And branching is
+directed at the criteria whose normalised enclosure is widest among the
+candidates still involved in an unresolved comparison, because those are the
+only bound coordinates that can still move the decision; this changes where
+effort goes and not what is provable.
+
+\begin{proposition}[Cancellation-induced slack is not asymptotic]
+\label{prop:slack}
+There exist a rational candidate set and a level $p>0$ at which the enclosure
+of Proposition~\ref{prop:sharedanchor} certifies the unique winner on the whole
+of $\mathcal B(p)$ in a single box, while the independent quotient -- identical
+in every other respect -- leaves part of the box uncertified after a budget
+three orders of magnitude larger.
+\end{proposition}
+\begin{proof}
+By exhibition. Example~E-B is a $4\times3$ matrix over the denominator $64$.
+At $p=0.05$ the joint enclosure resolves the root box in
+\crxExampleBJointBoxes{} box; the independent enclosure has certified only
+\crxExampleBIndepVolume\% of the volume after \crxExampleBIndepBoxes{}
+processed boxes. The two runs differ only in
+Equation~\eqref{eq:sharedquotient}. Recomputed by
+\texttt{certrelex.examples.check\_slack}.
+\end{proof}
+
+\subsection{Anytime brackets, refusal and independent replay}
+\label{sec:certrelex-replay}
+Certified leaves are never revisited and unresolved leaves always retain their
+volume, so an interrupted run returns a valid certified region together with a
+valid bound on the uncertified volume, and continuing can only move volume from
+the second into the first. A box is \emph{refused} outright when a normalising
+denominator or a probe active range is not certifiably positive on it; refusal
+leaves the box unresolved and never becomes positive stability.
+
+Because the search is one-sided, an upper bound on $\rho^\star$ must come from
+elsewhere. We obtain it from an exact rational oracle that evaluates the
+declared rule at a single bound vector with no floating-point step: a $b$ at
+which the oracle names a different unique winner is a verified counterexample
+and bounds $\rho^\star$ from above. Example~E-C is a $4\times3$ rational
+instance whose nominal winner is candidate~\crxExampleCNominal{}; inside
+$\mathcal B(\crxExampleCUpper)$ there is a bound vector at which the oracle
+names candidate~\crxExampleCWitness{} uniquely, while the engine certifies
+$\rho^\star\ge\crxExampleCLower$. The pair
+$[\crxExampleCLower,\ \crxExampleCUpper]$ is a genuine two-sided bracket, which
+is what an honest anytime certificate should return in place of a single
+number.
+
+Every certificate is replayed by a verifier written to be simpler than the
+search and independent of it: it imports nothing from the interval or
+enclosure modules, works entirely in exact rational arithmetic, and knows
+nothing about gates, budgets or branching. It is handed a leaf and a claimed
+winner and recomputes the enclosure and the comparison. A leaf both routes
+accept has been certified twice, by different arithmetic. The full numerical
+contract -- reference rule, operational selector, certification arithmetic and
+verifier, and what each does \emph{not} claim -- is recorded in the archive.
+
+\subsection{Fixed-budget certification experiments}
+\label{sec:certrelex-experiments}
+The study is a fixed-rule comparison: the same declared rule, probes,
+uncertainty box, arithmetic contract, box budget and hardware in every arm, so
+that any difference is attributable to the certification machinery and not to a
+different recommendation. Instances come from six development families and two
+locked stress families (near-tied margins; correlated heavy-tailed measurement
+noise) at $m\in\{3,6,10\}$ with eight replicates each,
+\crxInstances{} candidate sets in all, certified on a shortlist of
+\crxShortlist{} alternatives. The split is a deterministic function of the
+replicate index and was fixed in source before any run; the 90 instances of the
+earlier sections remain the development baseline and are not used as
+confirmatory evidence. Resolution is $\delta=\crxResolution$ throughout and the
+focal level is $p=\crxFocalLevel$. Each arm adds exactly one component to the
+one above:
+
+\begin{table}[tbp]\centering\small
+\caption{Ablation ladder. Every arm certifies the same rule on the same inputs with the same budget of \crxBudget{} processed boxes.}
+\label{tab:crxarms}
+\begin{tabular}{@{}llll@{}}\toprule
+Arm & Sufficient condition & Quotient & Branching\\\midrule
+A0 & all-candidate retention & independent & widest coordinate\\
+A1 & decision-focused & independent & widest coordinate\\
+A2 & decision-focused & shared anchors & widest coordinate\\
+A3 & decision-focused & shared anchors & decision-relevant\\\bottomrule
+\end{tabular}
+\end{table}
+
+The primary endpoint is the certified lower bound $\rho^{\mathrm{lo}}$ on the
+decision radius, obtained by bisection at the matched budget; it is continuous,
+paired within instance, and one value per arm. The two prespecified contrasts
+are P1 $=$ A1 $-$ A0, isolating the decision focus, and P2 $=$ A2 $-$ A1,
+isolating dependency preservation, both on the locked test split with Holm
+correction inside that family. Every other contrast is labelled exploratory.
+The independent unit is the instance. Because the study was not preregistered
+with a third party, $p$-values are descriptive.
+
+\paragraph{Correctness (E0).}
+Across \crxCorrectnessInstances{} instances, \crxOracleDraws{} bound vectors
+were drawn from inside certified leaves and evaluated by the exact rational
+oracle, and \crxReplayLeaves{} certified leaves were replayed by the
+independent verifier. There were \crxOracleViolations{} falsified certificates
+and \crxReplayFailures{} replay failures. Testing supplements
+Propositions~\ref{prop:decisionfocus} and~\ref{prop:sharedanchor}; it does not
+substitute for them, and a zero count is evidence of the absence of the errors
+searched for, not of soundness in general.
+
+\paragraph{Mechanism (E1).}
+At the root box the widest disappointment enclosure averages
+\crxWidthIndep{} under the independent quotient and \crxWidthJoint{} under the
+shared-anchor quotient. The coordinate that decides the nominal comparison is
+categorical on \crxDecisiveCategorical{} of the \crxDecisiveTotal{} instances
+with a resolvable root box; on those, the median enclosure width of that
+coordinate falls from \crxDecisiveWidthIndep{} categories to
+\crxDecisiveWidthJoint. The remaining instances are decided on a tail mean and
+are excluded from that statistic because the two are not in the same units. The
+share of instances certified at the root box with no subdivision at all rises
+from \crxRootCertifiedIndep\% to \crxRootCertifiedJoint\%.
+Figure~\ref{fig:crxmechanism} shows the paired comparison.
+
+\begin{figure}[tbp]\centering\includegraphics[width=\linewidth]{fig_mechanism.pdf}
+\caption{Dependency preservation tightens the comparison that decides. Each point is one instance at the root box $\mathcal B(0.02)$; the dashed line is equality. Left: widest disappointment enclosure. Right: enclosure width of the profile coordinate at which the nominal winner and its closest rival first differ. Points below the diagonal are instances where keeping the shared anchors inside one quotient narrows the enclosure.}
+\label{fig:crxmechanism}\end{figure}
+
+\paragraph{Fixed-budget certification (E2).}
+On the locked test split (\crxTestN{} instances), mean $\rho^{\mathrm{lo}}$ is
+\crxTestArmZeroRho{} for A0, \crxTestArmOneRho{} for A1,
+\crxTestArmTwoRho{} for A2 and \crxTestArmThreeRho{} for A3. The share of
+instances with a strictly positive certified radius moves from
+\crxTestArmZeroPositive\% to \crxTestArmThreePositive\%. The prespecified
+contrasts are
+\[
+\text{P1}=\crxPOneMean\ [\crxPOneLo,\ \crxPOneHi],\qquad
+\text{P2}=\crxPTwoMean\ [\crxPTwoLo,\ \crxPTwoHi],
+\]
+with 95\% paired bootstrap intervals over instances, win/loss/tie counts
+\crxPOneWins/\crxPOneLosses/\crxPOneTies{} and
+\crxPTwoWins/\crxPTwoLosses/\crxPTwoTies, probabilities of superiority
+\crxPOnePSup{} and \crxPTwoPSup, and Holm-adjusted $p$-values \crxPOneHolm{}
+and \crxPTwoHolm. Decision-relevant branching contributes a further
+\crxBranchMean{} $[\crxBranchLo,\ \crxBranchHi]$, reported as exploratory. On
+the locked stress split the corresponding means are \crxStressArmZeroRho{} and
+\crxStressArmThreeRho. Figure~\ref{fig:crxladder} shows the distributions.
+
+\begin{figure}[tbp]\centering\includegraphics[width=\linewidth]{fig_certification_ladder.pdf}
+\caption{Certified lower bound on the decision radius at a matched budget of \crxBudget{} processed boxes, on the two locked splits. A0 is the all-candidate retention condition, A1 adds decision focus, A2 adds shared-anchor enclosures, A3 adds decision-relevant branching. Boxes show quartiles with the median; points are individual instances. A value of zero means ``not certified within this budget'', not a radius of zero.}
+\label{fig:crxladder}\end{figure}
+
+\paragraph{Anytime behaviour (E7) and brackets.}
+Mean certified volume of $\mathcal B(0.02)$ after 64, 256 and 1{,}024 processed
+boxes is \crxAnytimeArmZeroBsixtyfour, \crxAnytimeArmZeroBtwofiftysix{} and
+\crxAnytimeArmZeroBonezerotwofour{} for A0 against
+\crxAnytimeArmThreeBsixtyfour, \crxAnytimeArmThreeBtwofiftysix{} and
+\crxAnytimeArmThreeBonezerotwofour{} for A3. A verified switch witness was
+found for \crxBracketWithWitness{} of \crxBracketTotal{} instances; among those
+the median bracket width is \crxBracketMedian{} in $p$, and the number of
+instances whose certified lower bound exceeded its own witness -- which would
+be a contradiction -- is \crxBracketInversions.
+Figure~\ref{fig:crxprogress} shows both.
+
+\begin{figure}[tbp]\centering\includegraphics[width=\linewidth]{fig_certification_progress.pdf}
+\caption{Anytime behaviour and the two-sided radius bracket. Panel A: mean certified volume of the focal box against the processed-box budget, for the all-candidate retention condition and for the enhanced engine; certified volume is nondecreasing in the budget because certified leaves are never revisited. Panel B: for each instance with a verified switch witness and a strictly positive certified radius, the interval between the certified lower bound and the smallest level at which the exact rational oracle names a different unique winner. A bar's height is what remains unresolved between proof and counterexample, not an error bar.}
+\label{fig:crxprogress}\end{figure}
+
+\paragraph{What this does not show.}
+These are certification results and nothing more. They do not show that
+ReLexTail chooses better than another method, that its recommendations carry
+lower external regret, or that any calibration guarantee holds; the
+corresponding tracks were not run, and Section~\ref{sec:discussion} records
+them as unestablished. The instances are generated, the shortlist size is
+declared rather than elicited, and the stress families test extrapolation
+without licensing any claim about arbitrary deployment shift. A radius reported
+as zero always means ``not certified within this budget''.

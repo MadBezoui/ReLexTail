@@ -1,0 +1,17 @@
+Dear Editors,
+
+Please consider “Resolution-Aware Lexicographic Tail-Regret Selection under Uncertain Normalisation Bounds” as a Research Article in the Journal of Multi-Criteria Decision Analysis.
+
+The manuscript studies a decision-aiding rule for selecting from a fixed multicriteria candidate set when the reporting resolution of declared concerns matters. ReLexTail combines categories of maximum and upper-tail probe disappointment with exact lexicographic refinement. It establishes finite-set properties, gives a sound interval-elimination condition under normalisation uncertainty, and describes a sequential formulation for continuous polyhedra.
+
+Its main new result concerns what can be certified about a recommendation when the normalisation bounds are uncertain. The natural sufficient condition asks every candidate to keep every risk coordinate inside its resolution cell, and it fails whenever any coordinate touches a boundary, including coordinates that cannot affect the outcome. We prove that a recommendation can be certified throughout a bound box with no candidate retaining any category, and that keeping a probe's shared normalisation anchors inside a single quotient yields an enclosure contained in the independent one. Two small rational examples show that neither gap is asymptotic: on one, the all-candidate condition certifies nothing while the decision is certain over the whole box; on the other, anchor slack alone decides whether the box is certified. On a separate benchmark whose splits were fixed before the run, the two changes raise the certified decision radius at a matched budget, and an exact rational oracle and an independent replay verifier falsified none of the emitted certificates.
+
+The paper connects ordered aggregation and robustness analysis with an explicit, replayable recommendation. Its 90-instance synthetic experiment uses 500 matched bound perturbations per level and held-out preference vectors, reports paired uncertainty summaries, and includes grid-origin and representation ablations. A public building-simulation dataset provides an application-oriented reproducibility check, while a constructed supplier example demonstrates the decisive category comparison. The manuscript distinguishes theoretical guarantees, simulation evidence and unresolved interval uncertainty, and does not claim validation on an operational decision. A claim-to-evidence table states for every claim whether it is proved, measured, or unestablished; decision quality against external preference populations, any calibration guarantee, and priority over the closest literature are listed as unestablished rather than implied.
+
+The submission package contains the manuscript, separate vector figures, full captions, reproducible scripts and generated data. I believe its focus on preference modelling, interpretation and qualified robustness is relevant to the journal's decision-analysis readership.
+
+Sincerely,
+Madani Bezoui
+CESI LINEACT, UR 7527
+mbezoui@cesi.fr
+ORCID: 0000-0002-8342-7039

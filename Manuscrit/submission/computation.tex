@@ -1,0 +1,99 @@
+\section{Computation and uncertain bounds}
+\label{sec:compute}
+\subsection{Finite selection and comparison records}
+For finite $A$, evaluate each retained probe, compute its anchors, form $D$, sort each row, construct $\Psi$ and scan for the minimum. A second scan collects every exact and category tie. Computing the canonical family costs $O(Nm)$ and sorting costs $O(NK\log K)$. Comparing profiles in a scan costs $O(NK)$. Thus selection costs $O(Nm\log m)$ for the canonical family. This complexity excludes generating candidates and Pareto filtering. It is an operation count, not a measured runtime guarantee.
+
+Four numerical quantities have different meanings and are never substituted for one another. Table~\ref{tab:uncertainties} records the distinction used in the algorithms and experiments.
+\begin{table}[tbp]\centering\small
+\caption{Uncertainty and tolerance sources in the reported workflow.}
+\label{tab:uncertainties}
+\begin{tabular}{@{}p{.20\linewidth}p{.29\linewidth}p{.38\linewidth}@{}}\toprule
+Quantity & Role & Treatment\\\midrule
+Resolution $\delta$ & Preference-model granularity & Declared fixed cells; varied in sensitivity analysis\\
+Bound level $p$ & Epistemic normalisation uncertainty & Matched random draws or complete interval box\\
+Retention $\varepsilon_q$ & Degenerate-probe guard & Fixed at $10^{-9}$; never added to a denominator\\
+Machine/solver tolerance & Numerical implementation & Boundary snapping by eight machine epsilons for finite replay; solver tolerances must be reported separately\\\bottomrule
+\end{tabular}
+\end{table}
+
+Finite replay uses IEEE binary double precision for raw arithmetic, descending stable sorting, the declared boundary snapping rule in Section~\ref{sec:relextail}, and the smallest immutable row identifier only after equality of the full profile. The independent certification checks recompute category profiles from exact rational representations of outward-rounded interval endpoints. These conventions are recorded in the protocol file so that numerical tolerance cannot silently become a preference parameter.
+
+For each rival $y$ of a unique winner $x^\star$, a contrastive record stores the first differing coordinate of $\Psi(x^\star)$ and $\Psi(y)$, the two values, the comparison direction and the resolution if that coordinate is categorical. Together with the full disappointment matrix, this permits independent comparison replay. A labelled disappointment plot alone explains concerns but does not prove optimality. Recomputing probe values additionally requires the criterion matrix, bounds, formulas and retained identifiers. Recreating the candidates requires the upstream model and seeds. These levels of replay should not be conflated.
+
+\subsection{Sampling and certified enclosures}
+For a compact admissible box $\mathcal B$, let $W(b)$ be the full exact optimal class. Define
+\begin{equation}
+S^{\mathrm{pos}}=\bigcup_{b\in\mathcal B}W(b),\qquad S^{\mathrm{nec}}=\bigcap_{b\in\mathcal B}W(b).
+\label{eq:interval}
+\end{equation}
+A sampled union is an inner approximation of the possible set. A sampled intersection is an outer approximation of the necessary set, not a certificate of necessary optimality. If a candidate wins on a region of sampling probability at least $a>0$, then $B$ independent draws miss it with probability at most $(1-a)^B$. By a union bound, $B\ge\lceil\log(N/\epsilon)/[-\log(1-a)]\rceil$ detects all such candidates with probability at least $1-\epsilon$. It gives no guarantee for regions of zero or smaller probability.
+
+Our experiments perturb each bound by a fraction of its nominal criterion range. If $I_i=\min_Af_i$, $N_i=\max_Af_i$ and $s_i=N_i-I_i>0$, define
+\begin{equation}
+\mathcal B(p)=\prod_i[I_i-ps_i,I_i+ps_i]\times[N_i-ps_i,N_i+ps_i],\qquad 0\le p<\tfrac12.
+\label{eq:box}
+\end{equation}
+Denominators are bounded below by $(1-2p)s_i>0$. This convention is invariant to a change of criterion origin. Frequency estimates use independent uniform draws for each bound coordinate. Certification concerns the complete box and does not depend on this sampling distribution. The supplier sampling illustration also includes $p=0.5$, for which sampled denominators were checked positive; that endpoint is not used for certification because the closed box can contain zero denominators.
+
+Consider a sub-box $\beta$. Assume every retained probe has active range uniformly greater than $\varepsilon_q$ throughout $\beta$. Singleton retention can be checked using
+\[
+\inf_{b\in\beta}R_{q_i}(b)=\frac{s_i}{\sup_{b\in\beta}(\nadir_i-\ideal_i)}.
+\]
+A nominal check alone is insufficient. For aggregates, bound $q(r(x;b))$ using coordinatewise enclosures and monotonicity, then enclose the anchors and the ratio in Equation~\eqref{eq:disap}. The extrema of each normalised criterion over its two-dimensional rectangle occur at corners when denominators remain positive. Dependency between the ratio terms may produce substantial slack. If uniform retention cannot be established, the box remains unresolved and is subdivided or returned with its inherited candidates.
+
+\begin{proposition}[Sound elimination]\label{prop:certsound}
+Suppose the retained multiset is fixed and $D^L(x;\beta)\le D(x;b)\le D^U(x;\beta)$ for all $b\in\beta$. If
+\[
+\Psi(D^U(x;\beta))<_{\mathrm{lex}}\Psi(D^L(y;\beta)),
+\]
+then $x\prec_{\mathrm{ReLexTail}}y$ throughout $\beta$.
+\end{proposition}
+\begin{proof}
+Maximum, tail means, category maps and order statistics are coordinatewise nondecreasing. Hence $\Psi(D(x;b))\le\Psi(D^U(x;\beta))$ and $\Psi(D^L(y;\beta))\le\Psi(D(y;b))$ componentwise. Combining these inequalities with the strict lexicographic inequality proves the result.
+\end{proof}
+
+The branch-and-bound procedure eliminates a candidate only when the displayed test succeeds. A box with one survivor contributes that winner to both inner and outer possible sets. Unresolved terminal boxes contribute all survivors to the outer set. Crucially, these contributions are combined by union over leaves: elimination on one box cannot remove a candidate that wins on another. A strict processed-box budget preserves all unprocessed leaves. This produces
+\[
+\mathrm{In}\subseteq S^{\mathrm{pos}}\subseteq\mathrm{Out}
+\]
+with an explicitly recorded unresolved volume fraction. The new illustration uses outward-rounded enclosures and exact rational tail means and category comparisons of the outward-rounded binary endpoints. A floating-point sampled winner is a diagnostic witness; it is not by itself an exact-real optimality certificate.
+
+Persistent ties and winners confined to boundaries can prevent finite resolution. An inner set based only on sole-winner boxes can omit such winners even when they belong to the possible set. No general finite-budget exact recovery is claimed. If every terminal box is resolved to the same sole winner, necessary optimality is certified. A positive exact-refinement margin at one nominal point alone does not establish this result.
+
+\begin{figure}[tbp]\centering\includegraphics[width=\linewidth]{fig_certified_decay.pdf}
+\caption{New interval illustration for six candidates and three criteria, with ReLexTail resolution 0.02. Each curve uses the same criterion matrix and range-relative uncertainty box. The horizontal axis reports processed boxes, which may be fewer than the budget after early termination. The narrowest box resolves immediately; larger boxes can retain substantial unresolved volume despite increased effort.}
+\label{fig:certdecay}\end{figure}
+
+The illustration uses the first six candidates of the saved concave instance with three criteria and replicate zero. At each $p\in\{0.005,0.02,0.05\}$, budgets are 64, 256 and 1,024 processed boxes. We independently sampled 256 bound vectors per level and checked that their point winners belong to every reported outer set. Outer sets were also checked to be nested as the budget increased. These are consistency checks on one instance, not a proof of soundness or a broad scalability study. At $p=0.005$ the root box is resolved. At $p=0.05$, more than 99\% of the volume remains unresolved after 1,024 boxes. Reporting this limitation is essential to interpreting the bracket.
+
+\subsection{A direct formulation on a continuous polyhedron}
+Let $\mathcal X$ be a nonempty bounded continuous polyhedron, with affine criteria and nondegenerate canonical probes. Compute criterion bounds and probe anchors over $\mathcal X$ and then hold them fixed. Singleton and mean disappointments are affine. Maximum-probe disappointment is convex piecewise linear. Its epigraph has a linear representation. Since every subsequent objective and bound is monotone in disappointments, these epigraphs can represent the required upper bounds without introducing artificial improvements.
+
+For a risk coordinate $R_\ell$, use an integer variable $z_\ell\ge0$ and constraint $R_\ell(x)\le\delta_\ell z_\ell$. Minimising $z_\ell$ gives the least feasible category. Fix its optimum and continue to the next category. At an optimal category, a feasible point cannot have a lower actual category, because that would contradict the previous minimisation. This is why upper category bounds suffice despite the open lower cell endpoints.
+
+For $T_\alpha$, introduce $t_\alpha\in\mathbb R$ and $u_{\alpha q}\ge0$, with
+\begin{equation}
+ u_{\alpha q}\ge D_q(x)-t_\alpha,\qquad
+ t_\alpha+\frac{1}{\alpha K}\sum_qu_{\alpha q}\le\delta_\alpha z_\alpha.
+\label{eq:milp_cvar}
+\end{equation}
+The maximum uses an epigraph $v\ge D_q(x)$ for every $q$. After the four category stages, minimise $T_{25},T_{50},T_{100},M$ in sequence, retaining all earlier optima. For the terminal refinement, minimise the sums of the largest $p$ disappointments, $p=2,\ldots,K$:
+\begin{equation}
+ S_p(D)=\min_{t_p\in\mathbb R,\ u_{pq}\ge0}
+ \left\{p\,t_p+\sum_{q=1}^Ku_{pq}:u_{pq}\ge D_q(x)-t_p\quad\forall q\right\}.
+\label{eq:milp_terminal}
+\end{equation}
+Once preceding ordered coordinates are fixed, minimising $S_p$ minimises the next coordinate. These formulations follow standard ordered-optimisation identities \citep{ogryczak2003ksum,ogryczak2003owa}.
+
+\begin{proposition}[Sequential formulation]
+For the stated continuous-polyhedral setting with $K=m+2$ nondegenerate canonical probes, ReLexTail is characterised by a finite sequence of LPs and four integer category stages. With no reuse of anchor computations and no redundancy elimination, it uses $6m+8$ LP calls and four MILP calls.
+\end{proposition}
+\begin{proof}
+Criterion bounds require $2m$ LPs. The $m+1$ affine probes require $2(m+1)$ anchor LPs. Minimising the grand maximum requires one epigraph LP and maximising it requires $m$ affine maximisations. Preprocessing therefore uses $5m+3$ LPs. Four exact risk refinements and $K-1=m+1$ ordered-sum refinements add $m+5$ LPs. The four category stages introduce bounded integer variables. Sequentially fixing optimal categories leaves closed risk sublevel sets, and the later continuous objectives attain their minima on compact feasible sets. The sequence therefore realises the specified lexicographic optimum.
+\end{proof}
+
+\begin{figure}[tbp]\centering\includegraphics[width=\linewidth]{fig_continuous_cost.pdf}
+\caption{Theoretical solver-stage counts under the declared no-reuse continuous-polyhedral formulation. ReLexTail uses $6m+8$ LP calls and four integer category stages; exact LexPR uses $6m+5$ LP calls. These are formulation counts, not measured runtimes or evidence that MILP cost is constant.}
+\label{fig:continuous}\end{figure}
+
+If the original feasible set includes integer variables, preprocessing and refinements can themselves require MILPs. If probes are dropped or redundant stages are removed, the count changes. Solver tolerances also change the operational optimisation problem and must be reported separately from resolution widths. Finally, anchors computed over a polyhedron generally differ from anchors over a finite sampled shortlist. Agreement between the resulting recommendations is not guaranteed. The present submission does not claim an independently validated end-to-end continuous MILP implementation.

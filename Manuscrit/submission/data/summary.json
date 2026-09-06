@@ -1,0 +1,170 @@
+{
+  "comparison": [
+    {
+      "method": "Weighted-sum",
+      "mean_regret": 0.29147208534347874,
+      "tail_regret": 0.626988785067627,
+      "flip": 0.1952222222222222,
+      "category_change": null,
+      "category_size": 1.0,
+      "tail_difference_ci": [
+        0.05677214492638066,
+        0.11375532433953837
+      ]
+    },
+    {
+      "method": "Mean-D",
+      "mean_regret": 0.30699617856796074,
+      "tail_regret": 0.5491351268394064,
+      "flip": 0.30504444444444445,
+      "category_change": null,
+      "category_size": 1.0,
+      "tail_difference_ci": [
+        8.597490411524333e-05,
+        0.012754655483040401
+      ]
+    },
+    {
+      "method": "Leximax",
+      "mean_regret": 0.41361618012864254,
+      "tail_regret": 0.533962343707364,
+      "flip": 0.35644444444444445,
+      "category_change": null,
+      "category_size": 1.0,
+      "tail_difference_ci": [
+        -0.012162264430681297,
+        -0.005555576332986605
+      ]
+    },
+    {
+      "method": "Tail25-D",
+      "mean_regret": 0.3800040486721209,
+      "tail_regret": 0.5400598388398061,
+      "flip": 0.20844444444444446,
+      "category_change": null,
+      "category_size": 1.0,
+      "tail_difference_ci": [
+        -0.004725654205211257,
+        -0.0009712295086038256
+      ]
+    },
+    {
+      "method": "LexPR",
+      "mean_regret": 0.38099372268382914,
+      "tail_regret": 0.5428323242484919,
+      "flip": 0.20882222222222221,
+      "category_change": null,
+      "category_size": 1.0,
+      "tail_difference_ci": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "ReLexTail 0.005",
+      "mean_regret": 0.3809634817409797,
+      "tail_regret": 0.5424918055314017,
+      "flip": 0.19955555555555557,
+      "category_change": 0.20804444444444445,
+      "category_size": 1.0086444444444445,
+      "tail_difference_ci": [
+        -0.0009185550601502286,
+        0.00010922888893467719
+      ]
+    },
+    {
+      "method": "ReLexTail 0.01",
+      "mean_regret": 0.3809986216011081,
+      "tail_regret": 0.5419065859363242,
+      "flip": 0.20160000000000003,
+      "category_change": 0.21097777777777776,
+      "category_size": 1.0135777777777777,
+      "tail_difference_ci": [
+        -0.001810174824312984,
+        -0.00025085122974976057
+      ]
+    },
+    {
+      "method": "ReLexTail 0.02",
+      "mean_regret": 0.3798880100210656,
+      "tail_regret": 0.5410607912380293,
+      "flip": 0.19297777777777775,
+      "category_change": 0.21351111111111112,
+      "category_size": 1.0844222222222222,
+      "tail_difference_ci": [
+        -0.003241585218755944,
+        -0.0006423096153260829
+      ]
+    },
+    {
+      "method": "ReLexTail 0.05",
+      "mean_regret": 0.37413101861573994,
+      "tail_regret": 0.5406553287154574,
+      "flip": 0.21206666666666665,
+      "category_change": 0.26311111111111113,
+      "category_size": 1.4036666666666666,
+      "tail_difference_ci": [
+        -0.003616149967181877,
+        -0.0009306378055172056
+      ]
+    },
+    {
+      "method": "ReLexTail 0.075",
+      "mean_regret": 0.37293348998251863,
+      "tail_regret": 0.5401323765466486,
+      "flip": 0.20775555555555555,
+      "category_change": 0.3139111111111111,
+      "category_size": 1.9512666666666667,
+      "tail_difference_ci": [
+        -0.004223460564858671,
+        -0.001291189159455586
+      ]
+    },
+    {
+      "method": "ReLexTail 0.1",
+      "mean_regret": 0.37307385486516365,
+      "tail_regret": 0.5406745521605298,
+      "flip": 0.2324,
+      "category_change": 0.4089555555555555,
+      "category_size": 2.9004222222222222,
+      "tail_difference_ci": [
+        -0.004009214179771409,
+        -0.0005376364209465973
+      ]
+    }
+  ],
+  "primary_effects": [
+    {
+      "metric": "flip",
+      "label": "Point changes (pp)",
+      "n": 90,
+      "mean_difference": -1.5844444444444443,
+      "median_difference": 0.0,
+      "ci_low": -3.482222222222222,
+      "ci_high": 0.09111111111111114,
+      "wins": 32,
+      "losses": 19,
+      "ties": 39,
+      "probability_of_superiority": 0.5722222222222222,
+      "wilcoxon_statistic": 508.5,
+      "wilcoxon_p": 0.14755427772297033,
+      "holm_p": 0.14755427772297033
+    },
+    {
+      "metric": "tail_regret",
+      "label": "Upper-tail regret",
+      "n": 90,
+      "mean_difference": -0.0017715330104626512,
+      "median_difference": -7.41017314616621e-05,
+      "ci_low": -0.0032940341514087856,
+      "ci_high": -0.0006512197350000183,
+      "wins": 48,
+      "losses": 8,
+      "ties": 34,
+      "probability_of_superiority": 0.7222222222222222,
+      "wilcoxon_statistic": 163.0,
+      "wilcoxon_p": 2.221851117675025e-07,
+      "holm_p": 4.44370223535005e-07
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "boundary": {
+    "candidates_leaving_cells": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "global_gate_passes": false,
+    "decision_gate_certifies_root": true
+  },
+  "slack": {
+    "joint": {
+      "certified": true,
+      "boxes": 1,
+      "certified_volume": 1.0
+    },
+    "independent": {
+      "certified": false,
+      "boxes": 2048,
+      "certified_volume": 0.329833984375
+    }
+  },
+  "switch": {
+    "nominal_winner": 1,
+    "witness_winner_class": [
+      2
+    ],
+    "witness_level": 0.05,
+    "certified_radius_lower": 0.022041015625,
+    "bracket_is_valid": true
+  }
+}

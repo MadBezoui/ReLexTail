@@ -1,0 +1,43 @@
+{
+  "seed": 20260905,
+  "families": [
+    "linear",
+    "concave",
+    "convex"
+  ],
+  "criteria": [
+    3,
+    6,
+    10
+  ],
+  "replicates_per_cell": 10,
+  "candidates": 80,
+  "instances": 90,
+  "weights": 10000,
+  "draws_per_level": 500,
+  "levels": [
+    0.01,
+    0.025,
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.3,
+    0.4
+  ],
+  "deltas": [
+    0.001,
+    0.005,
+    0.01,
+    0.02,
+    0.03,
+    0.05,
+    0.075,
+    0.1
+  ],
+  "probe_family": "singletons + mean + maximum; drop active ranges <=1e-9",
+  "perturbation": "ideal and nadir independently uniform within +/- p times nominal criterion range; no clipping",
+  "evaluation": "nominal criterion scale; upper 2500 of 10000 linear regrets; then average over perturbations and instances",
+  "category_boundary": "closed upper endpoints; quotients within eight machine epsilons of an integer are snapped to that integer",
+  "script_sha256": "fd0cba1bda7f8581a80c39452a2da2d53bf811dc1e64043150026dfe75e101ee"
+}

@@ -1,0 +1,124 @@
+{
+  "denominator": 64,
+  "resolution": "0.02",
+  "boundary": {
+    "p": 0.01,
+    "winner": 4,
+    "candidates_leaving_cells": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "global_certified_volume_at_64_boxes": 5.066394805908203e-07,
+    "numerators": [
+      [
+        52,
+        29,
+        33,
+        46
+      ],
+      [
+        19,
+        50,
+        21,
+        17
+      ],
+      [
+        57,
+        60,
+        20,
+        13
+      ],
+      [
+        22,
+        30,
+        44,
+        56
+      ],
+      [
+        31,
+        35,
+        14,
+        13
+      ]
+    ]
+  },
+  "slack": {
+    "p": 0.1,
+    "winner": 0,
+    "independent_boxes_to_certify": 3,
+    "independent_certified_at_512": true,
+    "numerators": [
+      [
+        32,
+        18,
+        33
+      ],
+      [
+        23,
+        48,
+        43
+      ],
+      [
+        44,
+        34,
+        37
+      ],
+      [
+        14,
+        50,
+        39
+      ],
+      [
+        30,
+        58,
+        58
+      ]
+    ]
+  },
+  "switch": {
+    "winner": 1,
+    "witness_level": 0.05,
+    "witness": {
+      "ideal": [
+        0.07734375,
+        0.2484375,
+        0.17890625
+      ],
+      "nadir": [
+        0.90703125,
+        0.7828125,
+        0.94453125
+      ],
+      "winner_class": [
+        2
+      ],
+      "unique": true
+    },
+    "certified_level": 0.0125,
+    "numerators": [
+      [
+        61,
+        14,
+        9
+      ],
+      [
+        23,
+        27,
+        47
+      ],
+      [
+        2,
+        15,
+        58
+      ],
+      [
+        14,
+        52,
+        9
+      ]
+    ]
+  }
+}

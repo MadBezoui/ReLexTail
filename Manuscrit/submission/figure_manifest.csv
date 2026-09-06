@@ -1,0 +1,16 @@
+number,filename,status,source
+1,pipeline.pdf,rebuilt,ReLexTail mathematical definition
+2,resolution_cells.pdf,new,ceil cell definition; constructed illustration
+3,two_risks.pdf,new,selection and evaluation protocol
+4,fig_certified_decay.pdf,recomputed,submission/data/certification.json
+5,fig_continuous_cost.pdf,replaced unsupported empirical comparison,theoretical formulation counts
+6,fig_mechanism.pdf,new,enhanced/results/mechanism.csv
+7,fig_certification_ladder.pdf,new,enhanced/results/certification.csv
+8,fig_certification_progress.pdf,new,enhanced/results/anytime.csv; enhanced/results/certification.csv
+9,quality_stability_frontier.pdf,recomputed,submission/data/study.csv
+10,family_effects.pdf,new,paired instance bootstrap from study.csv
+11,fig_divergence.pdf,recomputed,nominal identifiers in study.csv
+12,sensitivity_extensions.pdf,new,grid_sensitivity.csv; ablation.csv; decisive_coordinates.csv; uci_benchmark.json
+13,fig_supplier_certificate.pdf,recomputed,submission/data/supplier.npz
+14,relex_decision_profile.pdf,recomputed,submission/data/supplier.npz
+15,fig_supplier_interval.pdf,replaced with correctly labelled sampling,submission/data/supplier_sensitivity.json

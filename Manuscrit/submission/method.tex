@@ -1,0 +1,81 @@
+\section{Representation and resolution-aware selection}
+\label{sec:relextail}
+\subsection{Declared probes and active-range disappointment}
+Let $A=\{x_1,\ldots,x_N\}$ be a fixed, nonempty finite candidate set, and let $f_i(x)$, $i=1,\ldots,m$, be criteria to minimise. For bounds $b=(\ideal,\nadir)$ with positive denominators, define
+\begin{equation}
+r_i(x;b)=\frac{f_i(x)-\ideal_i}{\nadir_i-\ideal_i}.
+\label{eq:norm}
+\end{equation}
+Nominal bounds are the minimum and maximum of each criterion over $A$. Thus nominal values lie in $[0,1]$. Perturbed or external bounds need not enclose the observed criteria, so perturbed values may lie outside that interval. We do not clip them. Constant criteria are excluded before normalisation and their exclusion is reported.
+
+A probe $q$ is finite-valued and coordinatewise nondecreasing on a domain containing every reachable normalised vector. The declared family $\Q$ is a multiset. Its multiplicities act as weights in the empirical distribution of probe values. For each bound vector, define
+\[
+q^\star(b)=\min_{x\in A}q(r(x;b)),\qquad q^w(b)=\max_{x\in A}q(r(x;b)),\qquad R_q(b)=q^w(b)-q^\star(b).
+\]
+Retain probes with $R_q(b)>\varepsilon_q$, and set
+\begin{equation}
+D_q(x;b)=\frac{q(r(x;b))-q^\star(b)}{R_q(b)}\in[0,1].
+\label{eq:disap}
+\end{equation}
+The nominal computation uses $\varepsilon_q=10^{-9}$. The ratio is evaluated without adding this threshold to the denominator. The threshold determines retention; it is not a smoothing constant. A run with no retained probes returns the entire candidate set as equivalent and cannot support a discriminating recommendation. All results below concern a nonempty retained family. Certification additionally requires a fixed retained family over its uncertainty box.
+
+The canonical family contains single-criterion probes $q_i(r)=r_i$, the mean $q_\mu(r)=m^{-1}\sum_i r_i$, and the maximum $q_{\max}(r)=\max_i r_i$. There are at most $m+2$ retained probes. The mean may be constant on a particular candidate set and then contributes no information. We report the retained count rather than treating $m+2$ as an unconditional identity. Correlated criteria are not automatically merged, and no cluster probes are used in the computational study.
+
+For a retained singleton, the two normalisations cancel exactly:
+\begin{equation}
+D_i(x;b)=\frac{f_i(x)-\min_{y\in A}f_i(y)}{\max_{y\in A}f_i(y)-\min_{y\in A}f_i(y)}.
+\label{eq:singleton}
+\end{equation}
+Consequently, singleton disappointments are invariant to admissible bounds. Aggregate disappointments generally are not. Fixing external criterion bounds alone also does not provide independence from edits to $A$, because the probe anchors in Equation~\eqref{eq:disap} still depend on that set. Full candidate-set independence would require fixing those anchors as well.
+
+\subsection{Tail means, categories and exact refinement}
+Write $D_{[1]}(x)\ge\cdots\ge D_{[K]}(x)$ for the retained disappointments sorted in decreasing order and $M(x)=D_{[1]}(x)$. For a tail fraction $\alpha\in(0,1]$, define
+\begin{equation}
+T_\alpha(x)=\min_{t\in\mathbb R}\left\{t+\frac{1}{\alpha K}\sum_{q=1}^K[D_q(x)-t]_+\right\}.
+\label{eq:tail}
+\end{equation}
+Here $\alpha$ denotes the mass of the upper tail, rather than its confidence level. For $h=\alpha K$, $k=\lfloor h\rfloor$ and $\theta=h-k$,
+\[
+T_\alpha(x)=\frac{\sum_{j=1}^{k}D_{[j]}(x)+\theta D_{[k+1]}(x)}{h}.
+\]
+The fractional term is omitted when $\theta=0$. If $h<1$, the expression equals $M(x)$. The fraction $\alpha=1$ gives the overall mean. We use $T_{25}=T_{0.25}$, $T_{50}=T_{0.50}$ and $T_{100}=T_1$. Small retained families may make some tail coordinates redundant, without invalidating the rule.
+
+Declare positive widths $\delta_M,\delta_{25},\delta_{50},\delta_{100}$. Categories are
+\begin{equation}
+B_\delta(z)=\lceil z/\delta\rceil,\qquad C_\ell(x)=B_{\delta_\ell}(R_\ell(x)),\quad R=(M,T_{25},T_{50},T_{100}).
+\label{eq:category}
+\end{equation}
+Category zero contains zero. For $j\ge1$, category $j$ is the interval $((j-1)\delta,j\delta]$. The boundary convention is part of the model and must be preserved in numerical replay.
+
+For numerical replay, the implementation evaluates the quotient once in binary double precision, snaps it to the nearest integer only when the discrepancy is at most eight machine epsilons times $\max(1,|z/\delta|)$, and then applies the ceiling. This rule protects declared decimal boundaries such as $0.10/0.05$ from representation noise; it is not a decision tolerance and does not move observations that are substantively near a boundary. Stable row identifiers settle any remaining full-profile tie.
+
+\begin{figure}[tbp]\centering\includegraphics[width=\linewidth]{resolution_cells.pdf}
+\caption{Fixed resolution cells and boundary sensitivity, illustrated at $\delta=0.05$. Filled endpoints belong to the lower category and open endpoints to the upper category. Scores 0.049 and 0.051 are close but occupy different cells. This is a constructed explanation of the rule, not an empirical result.}
+\label{fig:cells}\end{figure}
+
+\subsection{Eliciting and auditing resolution widths}
+A resolution width is best interpreted as the smallest difference on an active-range concern that the decision maker is willing to give categorical priority. It is not estimated from the alternative that happens to win. One practical protocol is: (i) name the probes and show their best and worst attainable physical values; (ii) present controlled pairs that differ on one risk summary while other summaries are held as nearly equal as feasible; (iii) bracket the smallest difference that warrants crossing a priority level; and (iv) translate that bracket to the $[0,1]$ active-range scale. Distinct widths may be elicited for maximum, upper-quarter, upper-half and mean concern. If the elicited answer is an interval, both endpoints and nearby values should be analysed rather than replaced by a favourable point estimate.
+
+The reported analysis must then vary widths and the placement of cell boundaries. For a diagnostic origin fraction $\gamma\in[0,1)$, we use
+\[
+B_{\delta,\gamma}(z)=\left\lceil\frac{z-\gamma\delta}{\delta}\right\rceil,
+\]
+with the same closed-upper-endpoint convention; because $z\ge0$ and $\gamma<1$, the first category remains labelled zero. The main specification is $\gamma=0$. Shifts $\gamma\in\{0,.25,.5,.75\}$ test whether conclusions depend on an accidental boundary placement. This diagnostic does not substitute for eliciting a defensible physical resolution.
+
+Define the full profile
+\begin{equation}
+\begin{split}
+\Psi(x)=(&C_M,C_{25},C_{50},C_{100},\ T_{25},T_{50},T_{100},\ M,\ D_{[2]},\ldots,D_{[K]})(x),\\
+x\preceq_{\mathrm{ReLexTail}}y&\quad\Longleftrightarrow\quad\Psi(x)\le_{\mathrm{lex}}\Psi(y).
+\end{split}
+\label{eq:profile}
+\end{equation}
+Every category coordinate precedes every exact coordinate. Placing exact $M$ immediately after $C_M$ would restore strict maximum priority within each maximum category, defeating the intended comparison of broader tails. Exact refinement is instead postponed until the entire category prefix has been compared.
+
+Let $W_{\mathrm{cat}}$ minimise the four-coordinate category prefix and $W_{\mathrm{exact}}$ minimise the full profile. Then $W_{\mathrm{exact}}\subseteq W_{\mathrm{cat}}$. Distinct alternatives are equivalent under the full preorder exactly when their sorted disappointment profiles coincide. When a single point is needed, we select the smallest candidate identifier in $W_{\mathrm{exact}}$ and report this convention separately from the preference rule. The exact LexPR baseline minimises $D^\downarrow$ directly; deleting the category coordinates alone from Equation~\eqref{eq:profile} does not produce LexPR, because the exact tail coordinates would still precede $M$.
+
+Fixed cells resolve a logical issue, not all sensitivity. For scalar minimisation with $\delta=0.05$, values $0$, $0.04$ and $0.08$ give adjacent pairs within tolerance, whereas the first value is strictly preferable to the third. This demonstrates nontransitive approximate indifference, without establishing a strict preference cycle. Category equality is transitive. However, a very small change across a fixed boundary can alter a category, and exact refinement can change the point while the category-optimal set stays fixed. We therefore measure these outcomes separately.
+
+\begin{figure}[tbp]\centering\includegraphics[width=\linewidth]{two_risks.pdf}
+\caption{Two distinct uses of an upper tail. Selection aggregates the declared probes of a candidate. Evaluation aggregates range-normalised regret across held-out preference vectors. The latter weights are shared across methods and are never used to select a candidate.}
+\label{fig:risks}\end{figure}

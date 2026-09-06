@@ -1,0 +1,55 @@
+\section{Properties and interpretation}
+\label{sec:theory}
+\begin{theorem}[Existence and completeness]
+For every finite nonempty candidate set $A$, fixed finite retained probe family, and positive declared resolution vector, a ReLexTail-optimal alternative exists, and $\preceq_{\mathrm{ReLexTail}}$ is a complete preorder.
+\end{theorem}
+\begin{proof}
+$\Psi(x)$ is a finite-dimensional vector. Lexicographic order on these vectors is a complete preorder (not a total order, as distinct alternatives can have identical $\Psi$). The pullback through $\Psi$ is a complete preorder, which has at least one minimal element on a finite non-empty set.
+\end{proof}
+
+\begin{theorem}[Positional anonymity conditional on the declared multiset]
+For every permutation $\sigma$ of the probe coordinates under fixed probe multiplicities, $\Psi(\sigma D) = \Psi(D)$.
+\end{theorem}
+\begin{proof}
+$M$, empirical CVaR, and resolution categories depend only on symmetric quantities (order statistics). $D^\downarrow$ is permutation-invariant. Selective duplication changes the multiset and can change the result.
+\end{proof}
+
+\begin{proposition}[Strict profile monotonicity]
+If $D(x) \leq D(y)$, then $x \preceq_{\mathrm{ReLexTail}} y$. If strictly less somewhere, $x \prec_{\mathrm{ReLexTail}} y$.
+\end{proposition}
+\begin{proof}
+Every coordinate of $\Psi$ is a nondecreasing functional of the coordinatewise input: empirical CVaR is monotone, $B_\delta$ is nondecreasing, and sorting is monotone, so $D(x) \leq D(y)$ implies $\Psi(x) \leq \Psi(y)$ coordinatewise, hence $\Psi(x) \leq_{\mathrm{lex}} \Psi(y)$. If additionally $D_q(x) < D_q(y)$ for some $q$, then $T_{100}(x) < T_{100}(y)$, and no coordinate preceding $T_{100}$ in $\Psi$ can strictly favour $y$, so $\Psi(x) <_{\mathrm{lex}} \Psi(y)$.
+\end{proof}
+
+\begin{theorem}[Criterion-level Pareto compatibility]
+Fix a retained probe family $Q$. Assume every $q\in Q$ is coordinatewise nondecreasing and $Q$ is Pareto-separating on the reachable domain: whenever $r(x)\le r(y)$ and $r(x)\ne r(y)$, there exists $q\in Q$ such that $q(r(x))<q(r(y))$. Then criterion-level Pareto dominance of $x$ over $y$ implies $x\prec_{\mathrm{ReLexTail}}y$.
+\end{theorem}
+\begin{proof}
+Since $x$ Pareto-dominates $y$ and the retained probes are nondecreasing, we have $D_q(x) \leq D_q(y)$ for all $q$. By monotonicity of empirical CVaR, $T_\alpha(x) \leq T_\alpha(y)$ for all $\alpha$, and since $B_\delta$ is nondecreasing, $C_\alpha(x) \leq C_\alpha(y)$. Thus $\Psi(x) \leq_{\mathrm{lex}} \Psi(y)$ and weak Pareto compatibility holds. For strictness, the Pareto-separating assumption gives a retained probe $q$ with $q(r(x))<q(r(y))$. On that probe the active-range map $q(r(x)) \mapsto D_q(x)$ is a strictly increasing affine map (its slope is $1/R_q > 0$ because the probe is retained), so $D_q(x) < D_q(y)$, hence $D(x) \neq D(y)$. Since $D(x) \leq D(y)$ coordinatewise with at least one strict coordinate, $T_{100}(x) = \frac{1}{K}\sum_q D_q(x) < T_{100}(y)$. The coordinate $T_{100}$ precedes the terminal sorted block in $\Psi$ and no earlier coordinate can favour $y$, so $\Psi(x) <_{\mathrm{lex}} \Psi(y)$ and $x \prec_{\mathrm{ReLexTail}} y$.
+\end{proof}
+
+\begin{theorem}[Uniform replication invariance]
+Let $rD$ denote the profile obtained by repeating every disappointment $r$ times. Under identical resolutions $\delta$ and tail fractions $\alpha$, $D \preceq_{\mathrm{ReLexTail}} E \iff rD \preceq_{\mathrm{ReLexTail}} rE$.
+\end{theorem}
+\begin{proof}
+The proof distinguishes the empirical distribution block from the terminal sorted-profile block. First, the empirical distribution of $rD$ is identical to $D$, meaning the empirical functionals remain unchanged: $M(rD) = M(D)$ and $T_\alpha(rD) = T_\alpha(D)$, so all resolution categories coincide. Second, if $D^\downarrow(x) <_{\mathrm{lex}} E^\downarrow(y)$, the uniformly repeated sorted vectors preserve the first differing original coordinate and its direction, preserving the lexicographic comparison.
+\end{proof}
+
+\begin{theorem}[Category stability]
+\label{thm:categorystability}
+For any finite candidate set $A$ and fixed retained probe count $K$, empirical upper-tail CVaR and the maximum are $1$-Lipschitz in the supremum norm over disappointment space. 
+For any risk coordinate $R_\ell \in \{M, T_{25}, T_{50}, T_{100}\}$, define the distance to the nearest category boundary as $\mu_\ell(x) = \operatorname{dist}(R_\ell(x), \delta_\ell \mathbb{Z})$. Let $\mu_{\mathrm{cell}} = \min_{x\in A, \ell} \mu_\ell(x)$. If a perturbation in the disappointment matrix satisfies $\|\widehat{D} - D\|_\infty = \eta < \mu_{\mathrm{cell}}$, then every candidate remains in the same category on every category coordinate. Note that if perturbations occur in the bounds $b$ rather than directly in disappointments, a propagation bound $\|D(b) - D(\widehat{b})\|_\infty \le L_B \|b - \widehat{b}\|$ must be applied.
+\end{theorem}
+\begin{proof}
+For the maximum $M$, the $1$-Lipschitz property is immediate since $|M(D) - M(\widehat{D})| \leq \max_q |D_q - \widehat{D}_q| \leq \eta$. For empirical upper-tail CVaR, by definition of the perturbation bound, $D - \eta\mathbf{1} \leq \widehat{D} \leq D + \eta\mathbf{1}$. By monotonicity and translation equivariance of CVaR, $T_\alpha(D) - \eta \leq T_\alpha(\widehat{D}) \leq T_\alpha(D) + \eta$, yielding $|T_\alpha(D) - T_\alpha(\widehat{D})| \leq \eta$. Because the shift in every $R_\ell$ is at most $\eta < \mu_{\mathrm{cell}}$, no value crosses a category boundary $\delta_\ell \mathbb{Z}$, preserving all categories.
+\end{proof}
+
+
+\textbf{Remark (Exact-refinement fragility).} Stability of the fully refined ReLexTail point does not generally follow from a positive gap at the nominal decisive exact coordinate. If any preceding exact coordinate is tied and can change under perturbation, an arbitrarily small perturbation may reverse the lexicographic comparison. A positive full-winner radius requires additional structural invariance of the preceding ties or a direct interval-profile certificate.
+
+
+The category condition is sufficient, not necessary. It can be vacuous when any risk coordinate lies exactly on a boundary, even if that coordinate is structurally invariant. For perturbations in physical bounds, a bound on the induced change in $D$ is additionally required. A distance measured only for one coordinate of the selected candidate cannot substitute for the minimum over all candidates and risk coordinates.
+
+Nor are category-optimal sets generally nested when a common width is increased: cell boundaries move as well as merge, and later category coordinates can become decisive in a different way. Nesting follows only for specially aligned coarsenings at the level of each scalar partition, and even then it does not automatically transfer to the lexicographically optimal set. Resolution sensitivity must therefore be computed rather than inferred from set inclusion.
+
+These properties describe the declared preorder and do not imply preference recovery, independence of the candidate set, or statistical optimality under an external loss distribution. In particular, equal replication of every probe preserves the empirical distribution, whereas duplicating only a subset does not.

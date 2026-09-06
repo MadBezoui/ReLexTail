@@ -1,0 +1,70 @@
+[
+  {
+    "p": 0,
+    "flip": 0.0,
+    "category_change": 0.0,
+    "sampled_possible_size": 1,
+    "winners": [
+      "S7"
+    ]
+  },
+  {
+    "p": 0.02,
+    "flip": 0.0,
+    "category_change": 0.0,
+    "sampled_possible_size": 1,
+    "winners": [
+      "S7"
+    ]
+  },
+  {
+    "p": 0.05,
+    "flip": 0.01,
+    "category_change": 0.01,
+    "sampled_possible_size": 2,
+    "winners": [
+      "S1",
+      "S7"
+    ]
+  },
+  {
+    "p": 0.1,
+    "flip": 0.13666666666666666,
+    "category_change": 0.13666666666666666,
+    "sampled_possible_size": 2,
+    "winners": [
+      "S1",
+      "S7"
+    ]
+  },
+  {
+    "p": 0.2,
+    "flip": 0.30666666666666664,
+    "category_change": 0.30666666666666664,
+    "sampled_possible_size": 2,
+    "winners": [
+      "S1",
+      "S7"
+    ]
+  },
+  {
+    "p": 0.3,
+    "flip": 0.36666666666666664,
+    "category_change": 0.36666666666666664,
+    "sampled_possible_size": 2,
+    "winners": [
+      "S1",
+      "S7"
+    ]
+  },
+  {
+    "p": 0.5,
+    "flip": 0.5566666666666666,
+    "category_change": 0.5566666666666666,
+    "sampled_possible_size": 2,
+    "winners": [
+      "S1",
+      "S7"
+    ]
+  }
+]

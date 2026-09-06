@@ -12,3 +12,23 @@
 __pycache__/
 .venv/
 Manuscrit/
+
+# Track the JMCDA submission revision while keeping historical build files local.
+!Manuscrit/
+Manuscrit/*
+!Manuscrit/main.tex
+!Manuscrit/main.pdf
+!Manuscrit/refs.bib
+!Manuscrit/scripts/
+!Manuscrit/submission/
+Manuscrit/submission/original_main.*
+Manuscrit/submission/.mplcache/
+
+# Wiley template: third-party material, redistributed by Wiley only.
+# Regenerate Manuscrit/wiley/ with scripts/build_wiley_version.py.
+WileyDesign/
+Manuscrit/wiley/
+Manuscrit/JMCDA_package/
+guidlesJMCDA.md
+scratch_add_flip.py
+.claude_resources.json

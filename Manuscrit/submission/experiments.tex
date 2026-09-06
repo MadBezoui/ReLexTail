@@ -1,0 +1,98 @@
+\section{Computational study and supplier illustration}
+\label{sec:experiments}
+\subsection{A matched, reproducible protocol}
+The study isolates the behaviour of the finite selection rule. It comprises 90 synthetic candidate sets: three front geometries, three criterion counts ($m=3,6,10$), and ten independent replicates per combination. Each set contains 80 candidates. Linear fronts use $f=0.5s$ for a uniformly Dirichlet-distributed simplex vector $s$. Convex fronts use $f_i=s_i^2$. Concave fronts normalise a vector of square-root-transformed independent uniform draws to Euclidean norm one. These are controlled synthetic geometries, not exact solutions of named engineering problems or real procurement datasets. Every generated matrix is saved.
+
+The nominal criterion bounds and probe anchors are computed from the candidate set. The family consists only of singletons, the mean and the maximum, subject to the stated retention test. Retention is checked to remain identical on every sampled perturbation. Eight common resolution widths are tested: $0.001,0.005,0.01,0.02,0.03,0.05,0.075,0.1$. The comparators are exact LexPR on $D$; exact leximax and Chebyshev selection on the normalised criterion vector; Mean-D; upper-25\% and upper-50\% tail minimisation on $D$; and a uniform weighted sum on the normalised criteria. They separate changes in order, tail aggregation and representation. Chebyshev and leximax happen to select identically throughout the saved population, so only leximax is shown in the compact table. All 15 method variants remain in the data. These are controlled comparators, not an exhaustive ranking of MCDA methods.
+
+At each level $p\in\{0.01,0.025,0.05,0.10,0.15,0.20,0.30,0.40\}$, 500 uniform bound perturbations are shared across all methods. The same random directions are scaled across levels. This yields 45,000 matched selections per method and level-specific summaries for every instance. Within an instance, one common set of 10,000 Dirichlet$(\mathbf1)$ weight vectors evaluates every candidate on the fixed nominal criterion scale. The master seed is 20260905, and instance streams are indexed by geometry, criterion count and replicate. Deterministic ties use the smallest row identifier.
+
+For a test weight vector $w$, the linear loss and its range-normalised regret are
+\begin{equation}
+L_w(x)=\sum_iw_ir_i(x;b_0),\qquad
+\Delta L_w(x)=\frac{L_w(x)-\min_{y\in A}L_w(y)}{\max_{y\in A}L_w(y)-\min_{y\in A}L_w(y)}.
+\label{eq:external}
+\end{equation}
+If the denominator is zero, regret is defined as zero for all candidates for that weight. Mean regret averages all 10,000 values. Upper-tail regret averages exactly the 2,500 largest values. The latter is empirical upper-25\% CVaR, including the appropriate mass when values tie. Candidate losses are computed once on the nominal scale. We then evaluate the points selected under perturbed bounds and average first over draws within each candidate set, then equally over candidate sets.
+
+Point-change rate is the fraction of draws changing the fully refined point relative to its nominal identifier. Category-set change rate compares the complete nominal and perturbed $W_{\mathrm{cat}}$ sets. We also save category-set size, Jaccard overlap and retention of the nominal point. None of these set metrics is substituted for a point-change rate in cross-method comparisons. Nominal divergence compares the nominal ReLexTail and LexPR identifiers.
+
+Table~\ref{tab:comparison} and Figure~\ref{fig:quality} use the same 90-instance population at $p=0.05$. Confidence intervals resample paired instance summaries, preserving each instance's methods and all 500 perturbations as one block. Table intervals use 10,000 percentile-bootstrap replicates. For two focal outcomes at $\delta=0.02$, Table~\ref{tab:effects} uses 20,000 paired bootstrap replicates, a paired Wilcoxon signed-rank check, probability of superiority with half credit for ties, and Holm correction across exactly those two checks. Seed 20260906 fixes both resampling analyses. The focal width represents two percentage points of active range and was retained from the earlier protocol; the analysis was not preregistered, so inferential quantities remain descriptive. No resolution is declared universally optimal.
+
+\begin{table}[tbp]\centering\small
+\caption{Paired comparison on 90 candidate sets at $p=0.05$. Regret is evaluated on the nominal scale after perturbed selection. The interval is a 95\% paired instance-bootstrap interval for the tail-regret difference from LexPR. Point changes are percentages.}
+\label{tab:comparison}
+\begin{tabular}{@{}lrrrr@{}}\toprule
+Method & Mean regret & Tail regret & Difference interval & Point changes\\\midrule
+Weighted-sum & 0.2915 & 0.6270 & [+0.05677, +0.11376] & 19.52 \\
+Mean-D & 0.3070 & 0.5491 & [+0.00009, +0.01275] & 30.50 \\
+Leximax & 0.4136 & 0.5340 & [-0.01216, -0.00556] & 35.64 \\
+Tail25-D & 0.3800 & 0.5401 & [-0.00473, -0.00097] & 20.84 \\
+LexPR & 0.3810 & 0.5428 & [+0.00000, +0.00000] & 20.88 \\
+ReLexTail $\delta=0.005$ & 0.3810 & 0.5425 & [-0.00092, +0.00011] & 19.96 \\
+ReLexTail $\delta=0.01$ & 0.3810 & 0.5419 & [-0.00181, -0.00025] & 20.16 \\
+ReLexTail $\delta=0.02$ & 0.3799 & 0.5411 & [-0.00324, -0.00064] & 19.30 \\
+ReLexTail $\delta=0.05$ & 0.3741 & 0.5407 & [-0.00362, -0.00093] & 21.21 \\
+ReLexTail $\delta=0.075$ & 0.3729 & 0.5401 & [-0.00422, -0.00129] & 20.78 \\
+ReLexTail $\delta=0.1$ & 0.3731 & 0.5407 & [-0.00401, -0.00054] & 23.24 \\
+\bottomrule\end{tabular}\end{table}
+
+\begin{figure}[tbp]\centering\includegraphics[width=\linewidth]{quality_stability_frontier.pdf}
+\caption{Matched quality--stability results at $p=0.05$ on all 90 synthetic instances. Lower values are preferred on both axes in panel A; labels on the ReLexTail curve give resolution widths. Panel B separates changes to the point from changes to the category-optimal set. Connecting lines identify tested resolutions and do not imply monotone behaviour between them.}
+\label{fig:quality}\end{figure}
+
+\subsection{Results and limits of the trade-off}
+At $\delta=0.02$, ReLexTail changes its point on 19.30\% of draws compared with 20.88\% for LexPR. The paired mean difference is $-1.584$ percentage points, but its 95\% bootstrap interval $[-3.482,0.091]$ includes zero and the Holm-adjusted Wilcoxon $p$-value is 0.148. Thus the enlarged run does not support a clear point-stability improvement. Mean external upper-tail regret is 0.5411 versus 0.5428; the paired difference is $-0.00177$ with interval $[-0.00329,-0.00065]$, superiority probability 0.722 and adjusted $p=4.44\times10^{-7}$. This effect is consistent on this population but small in magnitude and conditional on the held-out weight distribution.
+
+\begin{table}[tbp]\centering\small
+\caption{Two focal paired effects for ReLexTail at $\delta=0.02$ minus LexPR ($p=0.05$, 90 instance summaries). Probability of superiority counts a lower ReLexTail value as a win and gives half credit to ties. W/L/T are wins/losses/ties. Holm correction covers the two displayed Wilcoxon checks.}
+\label{tab:effects}
+\begin{tabular}{@{}lrrrrr@{}}\toprule
+Outcome & Mean difference & 95\% bootstrap interval & Superiority & W/L/T & Holm $p$\\\midrule
+Point changes (pp) & -1.584 & [-3.482, +0.091] & 0.572 & 32/19/39 & 0.148 \\
+Upper-tail regret & -0.002 & [-0.003, -0.001] & 0.722 & 48/8/34 & $4.44\times10^{-7}$ \\
+\bottomrule\end{tabular}\end{table}
+
+Exact leximax obtains lower tail regret (0.5340) but a higher point-change rate (35.64\%). Tail25-D attains tail regret 0.5401 and a 20.84\% point-change rate, showing that most of the numerical tail benefit does not require categories. The uniform weighted sum attains the lowest mean regret (0.2915) and a much worse upper-tail regret (0.6270), illustrating that average performance and protection across hidden preferences are different objectives.
+
+Coarser resolution is not uniformly more stable. At $\delta=0.1$, ReLexTail's point-change rate is 23.24\%, above the LexPR rate, even though its mean tail regret is slightly lower. Category-set change rises to 40.90\%, with a mean perturbed category-set size of 2.90. At $\delta=0.02$, category-set change is 21.35\% and mean size is 1.08. A larger set is therefore not automatically a more stable set under exact set equality. The category-stability theorem supplies a conditional local guarantee, not an empirical promise that these sets never change.
+
+\begin{figure}[tbp]\centering\includegraphics[width=\linewidth]{family_effects.pdf}
+\caption{Family-specific paired differences between ReLexTail at $\delta=0.02$ and LexPR, at $p=0.05$. Each family contains 30 candidate sets spanning three criterion counts. Points are mean differences; bars are 95\% percentile-bootstrap intervals from 4,000 paired instance resamples. Negative values favour ReLexTail. The intervals are descriptive and not adjusted for multiple comparisons.}
+\label{fig:families}\end{figure}
+
+Figure~\ref{fig:families} disaggregates the main comparison rather than assuming the pooled effect holds for every geometry. Figure~\ref{fig:divergence} separately reports nominal disagreement. A method can share a nominal winner with another method yet respond differently to perturbed bounds. Conversely, disagreement alone does not establish better quality. These distinctions prevent nominal selection, external regret and robustness from being treated as interchangeable outcomes.
+
+\begin{figure}[tbp]\centering\includegraphics[width=.88\linewidth]{fig_divergence.pdf}
+\caption{Nominal recommendation disagreement between ReLexTail at $\delta=0.02$ and exact LexPR, by synthetic geometry. Each denominator is 30 candidate sets. This concerns unperturbed recommendations and is distinct from the point-change rates under perturbed bounds.}
+\label{fig:divergence}\end{figure}
+
+\subsection{Grid, representation and public-data checks}
+Figure~\ref{fig:extensions} tests three potential alternative explanations. Across four grid origins, point changes for $\delta=0.02$ range from 19.30\% to 20.65\%; the result is therefore sensitive in magnitude but not created by the unshifted origin. Using only $C_M$, then $C_M,C_{25}$, or all four category coordinates gives similar point-change rates (19.40\%, 19.40\% and 19.30\%) while category-set changes fall from 28.54\% to 21.35\%. Removing all singleton probes changes the representation and raises point changes to 37.22\%; it is not a neutral simplification. Against each nominal winner's nearest full-profile rival, the first difference occurs at $C_M$ on 64 instances, $C_{25}$ on 13, $C_{50}$ on six and exact $T_{25}$ on seven. No later coordinate is decisive in this population.
+
+\begin{figure}[tbp]\centering\includegraphics[width=\linewidth]{sensitivity_extensions.pdf}
+\caption{Additional checks using the frozen synthetic directions and a public simulation dataset. Panel A shifts fixed-cell origins at three resolutions. Panel B changes the category prefix or removes singleton probes. Panel C identifies the first full-profile difference from the nearest nominal rival. Panel D is a single UCI building-simulation instance and must not be read as population evidence; its nonmonotone jump illustrates why widths require sensitivity analysis.}
+\label{fig:extensions}\end{figure}
+
+For an application-oriented reproducibility check, we downloaded the UCI Energy Efficiency dataset \citep{uci_energy}. It contains 768 simulated building designs, not measurements from occupied buildings. We minimise surface area, heating load and cooling load; surface is only a material-use proxy, not a monetised or environmental impact. Removing duplicate objective profiles and Pareto-dominated rows leaves four unique candidates. On the unperturbed front, LexPR, Mean-D, the uniform weighted sum and every tested ReLexTail width select saved source row 26. At $p=0.05$, LexPR changes on 32.6\% of 500 draws and ReLexTail at $\delta=0.02$ on 32.0\%; at $\delta=0.05$ ReLexTail happens not to change, whereas neighbouring widths do. This isolated discontinuity demonstrates boundary dependence, not superior real-world performance. The archived source, licence, checksum, filtering and all perturbed results are included.
+
+\subsection{A constructed supplier decision}
+The supplier illustration contains ten named alternatives and seven criteria to minimise: unit cost, defect rate, lead time, greenhouse-gas emissions, energy intensity, social risk and supply-resilience risk. Values are fixed in the accompanying source and are constructed, not field measurements. The instance illustrates how a decision analyst can expose the decisive concern and investigate sensitivity. It does not validate the model's preferences for a procurement organisation.
+
+With nine retained canonical probes and common resolution $\delta=0.02$, ReLexTail selects S7. Figure~\ref{fig:profile} compares its labelled disappointments with S6, the nearest rival under the full profile. Both have maximum disappointment $0.787879$, hence maximum category 40. Their upper-25\% tail means are 0.715814 and 0.743146 respectively, giving categories 36 and 38. Thus the decisive coordinate against S6 is $C_{25}$, not $C_M$. S1 has maximum category 41 and is eliminated earlier. Reporting only the S7--S1 contrast would miss the closest rival and misrepresent the actual hierarchy.
+
+\begin{figure}[tbp]\centering\includegraphics[width=.95\linewidth]{fig_supplier_certificate.pdf}
+\caption{Labelled probe disappointments for the recommended supplier S7 and its nearest rival S6. Values are recomputed from the saved criterion matrix with nine canonical probes. Bars explain the individual concerns; optimality follows from comparing complete profiles across all ten candidates.}
+\label{fig:profile}\end{figure}
+
+\begin{figure}[tbp]\centering\includegraphics[width=\linewidth]{relex_decision_profile.pdf}
+\caption{Supplier tail spectrum and category comparison at $\delta=0.02$. S7 and S6 tie in maximum category, but S7 has a lower upper-25\% tail category, highlighted in panel B. Later coordinates need not favour S7 once that first strict difference settles the comparison.}
+\label{fig:relex_profile}\end{figure}
+
+The distance $0.800000-0.787879=0.012121$ is only S7's upward distance to its maximum-category boundary. It is not the global $\mu_{\mathrm{cell}}$ of the stability theorem. On this instance the global minimum distance is zero because some risk coordinates lie exactly on boundaries. The theorem's sufficient condition is therefore uninformative without a more refined treatment of structurally invariant coordinates. A positive bound-robustness guarantee must come from a direct certificate rather than that single distance.
+
+\begin{figure}[tbp]\centering\includegraphics[width=\linewidth]{fig_supplier_interval.pdf}
+\caption{Supplier sampling sensitivity for ReLexTail at $\delta=0.02$, using 300 independent uniform bound draws at each level and nominal-range perturbations. Panel A reports point changes. Panel B reports distinct observed winners, an inner sampling approximation rather than a certified outer bound. The $p=0.5$ endpoint is sampled only and is excluded from closed-box certification.}
+\label{fig:interval}\end{figure}
+
+At $p=0.05$, three of the 300 draws change the nominal supplier. At $p=0.20$, the rate is 30.67\%. S1 and S7 are the only sampled winners from $p=0.05$ through $p=0.50$. This does not prove that no other supplier can win in those boxes. Sampling and the interval illustration in Section~\ref{sec:compute} use the same type of range-relative perturbation, but they concern different candidate matrices and must not be combined into a single empirical certificate.

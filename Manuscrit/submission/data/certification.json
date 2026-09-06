@@ -1,0 +1,155 @@
+[
+  {
+    "p": 0.005,
+    "budget": 64,
+    "processed": 1,
+    "inner": [
+      3
+    ],
+    "outer": [
+      3
+    ],
+    "unresolved": 0.0,
+    "sampled_winners": [
+      3
+    ]
+  },
+  {
+    "p": 0.005,
+    "budget": 256,
+    "processed": 1,
+    "inner": [
+      3
+    ],
+    "outer": [
+      3
+    ],
+    "unresolved": 0.0,
+    "sampled_winners": [
+      3
+    ]
+  },
+  {
+    "p": 0.005,
+    "budget": 1024,
+    "processed": 1,
+    "inner": [
+      3
+    ],
+    "outer": [
+      3
+    ],
+    "unresolved": 0.0,
+    "sampled_winners": [
+      3
+    ]
+  },
+  {
+    "p": 0.02,
+    "budget": 64,
+    "processed": 64,
+    "inner": [
+      3
+    ],
+    "outer": [
+      1,
+      3,
+      5
+    ],
+    "unresolved": 0.97265625,
+    "sampled_winners": [
+      3
+    ]
+  },
+  {
+    "p": 0.02,
+    "budget": 256,
+    "processed": 256,
+    "inner": [
+      3
+    ],
+    "outer": [
+      1,
+      3,
+      5
+    ],
+    "unresolved": 0.88671875,
+    "sampled_winners": [
+      3
+    ]
+  },
+  {
+    "p": 0.02,
+    "budget": 1024,
+    "processed": 1024,
+    "inner": [
+      3
+    ],
+    "outer": [
+      1,
+      3,
+      5
+    ],
+    "unresolved": 0.6416015625,
+    "sampled_winners": [
+      3
+    ]
+  },
+  {
+    "p": 0.05,
+    "budget": 64,
+    "processed": 64,
+    "inner": [
+      3
+    ],
+    "outer": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "unresolved": 0.9998931884765625,
+    "sampled_winners": [
+      3
+    ]
+  },
+  {
+    "p": 0.05,
+    "budget": 256,
+    "processed": 256,
+    "inner": [
+      3
+    ],
+    "outer": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "unresolved": 0.9995918273925781,
+    "sampled_winners": [
+      3
+    ]
+  },
+  {
+    "p": 0.05,
+    "budget": 1024,
+    "processed": 1024,
+    "inner": [
+      3
+    ],
+    "outer": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "unresolved": 0.9979133605957031,
+    "sampled_winners": [
+      3
+    ]
+  }
+]

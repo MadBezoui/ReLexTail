@@ -56,4 +56,3 @@ include = ["lexpr*"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-ra"
-

@@ -1,0 +1,29 @@
+{
+  "name": "trackA_locked",
+  "description": "Confirmatory Track A certification run. Frozen 6 September 2026 before the run on the test and stress splits.",
+  "resolution": "0.02",
+  "focal_level": 0.02,
+  "shortlist": 10,
+  "box_budget": 300,
+  "time_limit_seconds": 20.0,
+  "leaves_recorded_per_instance": 64,
+  "falsify_draws_per_instance": 64,
+  "witness_draws_per_instance": 192,
+  "witness_grid": [0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.4],
+  "anytime_budgets": [64, 256, 1024],
+  "arms": {
+    "A0_global_independent": {"gate": "global", "mode": "independent", "split": "widest"},
+    "A1_decision_independent": {"gate": "decision", "mode": "independent", "split": "widest"},
+    "A2_decision_joint": {"gate": "decision", "mode": "joint", "split": "widest"},
+    "A3_decision_joint_relevant": {"gate": "decision", "mode": "joint", "split": "decision"}
+  },
+  "primary_contrasts": {
+    "P1_decision_focus": ["A1_decision_independent", "A0_global_independent"],
+    "P2_dependency": ["A2_decision_joint", "A1_decision_independent"]
+  },
+  "primary_outcome": "rho_lower",
+  "multiplicity_correction": "Holm within {P1, P2}",
+  "bootstrap_resamples": 10000,
+  "bootstrap_seed": 20260906,
+  "command": "python enhanced/analysis/run_experiments.py --budget 300 --leaves 64 --witness-draws 192"
+}

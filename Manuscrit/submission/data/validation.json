@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "checks": [
+    "10800 instance-level method/perturbation summaries complete (15 methods, 8 levels); regret bounds valid",
+    "180 candidate-set selections agree with independently computed rational full profiles at delta 0.02",
+    "1920 exact rational probe values at 64 box corners lie within outward-rounded enclosures, including singletons",
+    "Nine certification runs preserve witnesses, set inclusions, strict budgets and volume bounds",
+    "Grid-origin, profile-ablation and decisive-coordinate extensions have complete expected designs",
+    "UCI source checksum, row counts, Pareto reduction and 44 benchmark summaries verified",
+    "Supplier recommendation S7 and nearest rival S6 independently verified; decisive coordinate C25",
+    "Fifteen vector figures; abstract 297 words; no LaTeX errors, unresolved references or overfull boxes",
+    "Certification macros all defined; 11072 oracle draws and 5029 replayed leaves, 0 falsified certificates and 0 replay failures"
+  ]
+}

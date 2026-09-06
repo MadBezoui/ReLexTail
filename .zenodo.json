@@ -1,13 +1,22 @@
 {
-  "title": "ReLexTail: Resolution-Aware Lexicographic Preorder",
-  "description": "Source code and experimental artifacts for the ReLexTail method.",
+  "title": "ReLexTail: resolution-aware lexicographic tail-regret selection",
+  "description": "Code, data and reproduction scripts for the ReLexTail decision rule and its decision-focused, dependency-preserving certification engine. Supersedes the experiments of v1.0.0.",
   "upload_type": "software",
   "creators": [
     {
-      "name": "Bezoui, Madani"
+      "name": "Bezoui, Madani",
+      "orcid": "0000-0002-8342-7039"
     }
   ],
   "access_right": "open",
   "license": "MIT",
-  "version": "1.0.0"
+  "version": "2.1.0",
+  "related_identifiers": [
+    {
+      "identifier": "10.24432/C51307",
+      "relation": "references",
+      "scheme": "doi",
+      "resource_type": "dataset"
+    }
+  ]
 }
