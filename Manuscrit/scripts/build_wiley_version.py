@@ -137,10 +137,7 @@ review and editing.
 \bmsection*{Acknowledgments}
 
 This research received no external funding. No additional acknowledgments are
-declared. An AI assistant assisted with manuscript revision, code preparation,
-numerical consistency checks and figure preparation. All reported numerical
-results were computed by the supplied deterministic, seeded scripts. The author
-is responsible for the scientific content and for all submission declarations.
+declared. An AI assistant was used exclusively for the final textual correction.
 
 \bmsection*{Conflicts of Interest}
 
@@ -163,8 +160,6 @@ earlier and smaller release archived at \url{https://doi.org/10.5281/zenodo.2177
 to which the experiments reported here must not be attributed.
 
 \bibliography{refs}
-
-FIGURELEGENDS
 
 \bmsection*{Supporting Information}
 
@@ -386,7 +381,7 @@ def build(out: Path) -> dict:
     body = HEADER.replace("ABSTRACTTEXT", abstract_text(table))
     body = body.replace("AUTHORBLOCK", AUTHOR_BLOCK)
     body += "\n".join(f"\\input{{sections/{name}}}" for name in SECTIONS)
-    backmatter = BACKMATTER.replace("FIGURELEGENDS", figure_legends(table))
+    backmatter = BACKMATTER
     body += "\n" + backmatter
     (out / "main.tex").write_text(body)
 

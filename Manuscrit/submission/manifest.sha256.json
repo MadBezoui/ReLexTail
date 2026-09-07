@@ -1,6 +1,6 @@
 {
-  "Manuscrit/main.tex": "63a5c6c08e54adc2cbe383a6b1828c11bdb1b80fbc9ae84ad7b11c93344e0e0c",
-  "Manuscrit/main.pdf": "3bcdb259dec1cceb94dc5fd20e3b25c568657e288522d6318b2baa7de6c5dcf1",
+  "Manuscrit/main.tex": "c6f668166a2951f02f50565e9b3483773215365eeddad4bbedf85749bf174b35",
+  "Manuscrit/main.pdf": "5e8b86f2a73eed37fd73ae22aaca4b9e83b56f39d403738ffda2c20446f96249",
   "Manuscrit/refs.bib": "7c13a493ce7933bbd194bbe478bd8fd31843f9ae2c05cb56968a4df7599e967a",
   "Manuscrit/scripts/submission_analysis.py": "0c7349d8e57570b21e2cda173a16bdd2cca6477374ac975c601ca4d1a7ec3fab",
   "Manuscrit/scripts/reproduce_submission.py": "b292b5b90dd448cc1fae8becebb943978e56cd439b9cbcf94342cc4a4bbae3cb",
@@ -9,7 +9,7 @@
   "Manuscrit/scripts/submission_certification.py": "846fb1e315d350dc6d59f5ccc677b88b2686044fd14e450ca97cdb7e567551b7",
   "Manuscrit/scripts/validate_submission.py": "f147bfe61d843a991ce05c5fe4322664f384fdf419a6c4170da2ab64df353a6e",
   "Manuscrit/scripts/package_submission.py": "e635d6ee5eab58b5654c563fe4e48a5aff5624e52dedf856cd27b6ee4405d77c",
-  "Manuscrit/scripts/build_wiley_version.py": "d40f5838ef9581c495bb679314653c156338eb0e73161703556d98fa8f1e9f7f",
+  "Manuscrit/scripts/build_wiley_version.py": "687eb1efd5a277f743ef3f9f1b40ca726d0da3d6781d1e9b1330e7d41b08e43f",
   "Manuscrit/scripts/build_jmcda_package.py": "31cd8c2e2f79f6cc87eb99700ce514ff13beb1ef046b1a3ebf417ffedb2cf8e2",
   "Manuscrit/scripts/submission_figures.py": "6d3dd2611395ac9393737b41d31e5c2ebd6cf789a4109fda247bdf2e365ad221",
   "Manuscrit/tests/test_submission_analysis.py": "0330c00a98b9b54ccbcef5e1c646575f6ac7bbc0a9a0f1a29c9729a1aa690a82",
