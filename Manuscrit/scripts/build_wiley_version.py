@@ -137,7 +137,7 @@ review and editing.
 \bmsection*{Acknowledgments}
 
 This research received no external funding. No additional acknowledgments are
-declared. An AI assistant was used exclusively for the final textual correction.
+declared.
 
 \bmsection*{Conflicts of Interest}
 
