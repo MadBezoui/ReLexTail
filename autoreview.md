@@ -1,932 +1,265 @@
+Madani, I conducted a bibliographic and positioning audit of the manuscript as of **7 September 2026**. The main conclusion is clear:
 
-# Comprehensive Revision Plan for ReLexTail
+> The existing references are mostly authentic and correctly used, but the bibliography is too narrow for a paper claiming a methodological contribution at the intersection of MCDA, lexicographic optimization, tail-risk aggregation, robustness, interval certification, and explainability.
 
-## Executive recommendation
-
-The paper already has a sound mathematical core. The strongest enhancement strategy is **not** to add more isolated theorems, but to strengthen four areas:
-
-1. **Positioning:** demonstrate precisely how ReLexTail differs from threshold-based MCDA, OWA/CVaR aggregation, exact leximax, SMAA and robust ordinal regression.
-2. **Resolution elicitation:** turn \(\delta\) from an externally selected experimental parameter into an auditable decision-modelling parameter.
-3. **Empirical validation:** add ablations, uncertainty intervals, grid-origin sensitivity, runtime evidence and at least one non-synthetic benchmark/application.
-4. **Reproducibility:** publish the exact manuscript-specific code and data under a versioned DOI.
-
-I recommend the following structure and work packages.
+One DOI is incorrect, one DOI contains a typographical error, several foundational streams are under-cited, and the 2025–2026 literature needs substantial reinforcement.
 
 ---
 
-# 1. Revised paper structure
+# 1. Audit of the references currently cited
 
-## Proposed structure
+## 1.1 Summary
 
-### 1. Introduction
+The manuscript contains **17 references**.
 
-- Decision problem and motivation.
-- Why exact lexicographic minimax can overreact to negligible differences.
-- Why ordinary pairwise tolerances may be nontransitive.
-- Main idea of fixed resolution cells followed by exact refinement.
-- Explicit distinction between:
-  - \(W_{\mathrm{cat}}\): resolution-level recommendation set;
-  - \(W_{\mathrm{exact}}\): fully refined optimal class;
-  - deterministic identifier tie-breaking.
-- Contributions in bullet form.
+| Result                                                                            |   Count |
+| --------------------------------------------------------------------------------- | ------: |
+| References whose identity and general metadata are verified                       |      17 |
+| Incorrect DOI                                                                     |       1 |
+| DOI containing a spacing/typographical defect                                     |       1 |
+| References that are relevant but insufficient to support broad positioning claims | Several |
+| Evidently fabricated references                                                   |       0 |
 
-### 2. Related work and positioning
-
-- Preference-based multiobjective optimisation.
-- Ordered aggregation, OWA, CVaR and leximax.
-- Threshold-based MCDA.
-- Robustness to uncertain inputs and normalisation.
-- SMAA and robust ordinal regression.
-- Explainability and auditability.
-- Comparison table with checkmarks/crossmarks.
-
-### 3. ReLexTail representation and decision rule
-
-- Criteria and normalisation.
-- Probe construction and retention.
-- Active-range disappointment.
-- Tail means.
-- Resolution categories.
-- Category-optimal and exact-optimal sets.
-- Contrastive explanation records.
-
-### 4. Resolution elicitation and sensitivity
-
-A new full section should be introduced here:
-
-- interpretation of \(\delta\);
-- elicitation protocol;
-- common versus coordinate-specific widths;
-- grid-origin sensitivity;
-- statistical or data-informed calibration;
-- reporting requirements.
-
-### 5. Mathematical properties
-
-- Existence and complete preorder.
-- Positional anonymity.
-- Strict profile monotonicity.
-- Pareto compatibility.
-- Uniform replication invariance.
-- Category stability.
-- New short proposition on monotonic nesting of category partitions as \(\delta\) changes—if valid only under restricted grid alignment, state those restrictions.
-- Exact-refinement fragility.
-
-### 6. Finite computation and robustness under uncertain bounds
-
-- Finite-set algorithm.
-- Sampling interpretation.
-- Possible and necessary winners.
-- Interval elimination.
-- Branch-and-bound algorithm.
-- Soundness versus tightness.
-
-### 7. Continuous polyhedral formulation
-
-- Anchor computation.
-- Four category stages.
-- Exact tail refinements.
-- Ordered-sum refinements.
-- Solver tolerances.
-- Explicit limitation: theoretical characterisation without a fully validated end-to-end implementation.
-
-### 8. Experimental design
-
-- Synthetic instances.
-- Public real/engineering datasets.
-- Compared methods.
-- Ablation variants.
-- Resolution and grid-shift design.
-- Perturbation levels.
-- Evaluation measures.
-- Statistical analysis.
-- Computational environment.
-
-### 9. Results
-
-- Quality–stability trade-off.
-- Statistical uncertainty.
-- Geometry- and dimension-specific results.
-- Probe-family ablation.
-- Grid-origin sensitivity.
-- Real-data results.
-- Runtime/scalability.
-- Interval-certification performance.
-
-### 10. Supplier decision and practical reporting
-
-- Supplier data.
-- Resolution elicitation example.
-- Category and exact recommendation.
-- Contrastive explanation.
-- Uncertain-bound sensitivity.
-- Decision dashboard.
-
-### 11. Discussion, limitations and real-world validation roadmap
-
-### 12. Conclusion
+The strongest bibliographic defect is the DOI attached to Kostreva and Ogryczak (1999).
 
 ---
 
-# 2. Revised contribution statement
+## 1.2 Reference-by-reference audit
 
-The contribution statement should be concise and defensible. I recommend replacing broad novelty language with the following.
-
-> This paper makes six contributions. First, it defines a complete and transitive preorder that prioritises fixed-resolution categories of maximum and upper-tail probe disappointments before applying exact refinements. Second, it distinguishes the resolution-level category-optimal set from the fully refined optimal class. Third, it establishes finite-set existence, strict profile monotonicity, conditional criterion-level Pareto compatibility and invariance to uniform replication of the declared probe multiset. Fourth, it provides a sufficient local condition for category stability while explicitly showing why this condition does not imply stability of the fully refined point. Fifth, it develops sound interval-based candidate elimination under fixed probe retention and positive normalisation denominators. Sixth, it evaluates the resulting quality–stability trade-off through matched perturbations, ablations and reproducible synthetic and application-oriented experiments.
-
-## Recommended highlights with checkmarks
-
-The journal highlights could be:
-
-- ✓ Fixed resolution cells avoid nontransitive pairwise tolerance relations.
-- ✓ Maximum and upper-tail probe disappointments are prioritised before exact refinement.
-- ✓ Category-optimal and fully refined recommendations are reported separately.
-- ✓ The preorder is complete, transitive and conditionally Pareto-compatible.
-- ✓ Uniform replication of the complete probe multiset leaves comparisons unchanged.
-- ✓ Uncertain normalisation bounds are studied through matched sampling and sound interval elimination.
-- ✓ The quality–stability trade-off is evaluated with paired statistical comparisons.
-- ✗ ReLexTail does not remove the need to elicit probes, multiplicities or resolution widths.
-- ✗ Category stability does not imply stability of the fully refined recommendation.
-- ✗ Sampling does not certify the complete possible-winner set.
-- ✗ The present continuous MILP formulation is not yet an independently validated solver implementation.
-
-The crossmarks are valuable: they show methodological honesty and prevent exaggerated claims.
+| Reference                                            | Verification                                                                                                                                                        | Relevance and required action                                                                                                                                                                              |
+| ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Erwig & Kumar (2025)**                       | Verified:*Journal of Multi-Criteria Decision Analysis*, 32(1), e70011, DOI [10.1002/mcda.70011](https://doi.org/10.1002/mcda.70011).                               | Highly relevant to contrastive explanations and replay records. Retain. Explain that their framework targets score decomposition, whereas ReLexTail exposes the decisive coordinate of an ordered profile. |
+| **Greco, Mousseau, & Słowiński (2008)**      | Verified:*EJOR*, 191(2), 416–436, DOI [10.1016/j.ejor.2007.08.013](https://doi.org/10.1016/j.ejor.2007.08.013).                                                   | Essential for Robust Ordinal Regression. Retain.                                                                                                                                                           |
+| **Huber, Rojas Gonzalez, & Astudillo (2025)**  | Verified:*Journal of Multi-Criteria Decision Analysis*, 32(3), e70019, DOI [10.1002/mcda.70019](https://doi.org/10.1002/mcda.70019).                               | Highly relevant, but it concerns learned preference uncertainty, not normalization uncertainty. The distinction made in the manuscript is correct.                                                         |
+| **Hwang & Yoon (1981)**                        | Verified. Book DOI[10.1007/978-3-642-48318-9](https://doi.org/10.1007/978-3-642-48318-9).                                                                            | Appropriate foundational citation for distance-based and multiple-attribute methods.                                                                                                                       |
+| **Kostreva & Ogryczak (1999)**                 | Article verified, but the DOI in the manuscript is wrong.                                                                                                           | **Correct DOI:** [10.1051/ro:1999112](https://doi.org/10.1051/ro:1999112), not `10.1051/ro:1999118`. This must be corrected.                                                                        |
+| **Kuhn, Shafiee, & Wiesemann (2025)**          | Verified:*Acta Numerica*, 34, 579–804, DOI [10.1017/S0962492924000084](https://doi.org/10.1017/S0962492924000084).                                                | Authoritative DRO review. Retain, but do not present DRO as a close competitor: it concerns ambiguity over probability laws, unlike a deterministic box of normalization bounds.                           |
+| **Lahdelma, Hokkanen, & Salminen (1998)**      | Verified, DOI[10.1016/S0377-2217(97)00163-X](https://doi.org/10.1016/S0377-2217(97)00163-X).                                                                         | Retain. Remove the space currently appearing inside`S0377 -2217`.                                                                                                                                        |
+| **Miettinen (1999)**                           | Verified. DOI[10.1007/978-1-4615-5563-6](https://doi.org/10.1007/978-1-4615-5563-6).                                                                                 | Appropriate foundational source for multiobjective optimization and preference articulation.                                                                                                               |
+| **Ogryczak & Śliwiński (2003)**              | Verified:*EJOR*, 148(1), 80–91, DOI [10.1016/S0377-2217(02)00399-5](https://doi.org/10.1016/S0377-2217(02)00399-5).                                               | Directly relevant to ordered aggregation and linear formulations. Retain.                                                                                                                                  |
+| **Ogryczak & Tamir (2003)**                    | Verified:*Information Processing Letters*, 85(3), 117–122, DOI [10.1016/S0020-0190(02)00370-8](https://doi.org/10.1016/S0020-0190(02)00370-8).                    | Directly supports sums-of-largest-functions formulations. Retain.                                                                                                                                          |
+| **Paradowski, Wątróbski, & Sałabun (2025)** | Verified:*Artificial Intelligence Review*, 58, Article 298, DOI [10.1007/s10462-025-11307-6](https://doi.org/10.1007/s10462-025-11307-6).                          | Relevant to rank stability under perturbations. Retain, but distinguish empirical robustness coefficients from proof-oriented certification.                                                               |
+| **Rockafellar & Uryasev (2000)**               | Verified:*Journal of Risk*, 2(3), 21–41, DOI [10.21314/JOR.2000.038](https://doi.org/10.21314/JOR.2000.038).                                                      | Essential. Clarify that the paper uses the upper-tail mass\(\alpha\), whereas standard CVaR notation often uses a confidence level.                                                                        |
+| **Tervonen & Figueira (2008)**                 | Verified:*Journal of Multi-Criteria Decision Analysis*, 15(1–2), 1–14, DOI [10.1002/mcda.407](https://doi.org/10.1002/mcda.407).                                 | Appropriate SMAA survey. Retain.                                                                                                                                                                           |
+| **Tsanas & Xifara (2012)**                     | Verified as a dataset: UCI Energy Efficiency, DOI[10.24432/C51307](https://doi.org/10.24432/C51307).                                                                 | The entry should explicitly include the document type**[Dataset]**, repository and version/access information if required by the journal.                                                                  |
+| **Więckowski & Sałabun (2025)**              | Verified:*Engineering Applications of Artificial Intelligence*, 140, 109699, DOI [10.1016/j.engappai.2024.109699](https://doi.org/10.1016/j.engappai.2024.109699). | Relevant to unknown weights. Retain, while preserving the distinction from bound uncertainty.                                                                                                              |
+| **Wierzbicki (1980)**                          | Verified, DOI[10.1007/978-3-642-48782-8_32](https://doi.org/10.1007/978-3-642-48782-8_32).                                                                           | Appropriate reference-point foundation.                                                                                                                                                                    |
+| **Yager (1988)**                               | Verified:*IEEE Transactions on Systems, Man, and Cybernetics*, 18(1), 183–190, DOI [10.1109/21.87068](https://doi.org/10.1109/21.87068).                          | Essential OWA citation. Retain.                                                                                                                                                                            |
 
 ---
 
-# 3. New related-work section
+# 2. Important weaknesses in the current literature positioning
 
-## 3.1 Recommended comparison table
+## 2.1 Missing direct citation for lexicographic minimax
 
-Use a table of methodological capabilities, not a claim that one method is universally superior.
+The manuscript repeatedly invokes “exact lexicographic minimax” and introduces “LexPR”, but does not cite a direct treatment of lexicographic minimax. Add:
 
-### Table: Positioning of ReLexTail relative to related decision rules
+> Ogryczak, W. (1997). On the lexicographic minimax approach to location problems. *European Journal of Operational Research, 100*(3), 566–585. DOI: [10.1016/S0377-2217(96)00154-3](https://doi.org/10.1016/S0377-2217(96)00154-3).
 
-| Family                           | Explicit preference model | Transitive fixed-resolution cells | Upper-tail aggregation across concerns | Complete final preorder | Uncertain-normalisation analysis | Possible/necessary winner analysis | LP/MILP characterisation | Contrastive audit record |
-| -------------------------------- | ------------------------: | --------------------------------: | -------------------------------------: | ----------------------: | -------------------------------: | ---------------------------------: | -----------------------: | -----------------------: |
-| Weighted sum                     |                        ✓ |                                ✗ |                                     ✗ |                     ✓* |                               ✗ |                                 ✗ |                       ✓ |                       △ |
-| Reference-point/distance methods |                        ✓ |                                △ |                                     ✗ |                     ✓* |                               ✗ |                                 ✗ |                       △ |                       △ |
-| OWA/ordered median               |                        ✓ |                                ✗ |                                     ✓ |                     ✓* |                               ✗ |                                 ✗ |                       ✓ |                       △ |
-| Empirical CVaR minimisation      |                        ✓ |                                ✗ |                                     ✓ |                     ✓* |                               △ |                                 ✗ |                       ✓ |                       △ |
-| Exact leximax/LexPR              |                        ✓ |                                ✗ |                                     ✗ |                      ✓ |                               △ |                                 ✗ |                       ✓ |                       ✓ |
-| ELECTRE-type threshold methods   |                        ✓ |                              ✓** |                                     ✗ |                   ✗*** |                               △ |                                 ✗ |                       ✗ |                       ✓ |
-| SMAA                             |                        ✓ |                                ✗ |                                     △ |                      ✗ |                               △ |                   ✓ probabilistic |                       ✗ |                       ✓ |
-| Robust ordinal regression        |                        ✓ |                                ✗ |                                     ✗ |                      ✗ |                               △ |                         ✓ logical |                       △ |                       ✓ |
-| ReLexTail                        |                        ✓ |                                ✓ |                                     ✓ |                      ✓ |                               ✓ |        ✓ under stated assumptions |           ✓ theoretical |                       ✓ |
+This reference is more directly relevant than relying only on equitable optimization and OWA.
 
-**Legend**
+## 2.2 Missing interval-analysis foundation
 
-- ✓: integral to the standard formulation;
-- ✗: not generally provided;
-- △: possible through an extension or implementation-dependent;
-- \(*\): complete up to numerical ties;
-- \(**\): thresholds are available, but they do not generally define the same fixed-cell equivalence relation;
-- \(***\): outranking relations may be incomplete or nontransitive.
+Section 5 discusses dependency loss, shared anchors, outward rounding and interval enclosures. These are standard interval-analysis issues, but no foundational interval-analysis source is cited. Add:
 
-Add this caution below the table:
+> Moore, R. E., Kearfott, R. B., & Cloud, M. J. (2009). *Introduction to Interval Analysis*. SIAM. DOI: [10.1137/1.9780898717716](https://doi.org/10.1137/1.9780898717716).
 
-> The table describes structural capabilities, not empirical superiority. A checkmark does not imply that a method is preferable for every decision context.
+The novelty claim should not be “dependency preservation is new”. The manuscript already avoids that claim. The contribution is its **specialization to the shared-anchor quotient and its decision-level empirical consequence**.
 
-## 3.2 Text explaining the gap
+## 2.3 Insufficient coverage of contemporary MCDA
 
-A suitable positioning paragraph is:
+The current paragraph beginning “Recent work reinforces four adjacent needs” cites only four recent papers. This is too narrow to support a strong state-of-the-art positioning. In particular, it omits:
 
-> ReLexTail lies between strict lexicographic optimisation and threshold-based decision aiding. Unlike exact leximax, it does not give every sub-resolution maximum difference immediate priority. Unlike pairwise indifference thresholds, its fixed cells induce a transitive category-equality relation. Unlike a pure OWA or CVaR score, it retains a declared noncompensatory hierarchy across the maximum and several tail levels. Unlike SMAA and robust ordinal regression, uncertainty is placed primarily on the normalisation bounds while the declared preference rule remains fixed. Exact refinement ultimately yields a complete preorder, but the category-optimal set remains available as the resolution-level decision output.
+- the 2025 retrospective on 50 years of MCDA;
+- recent work on relative robustness;
+- recent explainable MCDA;
+- recent combinations of probabilistic uncertainty and outranking;
+- recent SMAA-based elicitation;
+- recent exact anytime lexicographic enumeration;
+- behavioural evidence concerning interactive multiobjective optimization.
 
----
+## 2.4 “Tail regret” terminology needs stronger positioning
 
-# 4. Practical elicitation of the resolution parameter
+Inside the selection rule, \(T_\alpha\) aggregates **probe disappointments**, not decision regret against an alternative or state-dependent optimum. External regret is used only in the evaluation study.
 
-This must become a dedicated subsection, not only one paragraph in the conclusion.
+Two solutions are possible:
 
-## 4.1 Interpretation
+1. retain “tail-regret” but state explicitly, near the first occurrence, that it is a named decision index built from normalized disappointments; or
+2. use “tail-disappointment” for the internal profile and reserve “regret” for Equation (13).
 
-Explain that \(\delta_\ell\) is:
+The second option is terminologically cleaner.
 
-- not a solver tolerance;
-- not a confidence level;
-- not an uncertainty radius;
-- not directly a percentage of the physical criterion;
-- a category width on the active-range disappointment scale.
+## 2.5 The closest-literature claim remains unresolved
 
-For a probe \(q\), a width of \(0.02\) means 2% of the active probe range:
+Table 6 honestly labels “Priority over the closest literature” as unestablished. This is scientifically prudent, but it also signals that the literature review is not yet submission-ready. The revised section below resolves much of this problem, but I recommend avoiding an absolute “first method” claim. Prefer:
 
-\[
-R_q=q^w-q^\star.
-\]
+> “We are not aware of prior work combining these components under the same deterministic preorder and certification contract.”
 
-It does **not** necessarily mean 2% of price, delivery time or emissions.
+## 2.6 Author-identity metadata inconsistency
 
-## 4.2 Recommended elicitation protocol
+The manuscript gives the ORCID:
 
-### Step 1 — Present concrete candidate pairs
+> `0000-0002-8342-7039`
 
-Show the decision-maker pairs differing by controlled amounts in:
+This identifier appears in the recent IEEE and ACM metadata. However, some older Crossref records attributed to Madani Bezoui, including the 2025 *Applied Soft Computing* record, contain:
 
-- maximum disappointment;
-- worst 25% tail;
-- worst 50% tail;
-- mean disappointment.
+> `0000-0001-6930-1088`
 
-### Step 2 — Find a just-noticeable decision difference
+This should be corrected at publisher/Crossref level if the latter is obsolete or erroneous. Otherwise, automated indexing may split the publication record. The current HAL profile confirms the relevant publication list, while the recent IEEE record uses `0000-0002-8342-7039` ([HAL profile](https://cv.hal.science/mbezoui); [IEEE/Crossref record](https://doi.org/10.1109/OJCS.2026.3681725)).
 
-For each risk coordinate \(R_\ell\), ask:
+## 2.7 Reproducibility wording
 
-> What is the smallest difference in this summary that should be allowed to override all later coordinates?
+The repository exists and documents the archive and commands ([GitHub repository](https://github.com/MadBezoui/ReLexTail)). However, its README also states that parts of the legacy test suite fail against the current API. Therefore, replace “complete replay package” by a more precise formulation unless a clean release test is provided:
 
-Use a sequence such as:
-
-\[
-0.005,\ 0.01,\ 0.02,\ 0.03,\ 0.05,\ 0.075,\ 0.10.
-\]
-
-### Step 3 — Convert physical differences where possible
-
-If a probe corresponds to a physical criterion, show the corresponding physical-scale change:
-
-\[
-\Delta q \approx \delta_\ell R_q.
-\]
-
-For aggregate probes, show several representative candidate-specific examples because the physical interpretation may not be unique.
-
-### Step 4 — Check consistency
-
-Repeat selected pairwise questions in reverse order and after a delay. Report:
-
-- within-session consistency;
-- test–retest agreement;
-- width interval rather than only one point estimate.
-
-### Step 5 — Choose a robust width region
-
-Do not select one \(\delta\) only because it gives the most favourable experimental result. Identify a range in which:
-
-- the nominal \(W_{\mathrm{cat}}\) is stable;
-- the point recommendation is reasonably stable;
-- external regret does not deteriorate materially;
-- the recommendation remains interpretable.
-
-### Step 6 — Conduct grid-shift sensitivity
-
-For category origin \(o_\ell\), investigate:
-
-\[
-B_(z)
-=====
-
-\left\lceil \frac{z-o}{\delta}\right\rceil,
-\]
-
-with an explicit convention for \(z\le o\). Suggested offsets are:
-
-\[
-o\in\left\{0,\frac{\delta}{4},\frac{\delta}{2},
-\frac{3\delta}{4}\right\}.
-\]
-
-The original zero-anchored grid remains the primary model; shifted grids are sensitivity diagnostics.
-
-## 4.3 Practical guidance for choosing 0.02 versus 0.05
-
-Add a table such as:
-
-| Diagnostic                                                                     | Prefer\(\delta=0.02\) | Prefer\(\delta=0.05\) |
-| ------------------------------------------------------------------------------ | --------------------- | --------------------- |
-| Decision-maker discriminates small changes reliably                            | ✓                    | ✗                    |
-| Measurement/normalisation precision is high                                    | ✓                    | ✗                    |
-| Avoiding large category-optimal sets is important                              | ✓                    | ✗                    |
-| Broader-tail compensation within maximum cells is desired                      | △                    | ✓                    |
-| Small boundary movements are common                                            | ✓/△                 | △                    |
-| Decision is high-stakes and exact refinement must remain informative           | ✓                    | △                    |
-| Decision-maker explicitly regards 2–5% active-range differences as negligible | ✗                    | ✓                    |
-
-The choice must ultimately be based on elicited meaning, not on whichever width gives the best benchmark result.
+> “The archive contains the data, scripts, current certification tests and documented reproduction commands; known failures in the legacy test suite are separately disclosed.”
 
 ---
 
-# 5. Additional figures
+# 3. Proposed “Related Work” section
 
-The paper already has 11 figures. Adding six or more without restructuring could make it excessively long. I recommend adding **eight new figures**, while moving some existing methodological illustrations to supplementary material.
-
-## New Figure 12 — Resolution elicitation curve
-
-**Content:** For each risk coordinate, plot the proportion of decision-maker judgments declaring two values meaningfully different against the active-range difference.
-
-**Axes**
-
-- \(x\): absolute difference in risk coordinate;
-- \(y\): proportion of “meaningfully different” responses.
-
-**Output:** Estimated transition region and proposed \(\delta_M,\delta_{25},\delta_{50},\delta_{100}\).
-
-**Purpose:** Gives a practical basis for choosing \(\delta=0.02\) versus \(0.05\).
+The following section is written directly in English so that it can be inserted into the manuscript. It cites more than 15 works from 2025–2026 and incorporates six publications involving Madani Bezoui without presenting the peripheral ones as direct antecedents of ReLexTail.
 
 ---
 
-## New Figure 13 — Resolution–grid-origin sensitivity heatmap
+## 2 Related work
 
-**Content:** Heatmaps over:
+### 2.1 Multicriteria recommendation and ordered profiles
 
-- resolution width \(\delta\);
-- grid shift \(o/\delta\).
+Multiple-criteria decision analysis provides several conceptually different routes from a set of feasible or Pareto-efficient alternatives to a recommendation. Compensatory methods combine criterion evaluations through weighted scores, utility functions, distances or reference points, whereas noncompensatory and order-based methods emphasize the worst-performing coordinates or impose priorities between objectives (Hwang & Yoon, 1981; Wierzbicki, 1980; Miettinen, 1999). A recent retrospective by Greco, Słowiński, and Wallenius (2025) traces this development from classical aggregation methods to preference-disaggregation and robust ordinal-regression approaches. This broader perspective is important here because ReLexTail is not intended as a universally preferable aggregation method: it implements a declared priority structure over a multiset of interpretable concerns.
 
-Panels should report:
+Ordered weighted averaging associates weights with ranked outcomes rather than named criteria (Yager, 1988). Related equitable-optimization models seek solutions that improve the least satisfactory components of an achievement vector (Kostreva & Ogryczak, 1999), while lexicographic minimax refines the comparison of ordered profiles by successively minimizing their worst components (Ogryczak, 1997). Linear representations of ordered weighted objectives and sums of the largest functions provide the computational basis for such models (Ogryczak & Śliwiński, 2003; Ogryczak & Tamir, 2003). Recent work on anytime lexicographic enumeration addresses a complementary problem: Foschini et al. (2026) generate the lexicographically best nondominated solutions progressively, whereas ReLexTail assumes a fixed candidate set and defines a single preorder that combines resolution categories, tail summaries and exact ordered-profile refinement.
 
-1. point-change rate;
-2. category-set change rate;
-3. upper-tail external regret;
-4. mean size of \(W_{\mathrm{cat}}\).
+The upper-tail summaries used by ReLexTail are instances of empirical CVaR-type functionals (Rockafellar & Uryasev, 2000). In the present setting, however, the empirical atoms are declared probe disappointments rather than realizations of a stochastic loss. This distinction separates the selection mechanism from distributionally robust optimization, where decisions are protected against ambiguity in the probability law governing uncertain outcomes (Kuhn, Shafiee, & Wiesemann, 2025). ReLexTail instead treats a deterministic box of uncertain normalization parameters and makes no distributional-robustness claim.
 
-**Purpose:** Directly addresses fixed-boundary sensitivity.
+### 2.2 Preference uncertainty and normalization uncertainty
 
----
+A major part of contemporary MCDA concerns incomplete, uncertain or interactively elicited preferences. Stochastic multicriteria acceptability analysis represents uncertainty over weights or evaluations through acceptability measures (Lahdelma, Hokkanen, & Salminen, 1998; Tervonen & Figueira, 2008). Robust ordinal regression derives necessary and possible preference relations from a set of value functions compatible with preference information (Greco, Mousseau, & Słowiński, 2008). More recently, Więckowski and Sałabun (2025) proposed support procedures for settings with unknown criterion weights, while Huber, Rojas Gonzalez, and Astudillo (2025) used a Bayesian utility model and informative pairwise queries to identify preferred Pareto solutions. Zhao et al. (2026) combine SMAA-2 and FITradeoff to reduce the interaction burden during pairwise elicitation.
 
-## New Figure 14 — Paired instance-level effect distributions
+These methods vary preference parameters, criterion weights or probabilistic evaluations. ReLexTail addresses a different uncertainty source: the preference rule, probe family and resolution grid are fixed, while the bounds used to normalize criterion values are allowed to vary within a prescribed box. Consequently, its possible and necessary winner sets resemble the quantifier structure used in SMAA and robust ordinal regression, but their semantics are different. A possible ReLexTail winner is supported by at least one admissible normalization vector, not by at least one compatible utility function or sampled weight vector.
 
-Use violin, box, or raincloud plots for:
+Recent work also stresses that interactive elicitation is affected by behavioural and procedural choices. Halstead et al. (2026), for example, show that anchoring can prevent users from reaching their most preferred solution in interactive multiobjective optimization, especially when they decide on behalf of others. Such evidence reinforces the need to distinguish an explicitly declared deterministic rule from a claim of recovered or latent human preferences. ReLexTail provides the former; it does not claim that its cells or probes statistically identify a decision maker’s true utility function.
 
-\[
-\Delta_}
-========
+### 2.3 Robustness, sensitivity and certification
 
-\mathrm_}
----------
+Sensitivity analysis typically measures how rankings change when weights, evaluations or method parameters are perturbed. Paradowski, Wątróbski, and Sałabun (2025) introduce rank-stability and balance-point coefficients for diagnosing the robustness of MCDM results. Jangid et al. (2025) similarly compare the stability of several MCDM methods under perturbations in a logistics setting. Weber (2026) takes a different optimization perspective and defines relatively robust multicriteria decisions through a worst-case performance ratio over admissible weights. Cebesoy, Tuncer Şakar, and Yet (2025) combine outranking methods with Bayesian networks to represent uncertain evaluations and communicate the resulting decision support.
 
-\mathrm{ChangeRate}_{\mathrm{LexPR}},
-\]
+These contributions illustrate that “robustness” does not denote a single mathematical property. It may refer to empirical rank stability, worst-case performance over weights, probabilistic acceptability, or invariance of a selected alternative over a parameter region. ReLexTail adopts the last interpretation. Its certification problem asks whether the same unique recommendation is produced for every normalization vector in a prescribed box. Random perturbation experiments provide sensitivity evidence but cannot establish this universal statement.
 
-and
+The interval component of ReLexTail follows the general principle that dependency loss can enlarge interval enclosures when repeated occurrences of a shared variable are treated independently (Moore, Kearfott, & Cloud, 2009). The specific shared quantities here are the best and worst probe anchors used by every candidate at a fixed bound vector. The contribution is therefore not a new principle of interval arithmetic, but a decision-focused specialization: the anchors are retained within a common quotient, and certification stops once the first lexicographically decisive profile coordinate separates the nominal winner from each rival. This differs from requiring every candidate and every risk coordinate to remain within its original resolution cell.
 
-\[
-\Delta_}
-========
+### 2.4 Explanation and auditability
 
-\mathrm_}
----------
+Explanation has become an explicit concern in MCDA. Erwig and Kumar (2025) derive contrastive explanations from fine-grained representations of the computations performed by weighted and hierarchical decision methods. Shi and Yao (2025) propose an explainable MCDA framework based on three-way decisions. ReLexTail follows the same general objective of making a recommendation inspectable, but its explanation object is specific to its preorder: for each rival, it records the first coordinate at which the complete profile differs, the values being compared and, for categorical coordinates, the applicable resolution width. Such a record explains why a pairwise comparison is settled, while independent replay of all pairwise records establishes optimality over the finite candidate set.
 
-\mathrm{TailRegret}_{\mathrm{LexPR}}.
-\]
+Auditability is also distinct from statistical calibration. A deterministic replay can verify that the published recommendation follows from the declared candidates, probes, bounds and numerical conventions. It does not establish that the probes recover stakeholder preferences, that the selected candidate minimizes an external population loss, or that a certificate has a calibrated probability of correctness. These remain separate empirical questions.
 
-Show:
+### 2.5 Relation to the authors’ previous work
 
-- all 90 paired instance effects;
-- pooled mean;
-- median;
-- 95% paired-bootstrap interval;
-- zero reference line.
+The present work also extends a broader research programme on preference-aware multiobjective optimization and decision-support tooling. Bezoui, Olteanu, and Sevaux (2023) integrated decision-maker preferences into multiobjective flexible job-shop scheduling, while Bezoui et al. (2024) examined hybrid metaheuristics for multiobjective manufacturing and supply-chain optimization in an Industry 5.0 context. Ibnelbey and Bezoui (2025) subsequently studied preference-based multiobjective optimization for student transportation, and Regaigui et al. (2025) developed a memetic method for portfolio optimization under cardinality, quantity and pre-assignment constraints. More recent contributions investigate similarity-weighted transfer for manufacturing optimization (Bezoui, Nouinou, & Bounceur, 2026) and a hardware–software decomposition architecture for scalable digital-twin systems (Bounceur et al., 2026).
 
-**Purpose:** Prevents the pooled average from hiding heterogeneous effects.
+These studies motivate the need for interpretable optimization and reproducible decision-support pipelines, but they are not direct antecedents of the ReLexTail preorder or its interval certificate. The closest methodological antecedent in this sequence is the preference-integration work of Bezoui, Olteanu, and Sevaux (2023); the portfolio, manufacturing and digital-twin contributions provide application and computational context rather than proofs of the present ordering or certification results.
+
+### 2.6 Positioning of ReLexTail
+
+ReLexTail combines established components—active-range normalization, ordered aggregation, empirical CVaR, fixed resolution cells, lexicographic refinement and interval enclosure—under a specific decision contract. Relative to exact lexicographic minimax, fixed cells postpone sub-resolution differences until broader tail categories have been compared. Relative to SMAA, Bayesian preference elicitation and robust ordinal regression, the preference rule is held fixed and uncertainty is assigned to normalization bounds. Relative to empirical robustness coefficients, the method produces a deterministic box certificate rather than a sensitivity score. Relative to explainable MCDA, it supplies a method-specific first-difference record and an independent replay path.
+
+Accordingly, the contribution is not the invention of CVaR, ordered aggregation, lexicographic optimization or dependency-aware interval arithmetic. It is the construction and analysis of a resolution-aware preorder together with a decision-focused certificate that preserves the shared normalization structure. To our knowledge, the cited literature does not combine these elements under the same finite-set selection rule and exact certification contract; this statement should nevertheless be presented as a scoped literature-based assessment rather than as an unrestricted priority claim.
 
 ---
 
-## New Figure 15 — Quality–stability Pareto map across all \(p\) and \(\delta\)
+# 4. Recent references to add: 2025–2026
 
-Each point represents one method–parameter combination.
+The following list contains **17 references from 2025–2026**. The six references involving Madani Bezoui are marked **†**.
 
-- \(x\): point-change rate;
-- \(y\): upper-tail regret;
-- colour: perturbation level \(p\);
-- symbol: method;
-- line or hull: empirically nondominated configurations.
+## Directly relevant MCDA, robustness and preference literature
 
-**Purpose:** Shows that no single resolution is universally best and identifies dominated settings.
+1. **Cebesoy, M., Tuncer Şakar, C., & Yet, B. (2025).** Multicriteria decision support under uncertainty: Combining outranking methods with Bayesian networks. *Annals of Operations Research, 355*(3), 2971–2998. [https://doi.org/10.1007/s10479-024-06064-8](https://doi.org/10.1007/s10479-024-06064-8)
+2. **Erwig, M., & Kumar, P. (2025).** Explaining results of multi-criteria decision-making. *Journal of Multi-Criteria Decision Analysis, 32*(1), e70011. [https://doi.org/10.1002/mcda.70011](https://doi.org/10.1002/mcda.70011)
+3. **Greco, S., Słowiński, R., & Wallenius, J. (2025).** Fifty years of multiple criteria decision analysis: From classical methods to robust ordinal regression. *European Journal of Operational Research, 323*(2), 351–377. [https://doi.org/10.1016/j.ejor.2024.07.038](https://doi.org/10.1016/j.ejor.2024.07.038)
+4. **Huber, F., Rojas Gonzalez, S., & Astudillo, R. (2025).** Bayesian preference elicitation for decision support in multi-objective optimization. *Journal of Multi-Criteria Decision Analysis, 32*(3), e70019. [https://doi.org/10.1002/mcda.70019](https://doi.org/10.1002/mcda.70019)
+5. **Jangid, P., Kumar, T., Jahnvi, Dhanuk, K., & Sharma, M. K. (2025).** A stability and robustness analysis of multi-criteria decision methods in logistics. *Decision Analytics Journal, 16*, 100618. [https://doi.org/10.1016/j.dajour.2025.100618](https://doi.org/10.1016/j.dajour.2025.100618)
+6. **Kuhn, D., Shafiee, S., & Wiesemann, W. (2025).** Distributionally robust optimization. *Acta Numerica, 34*, 579–804. [https://doi.org/10.1017/S0962492924000084](https://doi.org/10.1017/S0962492924000084)
+7. **Paradowski, B., Wątróbski, J., & Sałabun, W. (2025).** Novel coefficients for improved robustness in multi-criteria decision analysis. *Artificial Intelligence Review, 58*, Article 298. [https://doi.org/10.1007/s10462-025-11307-6](https://doi.org/10.1007/s10462-025-11307-6)
+8. **Shi, C., & Yao, Y. (2025).** Explainable multi-criteria decision-making: A three-way decision perspective. *International Journal of Approximate Reasoning, 187*, 109528. [https://doi.org/10.1016/j.ijar.2025.109528](https://doi.org/10.1016/j.ijar.2025.109528)
+9. **Więckowski, J., & Sałabun, W. (2025).** Supporting multi-criteria decision-making processes with unknown criteria weights. *Engineering Applications of Artificial Intelligence, 140*, 109699. [https://doi.org/10.1016/j.engappai.2024.109699](https://doi.org/10.1016/j.engappai.2024.109699)
+10. **Foschini, M., Tsouros, D., Dilkina, B., & Guns, T. (2026).** Anytime lexicographic enumeration of the Pareto front in multi-objective combinatorial optimisation. *Journal of Multi-Criteria Decision Analysis, 33*(1). [https://doi.org/10.1002/mcda.70029](https://doi.org/10.1002/mcda.70029)
+11. **Halstead, M. E., López-Ibáñez, M., Farmer, G., & Warren, P. A. (2026).** Multiobjective optimisation for others: How anchoring effects change based on who guides the interaction. *Journal of Multi-Criteria Decision Analysis, 33*(2). [https://doi.org/10.1002/mcda.70036](https://doi.org/10.1002/mcda.70036)
+12. **Weber, T. A. (2026).** Relatively robust multicriteria decisions. *Management Science, 72*(4), 3175–3203. [https://doi.org/10.1287/mnsc.2025.00510](https://doi.org/10.1287/mnsc.2025.00510)
+13. **Zhao, Q., Balugani, E., Gamberini, R., & Lolli, F. (2026).** SMAA-based FITradeoff: An efficient framework for pairwise elicitation in multicriteria decision analysis. *Journal of Multi-Criteria Decision Analysis, 33*(2). [https://doi.org/10.1002/mcda.70031](https://doi.org/10.1002/mcda.70031)
 
----
+## Recent publications involving Madani Bezoui
 
-## New Figure 16 — Probe influence and decisive-coordinate decomposition
+14. **† Regaigui, S., Bezoui, M., Moulai, M., & Qaisar, S. M. (2025).** A memetic method for solving portfolio optimization problem under cardinality, quantity, and pre-assignment constraints. *Applied Soft Computing, 175*, 113058. [https://doi.org/10.1016/j.asoc.2025.113058](https://doi.org/10.1016/j.asoc.2025.113058)
+15. **† Ibnelbey, R., & Bezoui, M. (2025).** Preference-based multi-objective optimization for student transportation: A machine learning approach. *Congrès annuel de la Société Française de Recherche Opérationnelle et d’Aide à la Décision*. [HAL-04974058](https://hal.science/hal-04974058)
+16. **† Bezoui, M., Nouinou, H., & Bounceur, A. (2026).** Meta-learning with similarity-weighted transfer for manufacturing optimization. *Congrès annuel de la Société Française de Recherche Opérationnelle et d’Aide à la Décision*. [HAL-05548907](https://hal.science/hal-05548907)
+17. **† Bounceur, A., Bezoui, M., Mir, F., Oulefki, A., Ouamri, M.-A., Seker, H., Foufou, S., Amira, A., & Himeur, Y. (2026).** Phygital Twin IoT: A hardware-software decomposition architecture for scalable and secure digital twin IoT systems. *IEEE Open Journal of the Computer Society, 7*, 755–768. [https://doi.org/10.1109/OJCS.2026.3681725](https://doi.org/10.1109/OJCS.2026.3681725)
 
-For each method/instance, classify the decisive comparison as:
+To reach the requested six Bezoui references without artificial inflation, add these two earlier but methodologically relevant works:
 
-- maximum category;
-- 25% tail category;
-- 50% tail category;
-- mean category;
-- exact 25% tail;
-- exact 50% tail;
-- exact mean;
-- exact maximum;
-- terminal order statistic.
+18. **† Bezoui, M., Olteanu, A.-L., & Sevaux, M. (2023).** Integrating preferences within multiobjective flexible job shop scheduling. *European Journal of Operational Research, 305*(3), 1079–1086. [https://doi.org/10.1016/j.ejor.2022.07.002](https://doi.org/10.1016/j.ejor.2022.07.002)
+19. **† Bezoui, M., Almaktoom, A. T., Bounceur, A., Qaisar, S. M., & Chouman, M. (2024).** Hybrid metaheuristics for Industry 5.0 multi-objective manufacturing and supply chain optimization. In *2024 21st Learning and Technology Conference*, 245–249. [https://doi.org/10.1109/LT60077.2024.10469011](https://doi.org/10.1109/LT60077.2024.10469011)
 
-Display a stacked bar by:
+Thus, the proposed section contains:
 
-- geometry;
-- number of criteria;
-- perturbation level.
-
-Add a second panel reporting whether the decisive coordinate was driven by:
-
-- an invariant singleton probe;
-- the mean probe;
-- the maximum probe.
-
-**Purpose:** Explains how uncertain bounds actually influence the recommendation.
+- **17 references published in 2025–2026**;
+- **6 publications involving Madani Bezoui**;
+- a clear separation between direct methodological antecedents and contextual self-citations.
 
 ---
 
-## New Figure 17 — Ablation study
+# 5. Two foundational additions
 
-Compare:
+20. **Moore, R. E., Kearfott, R. B., & Cloud, M. J. (2009).** *Introduction to Interval Analysis*. SIAM. [https://doi.org/10.1137/1.9780898717716](https://doi.org/10.1137/1.9780898717716)
+21. **Ogryczak, W. (1997).** On the lexicographic minimax approach to location problems. *European Journal of Operational Research, 100*(3), 566–585. [https://doi.org/10.1016/S0377-2217(96)00154-3](https://doi.org/10.1016/S0377-2217(96)00154-3)
 
-1. LexPR;
-2. categories on maximum only;
-3. categories on maximum and \(T_{25}\);
-4. full four-category ReLexTail;
-5. full categories without exact refinement—report \(W_{\mathrm{cat}}\);
-6. full ReLexTail;
-7. ReLexTail without singleton probes;
-8. ReLexTail with rebalanced singleton/aggregate multiplicities.
-
-Plot point changes, category-set changes, regret and set size.
-
-**Purpose:** Demonstrates which components produce the observed trade-off.
+These two are indispensable despite not being recent: one supports the lexicographic-minimax lineage, and the other supports the dependency and enclosure discussion.
 
 ---
 
-## New Figure 18 — Interval-certification convergence
+# 6. Recommended editorial changes
 
-For each uncertainty level and multiple instances, plot against:
+## Mandatory corrections
 
-- processed boxes;
-- wall-clock time.
-
-Report:
-
-- unresolved volume;
-- outer possible-winner set size;
-- inner possible-winner set size;
-- fraction of instances completely resolved.
-
-Use median curves and interquartile bands across instances.
-
-**Purpose:** Converts the current one-instance illustration into a transparent computational assessment.
-
----
-
-## New Figure 19 — Continuous-formulation runtime and verification
-
-If the MILP implementation is completed, report:
-
-- runtime versus \(m\);
-- runtime versus number of constraints/variables;
-- number of solver stages;
-- agreement between direct finite enumeration and sequential optimisation on instances where both apply;
-- effect of feasibility and integrality tolerances.
-
-If the implementation is **not** completed, do not include simulated runtime data. Instead retain the theoretical stage-count figure and explicitly describe implementation as future work.
-
----
-
-## New Figure 20 — Practical decision dashboard
-
-For the supplier or real application, provide one dashboard containing:
-
-- \(W_{\mathrm{cat}}\);
-- \(W_{\mathrm{exact}}\);
-- decisive coordinate against every rival;
-- labelled probe disappointments;
-- sampled winner frequencies;
-- certified inner/outer sets;
-- unresolved volume;
-- sensitivity to \(\delta\);
-- sensitivity to grid shift.
-
-**Purpose:** Demonstrates the claimed auditability of ReLexTail.
-
----
-
-# 6. Additional tables
-
-## Table A — Related-work capability matrix
-
-Use the checkmark/crossmark table proposed above.
-
-## Table B — Resolution elicitation record
-
-| Coordinate  | Physical interpretation    | Tested active-range differences | Elicited discrimination interval | Selected width | Rationale |
-| ----------- | -------------------------- | ------------------------------: | -------------------------------: | -------------: | --------- |
-| \(M\)       | Worst declared concern     |                              … |                               … |             … | …        |
-| \(T_{25}\)  | Mean of worst 25% concerns |                              … |                               … |             … | …        |
-| \(T_{50}\)  | Mean of worst 50% concerns |                              … |                               … |             … | …        |
-| \(T_{100}\) | Overall mean concern       |                              … |                               … |             … | …        |
-
-For the constructed supplier example, label these as analyst-declared, not stakeholder-elicited.
-
-## Table C — Full paired statistical comparison
-
-Add:
-
-- mean and median regret;
-- upper-tail regret;
-- point-change rate;
-- category-set change rate;
-- category-set size;
-- nominal-point retention;
-- Jaccard overlap;
-- paired differences from LexPR;
-- 95% paired-bootstrap intervals;
-- probability of superiority.
-
-## Table D — Ablation results
-
-Report the components listed for Figure 17.
-
-## Table E — Real/public dataset description
-
-| Dataset                 | Nature                  | Candidates | Criteria | Criterion direction                     | Bound uncertainty source     | Stakeholders        |
-| ----------------------- | ----------------------- | ---------: | -------: | --------------------------------------- | ---------------------------- | ------------------- |
-| Procurement case        | Operational             |         … |       … | …                                      | estimation/contract ranges   | procurement experts |
-| Portfolio benchmark     | Historical market data  |         … |       … | risk/cost minimise, return maximise     | estimation window            | none                |
-| Concrete mixtures       | Laboratory observations |         … |       … | cost/impact minimise, strength maximise | measurement/reference bounds | none                |
-| Building energy designs | Engineering simulations |         … |       … | heating/cooling minimise                | reference-range uncertainty  | none                |
-
-Do not label simulated building data as field data.
-
-## Table F — Computational certification results
-
-Include runtime, boxes, set sizes, unresolved volume and retention status.
-
----
-
-# 7. Real comparison data
-
-## 7.1 What can already be reported from the manuscript
-
-The following comparisons are genuine calculations from the current Table 1. Relative percentages below are approximate because they are calculated from rounded published values.
-
-| Method                     | Tail regret | Difference from LexPR | Relative tail-regret difference | Point changes | Point-change difference from LexPR |
-| -------------------------- | ----------: | --------------------: | ------------------------------: | ------------: | ---------------------------------: |
-| LexPR                      |      0.5430 |                     0 |                              0% |        21.11% |                               0 pp |
-| Leximax                    |      0.5337 |              −0.0093 |                         −1.71% |        35.59% |                          +14.48 pp |
-| Mean-D                     |      0.5490 |               +0.0060 |                          +1.10% |        29.78% |                           +8.67 pp |
-| ReLexTail,\(\delta=0.001\) |      0.5430 |                0.0000 |                           0.00% |        20.96% |                          −0.15 pp |
-| ReLexTail,\(\delta=0.01\)  |      0.5421 |              −0.0009 |                         −0.17% |        20.11% |                          −1.00 pp |
-| ReLexTail,\(\delta=0.02\)  |      0.5414 |              −0.0016 |                         −0.29% |        19.07% |                          −2.04 pp |
-| ReLexTail,\(\delta=0.05\)  |      0.5408 |              −0.0022 |                         −0.41% |        21.22% |                           +0.11 pp |
-| ReLexTail,\(\delta=0.10\)  |      0.5406 |              −0.0024 |                         −0.44% |        24.22% |                           +3.11 pp |
-
-A careful interpretation is:
-
-- \(\delta=0.02\) reduces point changes by approximately **2.04 percentage points**, or **9.7% relative to the LexPR change rate**.
-- Its external upper-tail regret decreases by approximately **0.0016**, or **0.29% relative**.
-- Larger \(\delta\) values continue to reduce the reported tail regret but lose the point-stability advantage.
-- Leximax gives the strongest tail-regret result but substantially worse point stability.
-- Mean-D optimises a different aspect: it has the best mean regret but worse upper-tail regret than LexPR.
-
-These are real manuscript results, but the new paper should compute all differences from the unrounded per-instance files.
-
-## 7.2 Required new comparison data
-
-Increase the perturbation draws from 30 to at least **500 per instance and uncertainty level**. Thirty draws are sufficient for an exploratory population average but weak for estimating instance-specific switching probabilities.
-
-Recommended design:
-
-- 90 original synthetic instances;
-- at least 500 matched perturbations per \(p\);
-- \(p\in\{0.01,0.025,0.05,0.10,0.15,0.20,0.30,0.40\}\);
-- \(\delta\in\{0.001,0.005,0.01,0.02,0.03,0.05,0.075,0.10\}\);
-- grid offsets \(o/\delta\in\{0,0.25,0.50,0.75\}\);
-- at least 10,000 held-out preference vectors;
-- all random draws shared across methods.
-
-## 7.3 Baselines to add
-
-At minimum compare against:
-
-1. exact LexPR;
-2. exact leximax on normalised criteria;
-3. Mean-D;
-4. minimisation of \(T_{25}\) alone;
-5. minimisation of \(T_{50}\) alone;
-6. an OWA profile approximating the selected tail priorities;
-7. weighted sum under the mean elicited/evaluation weights;
-8. reference-point or achievement-scalarising method;
-9. category-only selection reporting \(W_{\mathrm{cat}}\);
-10. a threshold-based outranking method, if a defensible threshold specification is available.
-
-Do not force a comparison with methods operating under fundamentally different preference information unless the modelling assumptions are made equivalent.
-
-## 7.4 Statistical analysis
-
-For each paired comparison report:
-
-- paired mean difference;
-- paired median difference;
-- 95% percentile or BCa bootstrap interval;
-- probability that ReLexTail improves the metric;
-- Wilcoxon signed-rank test as supplementary information;
-- Holm correction across the predeclared primary comparisons;
-- geometry and criterion-count interaction;
-- number of wins, losses and ties.
-
-Define two primary endpoints before rerunning:
-
-1. point-change-rate difference versus LexPR;
-2. upper-tail external-regret difference versus LexPR.
-
-Treat all other resolutions and subgroup analyses as secondary or exploratory.
-
----
-
-# 8. Real-world validation strategy
-
-## 8.1 Minimum publication enhancement
-
-If a true operational study cannot be completed before publication, add one public-data experiment and clearly label it as an application-oriented benchmark rather than stakeholder validation.
-
-Possible public-data domains include:
-
-- portfolio selection using real historical asset returns;
-- experimental concrete-mixture designs;
-- vehicle or transport alternatives with observed cost/emission/performance data;
-- energy-system technology alternatives;
-- published supplier-selection data with explicit reuse permission.
-
-For benefit criteria, transform them to minimisation form transparently, for example:
-
-\[
-f_i(x)=-g_i(x),
-\]
-
-or use a declared monotone decreasing conversion. Do not silently invert criteria.
-
-## 8.2 Stronger prospective validation
-
-A proper real procurement validation should involve:
-
-- one or more procurement organisations;
-- 15–30 actual suppliers or bids;
-- 6–12 operational criteria;
-- explicit documentation of measurement uncertainty;
-- 5–15 stakeholders;
-- elicitation of probes and \(\delta\);
-- comparison with the organisation’s current decision process;
-- repeated elicitation to assess stability;
-- qualitative evaluation of explanation usefulness.
-
-Suggested endpoints:
-
-- recommendation agreement;
-- top-set overlap;
-- stakeholder acceptance;
-- confidence in the recommendation;
-- explanation time;
-- number of preference revisions;
-- test–retest stability;
-- disagreement resolution;
-- integration effort with procurement software.
-
-Because this involves human participants and potentially commercially sensitive data, the study may require informed consent, data governance and an ethics determination.
-
----
-
-# 9. New 2025–2026 references
-
-The following recent records were verified through publisher/Crossref metadata. They should be cited only where substantively discussed.
-
-## Robustness and stability in MCDA
-
-1. **Paradowski, B., Wątróbski, J., & Sałabun, W. (2025).** “Novel coefficients for improved robustness in multi-criteria decision analysis.” *Artificial Intelligence Review*.https://doi.org/10.1007/s10462-025-11307-6**Use:** robustness measures and sensitivity reporting.
-2. **Jangid, P., Kumar, T., Jahnvi, Dhanuk, K., & Sharma, M. K. (2025).** “A stability and robustness analysis of multi-criteria decision methods in logistics.” *Decision Analytics Journal*, article 100618.https://doi.org/10.1016/j.dajour.2025.100618**Use:** stability comparisons in application-oriented MCDA.
-3. **Patel, G., Das, S., & Das, R. (2025).** “Evaluation of optimal normalization techniques in multi-criteria decision-making to rank CMIP6 climate models.” *Theoretical and Applied Climatology*.https://doi.org/10.1007/s00704-025-05617-6**Use:** empirical importance of normalisation choices.
-4. **Gopisetty, Y. B., Sama, H. R., Padi, T. R., & Patibandla, L. (2025).** “A Double Normalization Framework for Sustainable Electric Vehicle Selection: Integrating LOPCOW and RAM in Multi-Criteria Decision-Making.” *Journal of the Operations Research Society of China*.
-   https://doi.org/10.1007/s40305-025-00626-8
-   **Use:** recent normalisation methodology; contrast with uncertain normalisation bounds.
-
-## Preference elicitation and explainability
-
-5. **Escamocher, G., Pourkhajouei, S., Toffano, F., Viappiani, P., & Wilson, N. (2025).** “Interactive preference elicitation under noisy preference models: An efficient non-Bayesian approach.” *International Journal of Approximate Reasoning*, article 109333.https://doi.org/10.1016/j.ijar.2024.109333**Use:** eliciting preferences under response noise.
-6. **Huber, F., Rojas Gonzalez, S., & Astudillo, R. (2025).** “Bayesian Preference Elicitation for Decision Support in Multi-Objective Optimization.” *Journal of Multi-Criteria Decision Analysis*.https://doi.org/10.1002/mcda.70019**Use:** modern preference-elicitation positioning.
-7. **Erwig, M., & Kumar, P. (2025).** “Explaining Results of Multi-Criteria Decision-Making.” *Journal of Multi-Criteria Decision Analysis*.https://doi.org/10.1002/mcda.70011**Use:** contrastive records and auditability.
-8. **Więckowski, J., & Sałabun, W. (2025).** “Supporting multi-criteria decision-making processes with unknown criteria weights.” *Engineering Applications of Artificial Intelligence*, article 109699.https://doi.org/10.1016/j.engappai.2024.109699**Use:** uncertainty about criteria weights versus uncertainty about normalisation.
-9. **Shi, C., & Yao, Y. (2025).** “Explainable multi-criteria decision-making: A three-way decision perspective.” *International Journal of Approximate Reasoning*, article 109528.https://doi.org/10.1016/j.ijar.2025.109528**Use:** explainability and set-valued decisions.
-10. **Zhao, L., Wang, P., Shen, J., Song, B., & Zhang, Q. (2026).** “Component-Sharing Preference in Expensive Multiobjective Optimization.” *IEEE Transactions on Evolutionary Computation*.https://doi.org/10.1109/TEVC.2025.3583302**Use:** preference-informed multiobjective optimisation.
-11. **Schwind, N., Everaere, P., Konieczny, S., & Lonca, E. (2026).** “Targeting in Multi-Criteria Decision Making.” *Proceedings of the AAAI Conference on Artificial Intelligence*, 40(43), 36732–36739.
-    https://doi.org/10.1609/aaai.v40i43.40998
-    **Use:** recent axiomatic treatment of alternative selection in MCDA.
-
-## Robust and risk-aware optimisation
-
-12. **Kuhn, D., Shafiee, S., & Wiesemann, W. (2025).** “Distributionally robust optimization.” *Acta Numerica*.https://doi.org/10.1017/S0962492924000084**Use:** distinguish bound uncertainty from distributional uncertainty.
-13. **Blanchet, J., Li, J., Lin, S., & Zhang, X. (2025).** “Distributionally Robust Optimization and Robust Statistics.” *Statistical Science*, 40(3), 351–377.https://doi.org/10.1214/24-STS955**Use:** clarify different meanings of robustness.
-14. **Garg, D., & Mehra, A. (2025).** “Portfolio optimization with expectile value at risk and conditional value at risk: deviation measure and robust allocation.” *Computational and Applied Mathematics*.https://doi.org/10.1007/s40314-025-03446-x**Use:** modern CVaR-based robust optimisation; distinguish decision-risk CVaR from empirical probe-tail summaries.
-15. **Arao, S., Komiyama, H., Tsuruga, R., Amishima, T., Kakubari, Y., & Naganawa, J. (2026).** “Lexicographic Robust Receiver Placement Optimization for Airport Surface Multilateration Against Worst-Case Station Failure.” *IEICE Communications Express*.https://doi.org/10.23919/COMEX.2026XBL0017**Use:** contemporary lexicographic robust optimisation.
-16. **Xue, J., Zheng, P., Wei, C., & Song, G. (2026).** “Robust Optimization Algorithm of Multi-Objective and Multi-Scenario Performance for Uncertain Microgrids Based on Lexicographic Order Method.” *Sustainability*, 18(2), 1100.https://doi.org/10.3390/su18021100**Use:** recent robust lexicographic multiobjective application.
-17. **Pratiwi, Z., Zahedi, Z., & Nusantara, B. C. (2026).** “Study of novel normalization technique on weighting and ranking methodology in multi criteria decision making.” *Croatian Operational Research Review*.
-    https://doi.org/10.17535/crorr.2026.0023
-    **Use:** recent effects of normalisation on ranking.
-
-## Directly relevant author publication
-
-18. **Regaigui, S., Bezoui, M., Moulaï, M., & Qaisar, S. M. (2025).** “A memetic method for solving portfolio optimization problem under cardinality, quantity, and pre-assignment constraints.” *Applied Soft Computing*, 175, 113058.
-    https://doi.org/10.1016/j.asoc.2025.113058
-    **Use:** continuity with the author’s constrained multiobjective optimisation research.
-
-This provides **18 recent 2025–2026 references**, exceeding the requested minimum of 16.
-
----
-
-# 10. At least six relevant Madani Bezoui references
-
-Self-citations must be scientifically justified. They should not be added merely to satisfy a numeric quota. The following works are the most defensible because they establish continuity in preference integration, multiobjective optimisation, scheduling and constrained portfolio optimisation.
-
-1. **Regaigui, S., Bezoui, M., Moulaï, M., & Qaisar, S. M. (2025).** “A memetic method for solving portfolio optimization problem under cardinality, quantity, and pre-assignment constraints.” *Applied Soft Computing*, 175, 113058.https://doi.org/10.1016/j.asoc.2025.113058
-2. **Bezoui, M., Olteanu, A.-L., & Sevaux, M. (2023).** “Integrating preferences within multiobjective flexible job shop scheduling.” *European Journal of Operational Research*, 305(3), 1079–1086.https://doi.org/10.1016/j.ejor.2022.07.002
-3. **Bezoui, M., Moulaï, M., Bounceur, A., & Euler, R. (2019).** “An iterative method for solving a bi-objective constrained portfolio optimization problem.” *Computational Optimization and Applications*, 72(2), 479–498.https://doi.org/10.1007/s10589-018-0052-9
-4. **Bezoui, M., Kermali, A., Bounceur, A., Qaisar, S. M., & Almaktoom, A. T. (2024).** “Deep Reinforcement Learning for Multiobjective Scheduling in Industry 5.0 Reconfigurable Manufacturing Systems.” In *Machine Learning for Networking*.https://doi.org/10.1007/978-3-031-59933-0_7
-5. **Bezoui, M., Olteanu, A.-L., & Sevaux, M. (2022).** “Preference-driven tabu search for multiobjective scheduling problems.” 23rd ROADEF Congress.https://hal.science/hal-03587512
-6. **Ibnelbey, R., & Bezoui, M. (2025).** “Preference-Based Multi-Objective Optimization for Student Transportation: A Machine Learning Approach.” ROADEF conference contribution.https://hal.science/hal-04974058
-7. **Bezoui, M., Olteanu, A.-L., & Sevaux, M. (2021).** “Embedding decision-maker’s preferences in the multi-objective Tabu search method for scheduling problems.” EURO conference contribution.
-   https://hal.science/hal-03285086
-
-Suggested use:
-
-- cite References 2, 5 and 7 when introducing preference integration;
-- cite References 1 and 3 when discussing constrained multiobjective optimisation;
-- cite Reference 4 when motivating Industry 5.0 applications;
-- cite Reference 6 only in the future real-world/application outlook.
-
-Do not present conference abstracts as equivalent to archival journal articles.
-
----
-
-# 11. Mandatory bibliographic identity check
-
-A metadata inconsistency must be resolved before publication.
-
-The manuscript gives:
-
-\[
-\text{ORCID }0000\text{-}0002\text{-}8342\text{-}7039,
-\]
-
-while several HAL, Crossref and OpenAlex records associate Madani Bezoui with:
-
-\[
-0000\text{-}0001\text{-}6930\text{-}1088.
-\]
-
-Some newer records use the manuscript identifier. The author should verify which ORCID is correct and request metadata corrections or account merging where appropriate. The paper, repository, Zenodo archive, HAL profile and publisher submissions should use one validated identity consistently.
-
----
-
-# 12. Exact additions requested by the reviewer
-
-## 12.1 Resolution-parameter paragraph
-
-Insert in a new subsection titled **“Practical elicitation of resolution widths”**:
-
-> The resolution widths should not be selected solely by optimising retrospective stability. An analyst should first determine the smallest change in each risk summary that the decision-maker considers capable of overriding all later profile coordinates. This can be elicited through controlled pairwise comparisons in which the maximum or a tail mean is varied while the remaining summaries are held approximately constant. Candidate values such as 0.01, 0.02 and 0.05 should then be translated into percentages of each probe’s active range and illustrated using physical criterion values where possible. Because responses may identify an interval rather than a unique threshold, the analysis should report recommendations over a plausible width range. Nearby widths and shifted category grids should be examined as sensitivity diagnostics. Consequently, choosing between \(\delta=0.02\) and \(\delta=0.05\) is a modelling decision based on meaningful discrimination and acceptable set size, not a universal numerical prescription.
-
-## 12.2 Abstract limitation for continuous MILP formulation
-
-Add after the sentence about the sequential formulation:
-
-> This formulation is a theoretical computational characterisation; an independently validated end-to-end continuous MILP implementation is not claimed in the present study.
-
-This is transparent, but slightly weakens the abstract. If word count is strict, use:
-
-> The continuous formulation is characterised theoretically but not yet validated through an end-to-end solver implementation.
-
-## 12.3 Real-world validation outlook
-
-Add to the conclusion:
-
-> Future operational validation should combine real candidate and criterion data with live stakeholder elicitation of probes, multiplicities and resolution widths. Such a study should compare ReLexTail with the organisation’s current decision process, evaluate recommendation acceptance and test–retest stability, and integrate the comparison and sensitivity records into existing procurement or decision-support software. Where human judgments or commercially sensitive supplier data are collected, appropriate ethics, consent and data-governance procedures will be required.
-
----
-
-# 13. Additional theoretical and technical improvements
-
-## 13.1 Correct Proposition 1
-
-Repair the corrupted proof as indicated in the review.
-
-## 13.2 Correct Theorem 3
-
-Use the retained separating-probe assumption directly rather than claiming that a specific singleton probe must separate the alternatives.
-
-## 13.3 Clarify interval-vector evaluation
-
-State that \(\Psi(D^U)\) is computed from a common upper disappointment vector.
-
-## 13.4 Distinguish uncertainty sources
-
-Add a table distinguishing:
-
-| Uncertainty                     | Object varied                         | Current treatment           |
-| ------------------------------- | ------------------------------------- | --------------------------- |
-| Normalisation-bound uncertainty | \(z^\star,z^{\mathrm{nad}}\)          | Main robustness analysis    |
-| Preference uncertainty          | probes, multiplicities, widths        | Sensitivity/elicitation     |
-| Candidate-data uncertainty      | \(f_i(x)\)                            | Not generally modelled      |
-| Candidate-set uncertainty       | membership of\(A\)                    | Not modelled                |
-| Sampling uncertainty            | Monte Carlo estimates                 | Bootstrap/Monte Carlo       |
-| Solver error                    | feasibility and optimality tolerances | Must be reported separately |
-
-## 13.5 Add a numerical specification
-
-The software/paper must document:
-
-- treatment of \(\lceil z/\delta\rceil\);
-- equality tolerance for exact profiles;
-- stable sorting convention;
-- tie-breaking;
-- outward rounding;
-- rational representation used in certification;
-- solver feasibility and integrality tolerances.
-
----
-
-# 14. Reproducibility package
-
-The final archive should have the following structure:
+1. Replace:
 
 ```text
-relextail-paper-version/
-├── README.md
-├── LICENSE
-├── CITATION.cff
-├── environment.yml
-├── requirements-lock.txt
-├── data/
-│   ├── synthetic/
-│   ├── real/
-│   ├── supplier/
-│   └── perturbation_directions/
-├── src/
-│   ├── probes/
-│   ├── selection/
-│   ├── intervals/
-│   ├── optimization/
-│   └── evaluation/
-├── experiments/
-│   ├── synthetic_protocol.yaml
-│   ├── real_data_protocol.yaml
-│   ├── ablation_protocol.yaml
-│   └── grid_shift_protocol.yaml
-├── results/
-│   ├── raw/
-│   └── summaries/
-├── figures/
-├── tables/
-├── tests/
-└── reproduce_all.sh
+doi: 10.1051/ro:1999118
 ```
 
-Required tests:
+with:
 
-- singleton invariance;
-- replication invariance;
-- fractional-CVaR calculation;
-- category-boundary convention;
-- Pareto monotonicity;
-- agreement between direct and sequential selection;
-- interval-enclosure containment;
-- deterministic seed replay.
+```text
+doi: 10.1051/ro:1999112
+```
 
-Archive this exact version with a new DOI and cite that DOI in the paper.
+2. Replace:
 
----
+```text
+10.1016/S0377 -2217(97)00163-X
+```
 
-# 15. Prioritised implementation checklist
+with:
 
-## Priority 1 — Required before publication
+```text
+10.1016/S0377-2217(97)00163-X
+```
 
-- [ ] Repair Proposition 1 and Theorem 3 proofs.
-- [ ] Add the related-work comparison table.
-- [ ] Add a practical \(\delta\)-elicitation subsection.
-- [ ] Add pooled confidence intervals for point-change differences.
-- [ ] Explain floating-point category-boundary handling.
-- [ ] Add the continuous-MILP limitation to the abstract or conclusion.
-- [ ] Add the real-world validation paragraph.
-- [ ] Archive the exact code and data used for this version.
-- [ ] Resolve the apparent ORCID inconsistency.
-- [ ] Verify every DOI against publisher metadata.
+3. Cite Tsanas and Xifara explicitly as a dataset:
 
-## Priority 2 — Strongly recommended
+```text
+Tsanas, A., & Xifara, A. (2012). Energy Efficiency [Dataset].
+UCI Machine Learning Repository.
+https://doi.org/10.24432/C51307
+```
 
-- [ ] Add grid-origin sensitivity.
-- [ ] Add the probe/decisive-coordinate decomposition.
-- [ ] Add an ablation study.
-- [ ] Increase perturbations beyond 30 per instance.
-- [ ] Report full paired distributions and stability intervals.
-- [ ] Add one public-data application benchmark.
-- [ ] Expand the interval experiment beyond one instance.
+4. Add Ogryczak (1997) at the first definition of exact lexicographic minimax.
+5. Add Moore, Kearfott, and Cloud (2009) when discussing dependency loss and interval quotients.
+6. Harmonize the author ORCID in Crossref, HAL, the manuscript and the repository.
 
-## Priority 3 — High-value extension
+## Strongly recommended
 
-- [ ] Implement and validate the sequential LP/MILP formulation.
-- [ ] Compare finite enumeration and continuous optimisation.
-- [ ] Conduct a prospective stakeholder elicitation study.
-- [ ] Integrate contrastive records into a procurement dashboard.
-- [ ] Evaluate decision time, acceptance and test–retest stability.
+Replace the current short paragraph beginning:
 
----
+> “Recent work reinforces four adjacent needs…”
 
-# 16. Final target for the revised manuscript
-
-The revised paper should make the following claim—and no stronger claim:
-
-> ReLexTail is a complete, auditable and resolution-prioritised lexicographic selection rule. It provides a principled alternative to pairwise numerical tolerances by using fixed transitive cells, while retaining exact refinement when a complete recommendation is required. Its robustness benefits are conditional on the probe representation, category widths, grid placement and uncertainty model, and must therefore be supported by elicitation, sensitivity analysis and reproducible paired comparisons.
-
-That positioning is rigorous, publishable and appropriately cautious.
+with the new *Related Work* section. The present paragraph reads as a list of recent papers rather than a structured comparison.

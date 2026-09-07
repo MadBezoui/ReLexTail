@@ -51,7 +51,7 @@ S = M / "submission"
 TEMPLATE = ROOT / "WileyDesign" / "Optimal-Design-layout"
 OUT = M / "wiley"
 
-SECTIONS = ["introduction", "method", "properties", "computation",
+SECTIONS = ["introduction", "related_work", "method", "properties", "computation",
             "certification", "experiments", "discussion"]
 
 #: Preamble lines of the local build that the class owns and must not see.

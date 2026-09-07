@@ -2,7 +2,7 @@
 from pathlib import Path
 import re,zipfile,hashlib,json
 ROOT=Path(__file__).resolve().parents[2];M=ROOT/'Manuscrit';S=M/'submission'
-sections=['introduction','method','properties','computation','certification','experiments','discussion']
+sections=['introduction','related_work','method','properties','computation','certification','experiments','discussion']
 text='\n'.join((S/(f+'.tex')).read_text() for f in sections)
 # Match balanced caption braces so mathematical groups are retained.
 legends=[];pos=0

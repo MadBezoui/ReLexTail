@@ -52,7 +52,7 @@ FIGURE_PROVENANCE = {
     "fig_supplier_interval.pdf": ("replaced with correctly labelled sampling", "submission/data/supplier_sensitivity.json"),
 }
 
-SECTION_ORDER = ["introduction", "method", "properties", "computation",
+SECTION_ORDER = ["introduction", "related_work", "method", "properties", "computation",
                  "certification", "experiments", "discussion"]
 
 ROOT = Path(__file__).resolve().parents[2]

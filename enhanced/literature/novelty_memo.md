@@ -58,17 +58,29 @@ paper.
 | Necessary/possible winners, robust ordinal regression | Fifty years of MCDA, EJOR (2025 issue), used to locate primary sources | Locate any prior work that certifies a *lexicographic* winner over a normalisation-bound set rather than over a weight set. This is the single most important check. |
 | Ordered optimisation foundations | Ogryczak and Sliwinski (2003) | Already cited. The ordered-sum LP identities are reused, not claimed. |
 
-## 4. Searches run in this session, and their outcome
+## 4. Searches and verification to date
 
-Recorded honestly in `search_log.csv`. Two cross-disciplinary searches were run
-against an OpenAlex-backed index. Both returned off-field results: the index is
-lexical, and the query vocabulary of this problem ("normalisation bounds",
-"possible winners", "certified radius") collides with unrelated literatures.
-**No usable novelty evidence was obtained in this session.** The searches are
-logged so that the failure is visible rather than invisible, and the
-publisher-database search described in the plan (EJOR, JMCDA, Management
-Science, Operations Research, proceedings, preprint servers, with backward and
-forward citation chasing) remains to be executed.
+Recorded in `search_log.csv`. Two cross-disciplinary searches against an
+OpenAlex-backed index returned off-field results and produced no usable novelty
+evidence; that failure is logged rather than hidden.
+
+A subsequent bibliographic audit supplied 22 candidate references. Every DOI was
+resolved against the Crossref API and the two grey-literature records against
+the HAL API before anything was added: **no reference enters the manuscript on
+the strength of the audit document alone.** Two of the audit's claims did not
+survive that check -- the reported space defect in the Lahdelma DOI is a PDF
+line break rather than a data error, and the Kostreva DOI correction was
+confirmed and applied. Ten verified references now support the Related work
+section, including the 2025 MCDA retrospective, relatively robust decisions,
+anytime lexicographic enumeration, and the interval-analysis foundation whose
+absence was the clearest gap.
+
+This strengthens the positioning but does **not** close the novelty gate.
+Resolving a DOI confirms a record exists; it does not tell us what the paper
+proves. Full-text reading of the closest work -- Weber (2026) above all, then
+Foschini et al. (2026) and the approximate-leximax line -- remains outstanding,
+and the publisher-database search with backward and forward citation chasing
+described in the plan has still not been executed.
 
 ## 5. Gate decision
 
